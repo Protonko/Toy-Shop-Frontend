@@ -1,0 +1,36 @@
+// Colors
+$white: #FFFFFF;
+$red-ribbon: #F91155;
+$blue-ribbon: #005BFF;
+$midnight: #001A34;
+$regent-gray: #808D9A;
+$athens-gray: #F2F3F5;
+$tango: #E7711B;
+$alabaster: #F8F8F8;
+
+$text-color: $midnight;
+$text-color-secondary: $regent-gray;
+
+$brand-color: $blue-ribbon;
+
+//fonts
+$font-family: "Roboto", sans-serif;
+
+$font-size-base: 16px;
+$font-size-big: 20px;
+$font-size-large: 30px;
+$font-size-small: 14px;
+$font-size-extra-small: 12px;
+
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+// transition
+$transition-duration: 200ms;
+
+// z-index
+$z-index-header: 15;
+
+// layout
+$header-height: 55px;
+$sidebar-width: 170px;

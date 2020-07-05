@@ -1,0 +1,57 @@
+.button {
+    $font-size: $font-size-small;
+
+    font-size: rem($font-size);
+    font-weight: $font-weight-bold;
+    line-height: (18px / $font-size);
+    padding: rem(7px) rem(12px);
+    cursor: pointer;
+    transition: color $transition-duration,
+                background-color $transition-duration,
+                border-color $transition-duration;
+    color: $white;
+    border: rem(1px) solid $brand-color;
+    border-radius: rem(3px);
+    background-color: $brand-color;
+
+    &:hover,
+    &:focus {
+        color: $brand-color;
+        border-color: $athens-gray;
+        outline: none;
+        background-color: $athens-gray;
+    }
+
+    &--active {
+        color: $brand-color;
+        border-color: $athens-gray;
+        background-color: $athens-gray;
+    }
+    &--active & {
+        &:hover,
+        &:focus {
+            color: $white;
+            border-color: $brand-color;
+            background-color: $brand-color;
+        }
+    }
+
+    &--transparent {
+        color: $text-color;
+        border-color: transparent;
+        background-color: transparent;
+    }
+
+    &--grey {
+        color: $text-color;
+        border-color: $alabaster;
+        background-color: $alabaster;
+
+        &:hover,
+        &:focus {
+            color: $brand-color;
+            border-color: $white;
+            background-color: $white;
+        }
+    }
+}

@@ -1,0 +1,30 @@
+html {
+    -ms-overflow-style: scrollbar;
+}
+
+body {
+    margin: 0;
+}
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+::selection {
+    background: $brand-color;
+    color: $white;
+}
+
+.container {
+    width: 100%;
+    padding-right: rem(15px);
+    padding-left: rem(15px);
+    margin-right: auto;
+    margin-left: auto;
+
+    @media (min-width: 1200px) {
+        width: 1140px;
+    }
+}

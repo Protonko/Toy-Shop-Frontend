@@ -1,0 +1,14 @@
+.link {
+    transition: color $transition-duration;
+    text-decoration-line: none;
+    color: $text-color-secondary;
+
+    &:hover,
+    &:focus {
+        color: $text-color;
+    }
+
+    &--active {
+        color: $text-color;
+    }
+}

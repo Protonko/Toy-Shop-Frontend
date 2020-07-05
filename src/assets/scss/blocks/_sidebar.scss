@@ -1,0 +1,28 @@
+.sidebar {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    &__list {
+        position: fixed;
+        width: rem($sidebar-width);
+        border: rem(1px) solid rgba($midnight, .2);
+        border-radius: rem(2px);
+    }
+
+    &__item {
+        &:not(:last-child) {
+            border-bottom: rem(1px) solid rgba($midnight, .2);
+        }
+    }
+
+    &__button {
+        width: 100%;
+        border-radius: 0;
+
+        &--active {
+            color: $brand-color;
+            background-color: $white;
+        }
+    }
+}
