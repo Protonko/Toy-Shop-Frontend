@@ -1,18 +1,16 @@
 import React from 'react';
-import {Card} from './Card';
+import Card from '../containers/Card';
 
-export const Cards = ({products}) => {
-    return (
-        <div className="cards">
-            <ul className="cards__list list list--reset">
-                {
-                    products.map((product, index) => (
-                        <li key={index} className="cards__item">
-                            <Card {...product} />
-                        </li>
-                    ))
-                }
-            </ul>
-        </div>
-    );
-};
+export const Cards = ({products}) => (
+    <div className="cards">
+        <ul className="cards__list list list--reset">
+            {
+                products.map((product, index) => (
+                    <li key={index} className="cards__item">
+                        <Card {...product} />
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+);

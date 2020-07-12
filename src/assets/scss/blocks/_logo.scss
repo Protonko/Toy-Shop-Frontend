@@ -1,0 +1,8 @@
+.logo {
+    $size: 50px;
+
+    width: rem($size);
+    max-width: rem($size);
+    height: rem(25px);
+    color: $brand-color;
+}

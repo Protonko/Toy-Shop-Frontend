@@ -1,0 +1,11 @@
+.input {
+    width: 100%;
+    padding: rem(7px) rem(12px);
+    transition: border-color $transition-duration;
+    border: rem(1px) solid $alabaster;
+    outline: none;
+
+    &:focus {
+        border-color: $midnight;
+    }
+}

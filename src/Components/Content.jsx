@@ -1,5 +1,4 @@
 import React from 'react';
-import {Loader} from './Common/Loader';
 import {Cards} from './Cards';
 
 export const Content = ({products}) => (

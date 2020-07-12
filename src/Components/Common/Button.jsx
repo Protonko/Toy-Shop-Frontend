@@ -1,5 +1,7 @@
 import React from 'react';
 
-export const Button = ({title}) => (
-    <button className="button">{title}</button>
+export const Button = ({title, onClick}) => (
+    <button className="button" onClick={onClick}>
+        {title}
+    </button>
 );

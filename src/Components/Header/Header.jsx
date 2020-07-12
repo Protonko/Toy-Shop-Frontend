@@ -1,21 +1,19 @@
 import React from 'react';
+import { ReactComponent as Logo } from '../../assets/icons/logo.svg';
 import {Container} from '../Common/Container';
 import {Navbar} from './Navbar/Navbar';
+import Cart from '../../containers/Cart';
 
-export const Header = () => {
-    return (
-        <header className="header">
-            <Container classNames="container page__header-wrapper">
-                <div className="header__logo logo">
-                    logo
-                </div>
+export const Header = () => (
+    <header className="header">
+        <Container classNames="container page__header-wrapper">
+            <div className="header__logo logo">
+                <Logo />
+            </div>
 
-                <Navbar />
+            <Navbar />
 
-                <div className="header__actions">
-                    click
-                </div>
-            </Container>
-        </header>
-    );
-}
+            <Cart />
+        </Container>
+    </header>
+);

@@ -1,7 +1,6 @@
 const initialState = {
     isLoaded: false,
     items: [],
-    filterBy: 'all',
 };
 
 export default (state = initialState, action) => {
@@ -11,11 +10,6 @@ export default (state = initialState, action) => {
                 ...state,
                 items: action.payload,
                 isLoaded: true,
-            };
-        case 'SET_FILTER':
-            return {
-                ...state,
-                filterBy: action.payload,
             };
         default:
             return state;

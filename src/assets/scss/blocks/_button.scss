@@ -42,6 +42,20 @@
         background-color: transparent;
     }
 
+    &--iconed {
+        padding: 0;
+        color: $regent-gray;
+        border-color: transparent;
+        background-color: transparent;
+
+        &:hover,
+        &:focus {
+            color: $midnight;
+            border-color: transparent;
+            background-color: transparent;
+        }
+    }
+
     &--grey {
         color: $text-color;
         border-color: $alabaster;

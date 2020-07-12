@@ -1,5 +1,6 @@
 const initialState = {
     items: [],
+    total: 0,
 };
 
 export default (state = initialState, action) => {
@@ -15,7 +16,7 @@ export default (state = initialState, action) => {
         case 'REMOVE_FROM_CART':
             return {
                 ...state,
-                items: state.items.filter(o => o.id !== action.payload.id),
+                items: state.items.filter(product => product.id !== action.payload.id),
             };
         default:
             return state;
