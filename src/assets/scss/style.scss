@@ -1,4 +1,5 @@
 @import "abstract/functions";
+@import "abstract/mixins";
 @import "abstract/variables";
 
 @import "base/generic";
@@ -13,6 +14,8 @@
 @import "blocks/cart";
 @import "blocks/card";
 @import "blocks/cards";
+@import "blocks/product";
+@import "blocks/popup";
 @import "blocks/header";
 @import "blocks/sidebar";
 @import "blocks/page";

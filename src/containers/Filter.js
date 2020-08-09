@@ -1,14 +1,14 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import * as filtersActions from '../actions/filter';
-import {Filter} from '../Components/Filter/Filter';
+import * as filtersActions from '../store/actions/filter';
+import {Filter} from '../components/Filter/Filter';
 
-const mapState = ({filter}) => ({
-    filterBy: filter.filterBy,
+const mapStateToProps = ({filter}) => ({
+  filterBy: filter.filterBy,
 });
 
-const mapDispatch = dispatch => ({
-    ...bindActionCreators(filtersActions, dispatch),
+const mapDispatchToProps = dispatch => ({
+  ...bindActionCreators(filtersActions, dispatch),
 });
 
-export default connect(mapState, mapDispatch)(Filter);
+export default connect(mapStateToProps, mapDispatchToProps)(Filter);

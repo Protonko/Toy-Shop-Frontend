@@ -1,0 +1,51 @@
+.product {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: rem(5px);
+
+    &__info {
+        display: flex;
+        align-items: center;
+    }
+
+    &__image {
+        $size: 30px;
+
+        width: rem($size);
+        height: rem($size);
+        border-radius: rem(5px);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        &:not(:last-child) {
+            margin-right: rem(15px);
+        }
+    }
+
+    &__data {
+        &-name {
+            font-size: rem($font-size-small);
+            color: $text-color;
+        }
+
+        &-price {
+            font-size: rem($font-size-extra-small);
+            color: $text-color-secondary;
+        }
+    }
+
+    &__counter {
+        display: flex;
+        align-items: center;
+
+        &-number {
+            $horizontal-gutter: 5px;
+
+            font-size: rem($font-size-small);
+            margin-right: rem($horizontal-gutter);
+            margin-left: rem($horizontal-gutter);
+        }
+    }
+}

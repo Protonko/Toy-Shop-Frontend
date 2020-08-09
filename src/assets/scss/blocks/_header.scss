@@ -2,6 +2,7 @@
     $padding-vertical: 18px;
 
     position: fixed;
+    z-index: $z-index-header;
     top: 0;
     width: 100%;
     height: rem($header-height);

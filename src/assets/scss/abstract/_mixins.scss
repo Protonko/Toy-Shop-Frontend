@@ -1,0 +1,9 @@
+@mixin drop($fromPositionY, $toPositionY) {
+    from {
+        bottom: $fromPositionY;
+    }
+
+    to {
+        bottom: $toPositionY;
+    }
+}
