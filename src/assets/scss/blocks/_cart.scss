@@ -4,14 +4,14 @@
     &__list {
         display: flex;
         align-items: center;
-        margin-right: rem(-$horizontal-gutter / 2);
-        margin-left: rem(-$horizontal-gutter / 2);
+
+        @include margin-horizontal(-$horizontal-gutter / 2);
     }
 
     &__item {
         position: relative;
-        padding-right: rem($horizontal-gutter / 2);
-        padding-left: rem($horizontal-gutter / 2);
+
+        @include padding-horizontal(-$horizontal-gutter / 2);
     }
 
     &__button {

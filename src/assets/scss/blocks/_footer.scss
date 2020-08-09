@@ -1,0 +1,40 @@
+.footer {
+    background-color: $white;
+    box-shadow: 0 rem(3px) rem(10px) rgba($midnight, .05);
+
+    &__row {
+        display: flex;
+        align-items: center;
+    }
+
+    &__col {
+        $horizontal-gutter: 20px;
+
+        position: relative;
+
+        &:not(:first-child) {
+            padding-left: rem($horizontal-gutter);
+        }
+
+        &:not(:last-child) {
+            padding-right: rem($horizontal-gutter);
+
+            &::after {
+                position: absolute;
+                top: 50%;
+                right: 0;
+                height: rem(35px);
+                width: rem(1px);
+                content: "";
+                transform: translateY(-50%);
+                background-color: rgba(210,220,220,.6)
+            }
+        }
+    }
+
+    &__text {
+        font-size: $font-size-small;
+        text-align: center;
+        color: $text-color;
+    }
+}

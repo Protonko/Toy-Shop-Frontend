@@ -25,6 +25,12 @@
         }
     }
 
+    &__footer {
+        &-wrapper {
+            @include padding-vertical(18px);
+        }
+    }
+
     &__content {
         flex-grow: 1;
         margin-top: rem($header-height);

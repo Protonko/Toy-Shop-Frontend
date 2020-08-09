@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import placeholder from '../../assets/images/placeholder.jpg';
-import {CountButton} from '../Common/CountButton';
+import {CountButton} from '../Common/Buttons/CountButton';
 
 export const Product = ({image = placeholder, title, price, sale, count}) => {
   const priceProduct = sale ? Math.round(price * sale) : price;

@@ -1,0 +1,26 @@
+.socials {
+    $horizontal-gutter: 10px;
+
+    &__list {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        @include margin-horizontal(-$horizontal-gutter / 2);
+    }
+
+    &__item {
+        @include padding-horizontal($horizontal-gutter / 2);
+    }
+
+    &__link {
+        $size: 24px;
+
+        display: block;
+        overflow: hidden;
+        width: rem($size);
+        height: rem($size);
+        cursor: pointer;
+        border-radius: rem(5px);
+    }
+}

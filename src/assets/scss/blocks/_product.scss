@@ -44,8 +44,8 @@
             $horizontal-gutter: 5px;
 
             font-size: rem($font-size-small);
-            margin-right: rem($horizontal-gutter);
-            margin-left: rem($horizontal-gutter);
+
+            @include margin-horizontal($horizontal-gutter);
         }
     }
 }

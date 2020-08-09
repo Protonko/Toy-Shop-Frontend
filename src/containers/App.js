@@ -5,7 +5,7 @@ import * as productsActions from '../store/actions/products';
 import {orderBy} from '../utils/orderBy';
 import {Header} from '../components/Header/Header';
 import {Main} from '../pages/Main';
-import {Footer} from '../components/Footer';
+import {Footer} from '../components/Footer/Footer';
 
 const filterProducts = (products, filterBy, searchQuery) =>
   sortProducts(searchProducts(products, searchQuery), filterBy);

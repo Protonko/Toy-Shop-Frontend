@@ -7,3 +7,18 @@
         bottom: $toPositionY;
     }
 }
+
+@mixin margin-horizontal($value) {
+    margin-right: rem($value);
+    margin-left: rem($value);
+}
+
+@mixin padding-horizontal($value) {
+    padding-right: rem($value);
+    padding-left: rem($value);
+}
+
+@mixin padding-vertical($value) {
+    padding-top: rem($value);
+    padding-bottom: rem($value);
+}
