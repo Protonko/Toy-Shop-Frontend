@@ -1,0 +1,12 @@
+.tile {
+    display: flex;
+    padding: rem(10px);
+    box-shadow: 0 rem(3px) rem(10px) rgba($midnight, .03),
+    0 rem(12px) rem(40px) rgba($midnight, .03);
+
+    &__image {
+        &:not(:last-child) {
+            margin-right: rem(14px);
+        }
+    }
+}

@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {NavLink} from 'react-router-dom';
 
 export const NavbarItem = ({href, title}) => (
   <li className="header__navigation-item">
-    <a href={href} className="header__navigation-link link">
+    <NavLink exact to={href} className="header__navigation-link link" activeClassName='link--active'>
       {title}
-    </a>
+    </NavLink>
   </li>
 );
 

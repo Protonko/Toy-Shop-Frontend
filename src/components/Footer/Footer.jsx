@@ -1,4 +1,5 @@
 import React from 'react';
+import {socialsData} from './socialsData';
 import {Container} from '../Common/Container';
 import {Socials} from '../Common/Socials/Socials';
 
@@ -7,7 +8,7 @@ export const Footer = () => (
     <Container classNames="container page__footer-wrapper">
       <div className="footer__row">
         <div className="footer__col">
-          <Socials />
+          <Socials data={socialsData} />
         </div>
         <div className="footer__col">
           <p className="footer__text">

@@ -1,0 +1,20 @@
+.tiles {
+    $vertical-gutter: 20px;
+    $horizontal-gutter: 20px;
+
+    &__list {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: rem(-$vertical-gutter);
+
+        @include margin-horizontal(-$horizontal-gutter / 2);
+    }
+
+    &__item {
+        width: percentage(1 / 3);
+        padding-top: rem($vertical-gutter);
+
+        @include padding-horizontal($horizontal-gutter / 2);
+    }
+}
