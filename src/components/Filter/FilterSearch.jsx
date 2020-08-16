@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Input} from '../Common/Input';
+import {Input} from 'components/Common/Input';
 
 export const FilterSearch = ({placeholder, onChange}) => (
   <li className="sidebar__item">

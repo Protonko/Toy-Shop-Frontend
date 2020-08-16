@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import {Button} from '../Common/Buttons/Button';
+import {Button} from 'components/Common/Buttons/Button';
 
 export const Card = props => {
   const {product, selectedProducts, addToCart, removeFromCart} = props;

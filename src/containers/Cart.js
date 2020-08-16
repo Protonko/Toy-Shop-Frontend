@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import * as cartActions from '../store/actions/cart';
-import {Cart} from '../components/Cart/Cart';
+import * as cartActions from 'store/actions/cart';
+import {Cart} from 'components/Cart/Cart';
 
 const setTotalPrice = products => products.reduce(priceReducer, 0);
 

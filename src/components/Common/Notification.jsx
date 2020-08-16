@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {ReactComponent as LoupeLogo} from '../../assets/icons/loupe.svg';
+import {ReactComponent as LoupeLogo} from 'assets/icons/loupe.svg';
 
 export const Notification = ({text}) => {
   return (

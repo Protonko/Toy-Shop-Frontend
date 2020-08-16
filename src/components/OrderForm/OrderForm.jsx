@@ -1,6 +1,6 @@
 import React from 'react';
-import {Checkbox} from '../Common/Checkbox';
+import {Checkbox} from 'components/Common/Checkbox';
 
 export const OrderForm = () => {
-  return <Checkbox text={"Select all"} />
+  return <Checkbox text="Select all" />
 }

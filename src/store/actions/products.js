@@ -1,6 +1,6 @@
 import buildAction from './buildAction';
-import keyMirror from '../../utils/keyMirror';
-import {API_URL} from '../../static';
+import keyMirror from 'utils/keyMirror';
+import {API_URL} from 'static';
 
 const PREFIX = '[PRODUCTS]';
 

@@ -1,4 +1,4 @@
-import {ACTIONS} from '../actions/cart';
+import {ACTIONS} from 'store/actions/cart';
 
 const initialState = {
   items: [],

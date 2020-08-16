@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Card from '../../containers/Card';
+import Card from 'containers/Card';
 
 export const Cards = ({products, selectedProducts}) => (
   <div className="cards">

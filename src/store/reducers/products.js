@@ -1,4 +1,4 @@
-import {ACTIONS} from '../actions/products';
+import {ACTIONS} from 'store/actions/products';
 
 const initialState = {
   isLoaded: false,

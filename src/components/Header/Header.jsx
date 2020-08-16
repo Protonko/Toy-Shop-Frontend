@@ -1,8 +1,8 @@
 import React from 'react';
-import { ReactComponent as Logo } from '../../assets/icons/logo.svg';
-import {Container} from '../Common/Container';
+import { ReactComponent as Logo } from 'assets/icons/logo.svg';
+import {Container} from 'components/Common/Container';
 import {Navbar} from './Navbar/Navbar';
-import Cart from '../../containers/Cart';
+import Cart from 'containers/Cart';
 
 export const Header = () => (
     <header className="header">

@@ -2,9 +2,9 @@ import React, {useRef} from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import classNames from 'classnames';
-import {useOutsideClick} from '../../hooks/useOutsideClick';
 import {Scrollbars} from 'react-custom-scrollbars';
-import {Product} from '../Product/Product';
+import {useOutsideClick} from 'hooks/useOutsideClick';
+import {Product} from 'components/Product/Product';
 
 export const CartPopup = ({setPopupVisible, removeFromCart, items}) => {
   const popup = useRef();

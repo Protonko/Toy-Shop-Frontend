@@ -2,13 +2,13 @@ import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {orderBy} from '../utils/orderBy';
-import * as productsActions from '../store/actions/products';
-import * as filterActions from '../store/actions/filter';
-import {Loader} from '../components/Common/Loader';
-import {Cards} from '../components/Card/Cards';
-import {Notification} from '../components/Common/Notification';
-import Filter from '../containers/Filter';
+import * as productsActions from 'store/actions/products';
+import * as filterActions from 'store/actions/filter';
+import {orderBy} from 'utils/orderBy';
+import {Loader} from 'components/Common/Loader';
+import {Cards} from 'components/Card/Cards';
+import {Notification} from 'components/Common/Notification';
+import Filter from 'containers/Filter';
 
 const filterProducts = (products, filterBy, searchQuery) =>
   sortProducts(searchProducts(products, searchQuery), filterBy);

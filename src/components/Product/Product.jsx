@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Dotdotdot from 'react-dotdotdot';
-import placeholder from '../../assets/images/placeholder.jpg';
+import placeholder from 'assets/images/placeholder.jpg';
 
 export const Product = ({product, removeFromCart}) => {
   const {image = placeholder, title, price, sale} = product;

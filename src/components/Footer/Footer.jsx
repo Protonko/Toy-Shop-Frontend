@@ -1,7 +1,7 @@
 import React from 'react';
 import {socialsData} from './socialsData';
-import {Container} from '../Common/Container';
-import {Socials} from '../Common/Socials/Socials';
+import {Container} from 'components/Common/Container';
+import {Socials} from 'components/Common/Socials/Socials';
 
 export const Footer = () => (
   <footer className="page__footer footer">

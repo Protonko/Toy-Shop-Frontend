@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import {ReactComponent as CartLogo} from '../../assets/icons/cart.svg';
+import {ReactComponent as CartLogo} from 'assets/icons/cart.svg';
 import {CartPopup} from './CartPopup';
 
 export const Cart = ({total, countProducts, items, removeFromCart}) => {

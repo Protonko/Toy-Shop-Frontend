@@ -4,15 +4,15 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
-import {Main} from './pages/Main';
-import {Delivery} from './pages/Delivery';
-import {ErrorPage} from './pages/ErrorPage';
-import {Support} from './pages/Support';
-import {Payment} from './pages/Payment';
-import {Order} from './pages/Order';
-import {Header} from './components/Header/Header';
-import {Footer} from './components/Footer/Footer';
-import {Container} from './components/Common/Container';
+import {Main} from 'pages/Main';
+import {Delivery} from 'pages/Delivery';
+import {ErrorPage} from 'pages/ErrorPage';
+import {Support} from 'pages/Support';
+import {Payment} from 'pages/Payment';
+import {Order} from 'pages/Order';
+import {Header} from 'components/Header/Header';
+import {Footer} from 'components/Footer/Footer';
+import {Container} from 'components/Common/Container';
 
 const App = () => {
   return (

@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import * as orderActions from '../store/actions/order';
-import {OrderForm} from '../components/OrderForm/OrderForm';
+import * as orderActions from 'store/actions/order';
+import {OrderForm} from 'components/OrderForm/OrderForm';
 
 const mapStateToProps = () => ({});
 

@@ -1,5 +1,5 @@
 import buildAction from './buildAction';
-import keyMirror from '../../utils/keyMirror';
+import keyMirror from 'utils/keyMirror';
 
 const PREFIX = '[CART]';
 
