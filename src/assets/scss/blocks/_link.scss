@@ -10,4 +10,8 @@
     &--active {
         color: $text-color;
     }
+
+    &--colored-red {
+        color: $red-ribbon;
+    }
 }
