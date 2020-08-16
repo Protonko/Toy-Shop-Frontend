@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import {ReactComponent as CartLogo} from '../../assets/icons/cart.svg';
 import {CartPopup} from './CartPopup';
 
-export const Cart = ({total, countProducts, items}) => {
+export const Cart = ({total, countProducts, items, removeFromCart}) => {
   const [popupVisible, setPopupVisible] = useState(false);
   const classNamesButton = classNames(
     'cart__button',
@@ -34,11 +34,17 @@ export const Cart = ({total, countProducts, items}) => {
             className={classNamesButton}
             onClick={() => setPopupVisible(!popupVisible)}>
             <span className="cart__button-icon">
-              <CartLogo/>
+              <CartLogo />
             </span>
           </button>
 
-          {popupVisible && <CartPopup items={items} setPopupVisible={setPopupVisible}/>}
+          {popupVisible &&
+            <CartPopup
+              items={items}
+              setPopupVisible={setPopupVisible}
+              removeFromCart={removeFromCart}
+            />
+          }
         </li>
       </ul>
     </div>
@@ -49,4 +55,5 @@ Cart.propTypes = {
   total: PropTypes.number,
   countProducts: PropTypes.number,
   items: PropTypes.array,
+  removeFromCart: PropTypes.func,
 };

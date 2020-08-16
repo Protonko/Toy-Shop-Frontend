@@ -39,7 +39,10 @@ $popup-height: 180px;
     }
 
     &__button {
+        display: inline-block;
         width: 100%;
+        text-align: center;
+        text-decoration-line: none;
     }
 
     &__wrapper {

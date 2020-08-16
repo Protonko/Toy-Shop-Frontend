@@ -32,6 +32,7 @@
     }
 
     &__content {
+        display: flex;
         flex-grow: 1;
         margin-top: rem($header-height);
         padding-top: rem(45px);

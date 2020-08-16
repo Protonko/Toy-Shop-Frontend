@@ -1,0 +1,31 @@
+.notification {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    &__logo {
+        $size: 100px;
+
+        width: rem($size);
+        height: rem($size);
+    }
+
+    &__text {
+        font-size: rem($font-size-big);
+        color: $text-color-secondary;
+        text-transform: uppercase;
+
+        @include margin-vertical(0);
+
+        &:not(:last-child) {
+            margin-bottom: rem(15px);
+        }
+    }
+}

@@ -13,6 +13,11 @@
     margin-left: rem($value);
 }
 
+@mixin margin-vertical($value) {
+    margin-top: rem($value);
+    margin-bottom: rem($value);
+}
+
 @mixin padding-horizontal($value) {
     padding-right: rem($value);
     padding-left: rem($value);

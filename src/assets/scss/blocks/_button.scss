@@ -22,6 +22,11 @@
         background-color: $athens-gray;
     }
 
+    &--disabled {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
     &--active {
         color: $brand-color;
         border-color: $athens-gray;
@@ -99,6 +104,19 @@
             &::before {
                 line-height: (9px / $font-size);
             }
+        }
+    }
+
+    &--red {
+        color: $white;
+        border-color: $red-ribbon;
+        background-color: $red-ribbon;
+
+        &:hover,
+        &:focus {
+            color: $red-ribbon;
+            border-color: $red-ribbon;
+            background-color: $white;
         }
     }
 }

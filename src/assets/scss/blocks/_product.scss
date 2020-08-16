@@ -7,12 +7,17 @@
     &__info {
         display: flex;
         align-items: center;
+
+        &:not(:last-child) {
+            margin-right: rem(5px);
+        }
     }
 
     &__image {
         $size: 30px;
 
         width: rem($size);
+        min-width: rem($size);
         height: rem($size);
         border-radius: rem(5px);
         background-position: center center;
@@ -47,5 +52,25 @@
 
             @include margin-horizontal($horizontal-gutter);
         }
+    }
+
+    &__actions {
+        $horizontal-gutter: 5px;
+
+        &-list {
+            display: flex;
+            align-items: center;
+
+            @include margin-horizontal(-$horizontal-gutter / 2);
+        }
+
+        &-item {
+            @include padding-horizontal($horizontal-gutter / 2);
+        }
+    }
+
+    &__action {
+        font-size: rem($font-size-extra-small);
+        padding: rem(5px)
     }
 }

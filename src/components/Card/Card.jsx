@@ -1,11 +1,12 @@
-import React, {useState} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import {Button} from '../Common/Buttons/Button';
 
-export const Card = (product) => {
-  const [isAdded, setIsAdded] = useState(false);
-  const {price, sale, image, title, addToCart, removeFromCart} = product;
+export const Card = props => {
+  const {product, selectedProducts, addToCart, removeFromCart} = props;
+  const {price, sale, image, title} = product;
+  const isAdded = selectedProducts.find(item => item.id === product.id);
   const productPrice = sale ? Math.round(price * sale) : price;
   const titleButton = isAdded ? 'Added' : 'Add to card';
   const classNamesPrice = classNames('card__data-price-text', {'card__data-price-text--new': sale});
@@ -15,7 +16,6 @@ export const Card = (product) => {
     isAdded
       ? removeFromCart(product)
       : addToCart(product);
-    setIsAdded(!isAdded);
   };
 
   return (
@@ -59,10 +59,8 @@ export const Card = (product) => {
 };
 
 Card.propTypes = {
-  price: PropTypes.number,
-  sale: PropTypes.number,
-  image: PropTypes.string,
-  title: PropTypes.string,
+  product: PropTypes.object,
+  selectedProducts: PropTypes.array,
   addToCart: PropTypes.func,
   removeFromCart: PropTypes.func,
 };
