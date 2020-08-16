@@ -47,6 +47,19 @@
         background-color: transparent;
     }
 
+    &--linked {
+        font-weight: $font-weight-normal;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+
+        &:hover,
+        &:focus {
+            border: none;
+            background-color: transparent;
+        }
+    }
+
     &--iconed {
         padding: 0;
         color: $regent-gray;
@@ -117,6 +130,15 @@
             color: $red-ribbon;
             border-color: $red-ribbon;
             background-color: $white;
+        }
+    }
+
+    &--colored-red {
+        color: $red-ribbon;
+
+        &:hover,
+        &:focus {
+            color: $text-color;
         }
     }
 }

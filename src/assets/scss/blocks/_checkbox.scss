@@ -23,6 +23,7 @@
         line-height: (18px / $font-size-small);
         position: relative;
         padding-left: calc(#{rem($size)} + #{rem($size / 2)});
+        color: $text-color;
 
         &::before {
             position: absolute;

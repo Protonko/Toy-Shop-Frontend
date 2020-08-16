@@ -1,17 +1,16 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import {ReactComponent as CartLogo} from 'assets/icons/cart.svg';
 import {CartPopup} from './CartPopup';
+import {ButtonIconed} from 'components/Common/Buttons/ButtonIconed';
 
 export const Cart = ({total, countProducts, items, removeFromCart}) => {
   const [popupVisible, setPopupVisible] = useState(false);
-  const classNamesButton = classNames(
+  const classNamesButton = [
     'cart__button',
-    'button button--iconed',
     {'cart__button--counter': countProducts},
     {'cart__button--active': popupVisible}
-  );
+  ];
 
   return (
     <div className="cart">
@@ -29,14 +28,14 @@ export const Cart = ({total, countProducts, items, removeFromCart}) => {
           </div>
         </li>
         <li className="cart__item">
-          <button
+          <ButtonIconed
             data-count={countProducts}
-            className={classNamesButton}
+            classNamesAdditional={classNamesButton}
             onClick={() => setPopupVisible(!popupVisible)}>
             <span className="cart__button-icon">
               <CartLogo />
             </span>
-          </button>
+          </ButtonIconed>
 
           {popupVisible &&
             <CartPopup

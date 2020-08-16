@@ -1,0 +1,97 @@
+.order {
+    max-width: rem(800px);
+    margin-top: rem(35px);
+
+    &__section {
+        &--header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    &__box {
+        background-color: $athens-gray;
+
+        @include padding-vertical(16px);
+        @include padding-horizontal(24px);
+    }
+
+    &__price {
+        $vertical-gutter: 16px;
+
+        &-block {
+            &:not(:first-child) {
+                margin-top: rem($vertical-gutter);
+            }
+
+            &:not(:last-child) {
+                margin-bottom: rem($vertical-gutter);
+                padding-bottom: rem($vertical-gutter);
+                border-bottom: rem(1px) solid rgba($midnight, .15);
+            }
+        }
+
+        &-line {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &:not(:first-child) {
+                margin-top: rem($vertical-gutter);
+            }
+        }
+
+        &-label {
+            font-size: rem($font-size-base);
+            line-height: (20px / $font-size-base);
+            color: $text-color;
+
+            @include margin-vertical(0);
+
+            &--bold {
+                font-weight: $font-weight-bold;
+            }
+
+            &--big {
+                font-size: rem($font-size-big);
+                line-height: (26px / $font-size-big);
+            }
+
+            &--sale {
+                color: $red-ribbon;
+            }
+        }
+    }
+
+    &__submit {
+        $horizontal-gutter: 30px;
+
+        margin-top: rem(32px);
+
+        &-list {
+            display: flex;
+            align-items: center;
+
+            @include margin-horizontal(-$horizontal-gutter);
+        }
+
+        &-item {
+            width: percentage(1 / 2);
+
+            @include padding-horizontal($horizontal-gutter);
+        }
+
+        &-text {
+            font-size: rem($font-size-base);
+            line-height: (20px / $font-size-base);
+            color: $text-color-secondary;
+        }
+
+        &-button {
+            width: 100%;
+
+            @include padding-vertical(14px);
+        }
+    }
+}

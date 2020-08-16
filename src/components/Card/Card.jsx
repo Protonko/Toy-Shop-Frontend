@@ -10,7 +10,6 @@ export const Card = props => {
   const productPrice = sale ? Math.round(price * sale) : price;
   const titleButton = isAdded ? 'Added' : 'Add to card';
   const classNamesPrice = classNames('card__data-price-text', {'card__data-price-text--new': sale});
-  const classNamesButton = classNames('button', {'button--active': isAdded});
 
   const handleClickCartButton = product => {
     isAdded
@@ -46,7 +45,7 @@ export const Card = props => {
               <li className="card__data-actions-item">
                 <Button
                   title={titleButton}
-                  classNames={classNamesButton}
+                  classNamesAdditional={[{'button--active': isAdded}]}
                   onClick={() => handleClickCartButton(product)}
                 />
               </li>

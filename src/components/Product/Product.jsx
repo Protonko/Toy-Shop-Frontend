@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Dotdotdot from 'react-dotdotdot';
 import placeholder from 'assets/images/placeholder.jpg';
+import {Button} from 'components/Common/Buttons/Button';
 
 export const Product = ({product, removeFromCart}) => {
   const {image = placeholder, title, price, sale} = product;
@@ -23,9 +24,12 @@ export const Product = ({product, removeFromCart}) => {
       <div className="product__actions">
         <ul className="product__actions-list list list--reset">
           <li className="product__actions-item">
-            <button className="product__action button button--red" onClick={() => removeFromCart(product)}>
-              Remove
-            </button>
+            <Button
+              title="Remove"
+              onClick={() => removeFromCart(product)}
+              isRemoved={true}
+              classNamesAdditional={['product__action']}
+            />
           </li>
         </ul>
       </div>

@@ -2,22 +2,50 @@
     display: flex;
     align-items: center;
 
+    &--sm & {
+        &__text {
+            &--title {
+                font-size: rem($font-size-base);
+                line-height: (20px / $font-size-base);
+            }
+
+            &--subtitle {
+                $font-size: 10px;
+
+                font-size: rem($font-size);
+                line-height: (12px / $font-size);
+            }
+        }
+    }
+
+    &--lg & {
+        &__text {
+            &--title {
+                font-size: rem($font-size-large);
+                line-height: (38px / $font-size-large);
+            }
+
+            &--subtitle {
+                font-size: rem($font-size-base);
+                line-height: (20px / $font-size-base);
+            }
+        }
+    }
+
     &__text {
         @include margin-vertical(0);
 
         &--title {
-            $font-size: 30px;
-
-            font-size: rem($font-size);
+            font-size: rem($font-size-big);
             font-weight: $font-weight-bold;
-            line-height: (38px / $font-size);
+            line-height: (26px / $font-size-big);
             color: $text-color;
         }
 
         &--subtitle {
-            font-size: rem($font-size-base);
+            font-size: rem($font-size-extra-small);
             font-weight: $font-weight-normal;
-            line-height: (20px / $font-size-base);
+            line-height: (20px / $font-size-extra-small);
             color: $text-color-secondary;
 
             &:not(:first-child) {

@@ -24,7 +24,10 @@
 @import "blocks/product";
 @import "blocks/popup";
 @import "blocks/order";
-@import "blocks/header";
-@import "blocks/footer";
-@import "blocks/sidebar";
-@import "blocks/page";
+@import "blocks/product-line";
+@import "blocks/product-lines";
+
+@import "layout/header";
+@import "layout/footer";
+@import "layout/sidebar";
+@import "layout/page";

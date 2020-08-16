@@ -2,31 +2,29 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-export const Button = ({
-  title,
+export const ButtonIconed = ({
+  children,
   onClick,
-  isRemoved,
   disabled,
-  classNamesAdditional = []
+  classNamesAdditional = [],
+  ...attrs
 }) => {
   const classNamesButton = classNames(
     'button',
+    'button--iconed',
     {'button--disabled': disabled},
-    {'button--red': isRemoved},
     ...classNamesAdditional,
   );
 
   return (
-    <button className={classNamesButton} onClick={onClick}>
-      {title}
+    <button className={classNamesButton} onClick={onClick} {...attrs}>
+      {children}
     </button>
   );
 }
 
-Button.propTypes = {
-  title: PropTypes.string,
+ButtonIconed.propTypes = {
   onClick: PropTypes.func,
-  isRemoved: PropTypes.bool,
   disabled: PropTypes.bool,
   classNamesAdditional: PropTypes.array,
 };

@@ -1,0 +1,10 @@
+.product-lines {
+    &__item {
+        @include padding-vertical(17px);
+        @include padding-horizontal(24px);
+
+        &:not(:last-child) {
+            border-bottom: rem(1px) solid rgba($midnight, .15);
+        }
+    }
+}

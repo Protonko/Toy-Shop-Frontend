@@ -7,11 +7,12 @@
         color: $text-color;
     }
 
-    &--active {
-        color: $text-color;
+    &--disabled {
+        opacity: .5;
+        pointer-events: none;
     }
 
-    &--colored-red {
-        color: $red-ribbon;
+    &--active {
+        color: $text-color;
     }
 }
