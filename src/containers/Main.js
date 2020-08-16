@@ -80,7 +80,7 @@ const Main = ({isLoaded, products, selectedProducts, setProducts, setSearchQuery
 
 Main.propTypes = {
   isLoaded: PropTypes.bool,
-  products: PropTypes.object,
+  products: PropTypes.array,
   selectedProducts: PropTypes.array,
   setProducts: PropTypes.func,
   setSearchQuery: PropTypes.func,

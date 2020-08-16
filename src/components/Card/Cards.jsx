@@ -15,6 +15,6 @@ export const Cards = ({products, selectedProducts}) => (
 );
 
 Cards.propTypes = {
-  products: PropTypes.object,
+  products: PropTypes.array,
   selectedProducts: PropTypes.array
 };

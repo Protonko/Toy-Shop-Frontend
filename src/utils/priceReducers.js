@@ -5,7 +5,7 @@ export const totalPriceReducer = (total = 0, product) => {
 };
 
 export const saleReducer = (total = 0, product) => {
-  return Math.round(product.price * product.sale);
+  return total + Math.round(product.price - product.price * product.sale);
 }
 
 export const priceFullReducer = (total = 0, product) => total + product.price;
