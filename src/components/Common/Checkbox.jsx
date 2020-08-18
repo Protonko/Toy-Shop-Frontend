@@ -2,7 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-export const Checkbox = ({text, classNamesText = [], onChange}) => {
+export const Checkbox = ({
+  text,
+  classNamesText = [],
+  value,
+  checked,
+  onChange
+}) => {
   const classNamesCheckboxText = classNames(
     'checkbox__text',
     ...classNamesText,
@@ -10,7 +16,7 @@ export const Checkbox = ({text, classNamesText = [], onChange}) => {
 
   return (
     <label className="checkbox">
-      <input type="checkbox" className="checkbox__input" onChange={onChange} />
+      <input type="checkbox" className="checkbox__input" checked={checked} onChange={onChange} />
       <span className={classNamesCheckboxText}>{text}</span>
     </label>
   );
@@ -19,4 +25,7 @@ export const Checkbox = ({text, classNamesText = [], onChange}) => {
 Checkbox.propTypes = {
   text: PropTypes.string,
   classNamesAdditional: PropTypes.array,
+  value: PropTypes.string,
+  checked: PropTypes.bool,
+  onChange: PropTypes.func,
 };

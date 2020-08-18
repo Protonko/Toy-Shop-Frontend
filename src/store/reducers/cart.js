@@ -32,6 +32,15 @@ export default (state = initialState, action) => {
       fullPrice: setFullPrice(itemsRemoved),
       total: setTotalPrice(itemsRemoved),
     };
+    case ACTIONS.SELECT_PRODUCT:
+      const selectedItems = state.items.map(item => {
+        return (item.id === action.payload) ? '' : item;
+      });
+
+      return {
+        ...state,
+        items: selectedItems,
+      }
   default:
     return state;
 }

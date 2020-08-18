@@ -6,7 +6,7 @@ import {ButtonLink} from 'components/Common/Buttons/ButtonLink';
 export const FormHeader = ({onChange, onClick}) => {
   return (
     <div className="order__section order__section--header order__box">
-      <Checkbox text="Select all" onChange={onChange} />
+      <Checkbox text="Select all" onChange={onChange} checked={true} />
       <ButtonLink text="Delete selected" onClick={onClick} isRemoved={true} />
     </div>
   )

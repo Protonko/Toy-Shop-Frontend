@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import Dotdotdot from 'react-dotdotdot';
 import {Checkbox} from 'components/Common/Checkbox';
 
-export const ProductLine = ({title, price, image}) => {
+export const ProductLine = ({title, price, image, checked}) => {
   return (
     <label className="product-line">
       <div className="product-line__info">
-        <Checkbox />
+        <Checkbox checked={checked} />
 
         <div className="product-line__image" style={{backgroundImage: `url(${image})`} }/>
 
@@ -27,4 +27,5 @@ ProductLine.propTypes = {
   title: PropTypes.string,
   price: PropTypes.string,
   image: PropTypes.string,
+  checked: PropTypes.bool,
 };

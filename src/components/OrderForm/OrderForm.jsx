@@ -9,7 +9,7 @@ export const OrderForm = ({cartItems, total, fullPrice, sale}) => {
 
   return (
     <form className="order">
-      <FormHeader onChange={{}} onClick={{}} />
+      <FormHeader onChange={() => {}} onClick={() => {}} />
 
       <div className="order__section order__section--body">
         <ProductLines products={cartItems} />
