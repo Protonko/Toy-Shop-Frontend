@@ -18,7 +18,7 @@ export const ButtonLink = ({
   );
 
   return (
-    <button className={classNamesButton} onClick={onClick}>
+    <button className={classNamesButton} onClick={onClick} type="button">
       {text}
     </button>
   )

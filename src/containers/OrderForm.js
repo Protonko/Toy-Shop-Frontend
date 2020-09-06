@@ -1,19 +1,21 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as orderActions from 'store/actions/order';
-import {getTotalPrice, getSale, getFullPrice} from 'store/selectors/cart';
+import * as cartActions from 'store/actions/cart';
+import * as cartSelectors from 'store/selectors/cart';
 import {OrderForm} from 'components/OrderForm/OrderForm';
 
 const mapStateToProps = ({cart}) => ({
   cartItems: cart.items,
-  cartSelectedItems: cart.items,
-  sale: getSale(cart.items),
-  fullPrice: getFullPrice(cart.items),
-  total: getTotalPrice(cart.items),
+  sale: cartSelectors.getSale(cart.items),
+  fullPrice: cartSelectors.getFullPrice(cart.items),
+  total: cartSelectors.getTotalPrice(cart.items),
 });
 
 const mapDispatchToProps = dispatch => ({
-  ...bindActionCreators(orderActions, dispatch),
+  ...bindActionCreators(
+    {...orderActions, ...cartActions},
+    dispatch),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(OrderForm);

@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import Dotdotdot from 'react-dotdotdot';
 import {Checkbox} from 'components/Common/Checkbox';
 
-export const ProductLine = ({title, price, image, checked}) => {
+export const ProductLine = ({title, price, image, checked, onChange}) => {
   return (
     <label className="product-line">
       <div className="product-line__info">
-        <Checkbox checked={checked} />
+        <Checkbox checked={checked} onChange={onChange} />
 
         <div className="product-line__image" style={{backgroundImage: `url(${image})`} }/>
 
@@ -24,6 +24,7 @@ export const ProductLine = ({title, price, image, checked}) => {
 }
 
 ProductLine.propTypes = {
+  onChange: PropTypes.func,
   title: PropTypes.string,
   price: PropTypes.string,
   image: PropTypes.string,

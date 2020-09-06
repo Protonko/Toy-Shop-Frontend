@@ -15,21 +15,49 @@ export default (state = initialState, action) => {
         ...state,
         items: itemsAdded,
       };
-  case ACTIONS.REMOVE_FROM_CART:
-    const itemsRemoved = state.items.filter(product => product.id !== action.payload.id);
-    return {
-      ...state,
-      items: itemsRemoved,
-    };
-    case ACTIONS.SELECT_PRODUCT:
+
+    case ACTIONS.REMOVE_FROM_CART:
+      const itemsRemoved = state.items.filter(product => product.id !== action.payload.id);
+      return {
+        ...state,
+        items: itemsRemoved,
+      };
+
+    case ACTIONS.TOGGLE_SELECT_PRODUCT:
       const selectedItems = state.items.map(item => {
-        return (item.id === action.payload) ? '' : item;
+        if (item.id === action.payload) {
+          return {
+            ...item,
+            checked: !item.checked,
+          }
+        } else if (action.payload === 'remove') {
+          return {
+            ...item,
+            checked: false,
+          }
+        } else if (action.payload === 'select') {
+          return {
+            ...item,
+            checked: true,
+          }
+        } else {
+          return {...item};
+        }
       });
 
       return {
         ...state,
         items: selectedItems,
       }
+
+    case ACTIONS.DELETE_SELECTED:
+      const deletedItems = state.items.filter(item => !item.checked);
+
+      return {
+        ...state,
+        items: deletedItems,
+      }
+
   default:
     return {...state};
 }

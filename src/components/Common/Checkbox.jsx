@@ -5,7 +5,6 @@ import classNames from 'classnames';
 export const Checkbox = ({
   text,
   classNamesText = [],
-  value,
   checked,
   onChange
 }) => {
@@ -25,7 +24,6 @@ export const Checkbox = ({
 Checkbox.propTypes = {
   text: PropTypes.string,
   classNamesAdditional: PropTypes.array,
-  value: PropTypes.string,
   checked: PropTypes.bool,
   onChange: PropTypes.func,
 };

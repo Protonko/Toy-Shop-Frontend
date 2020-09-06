@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {ProductLine} from './ProductLine';
 
-export const ProductLines = ({products}) => {
+export const ProductLines = ({products, toggleSelectProduct}) => {
   const renderProducts = product => (
     <li className="product-lines__item" key={product.id}>
-      <ProductLine {...product} />
+      <ProductLine {...product} onChange={() => toggleSelectProduct(product.id)} />
     </li>
   );
 
@@ -19,5 +19,6 @@ export const ProductLines = ({products}) => {
 };
 
 ProductLines.propTypes = {
+  toggleSelectProduct: PropTypes.func,
   products: PropTypes.array,
 };
