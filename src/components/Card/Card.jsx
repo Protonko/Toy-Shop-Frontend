@@ -1,11 +1,12 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import {Button} from 'components/Common/Buttons/Button';
 
 export const Card = props => {
   const {product, selectedProducts, addToCart, removeFromCart} = props;
-  const {price, sale, image, title} = product;
+  const {price, sale, image, title, id} = product;
   const isAdded = selectedProducts.find(item => item.id === product.id);
   const productPrice = sale ? Math.round(price * sale) : price;
   const titleButton = isAdded ? 'Added' : 'Add to card';
@@ -35,9 +36,7 @@ export const Card = props => {
               </s>
             )}
           </div>
-          <h2 className="card__data-title">
-            {title}
-          </h2>
+          <Link to={`/product/${id}`} className="card__data-title">{title}</Link>
         </div>
         <div className="card__section card__section--footer">
           <div className="card__data-actions">

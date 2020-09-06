@@ -10,6 +10,7 @@ import {ErrorPage} from 'pages/ErrorPage';
 import {Support} from 'pages/Support';
 import {Payment} from 'pages/Payment';
 import {Order} from 'pages/Order';
+import {ProductDetailPage} from 'pages/ProductDetailPage';
 import {Header} from 'components/Header/Header';
 import {Footer} from 'components/Footer/Footer';
 import {Container} from 'components/Common/Container';
@@ -36,6 +37,9 @@ const App = () => {
             </Route>
             <Route exact path='/order'>
               <Order />
+            </Route>
+            <Route exact path='/product/:id'>
+              <ProductDetailPage />
             </Route>
             <Route exact path='*'>
               <ErrorPage />

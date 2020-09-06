@@ -64,7 +64,10 @@
             $font-size: $font-size-base;
 
             font-size: rem($font-size);
+            font-weight: $font-weight-bold;
             line-height: (20px / $font-size);
+            display: block;
+            text-decoration: none;
             color: $text-color;
 
             &:not(:first-child) {
