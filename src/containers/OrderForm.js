@@ -6,6 +6,7 @@ import {OrderForm} from 'components/OrderForm/OrderForm';
 
 const mapStateToProps = ({cart}) => ({
   cartItems: cart.items,
+  cartSelectedItems: cart.items,
   sale: getSale(cart.items),
   fullPrice: getFullPrice(cart.items),
   total: getTotalPrice(cart.items),

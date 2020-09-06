@@ -13,16 +13,17 @@ export const CartPopup = ({setPopupVisible, removeFromCart, items}) => {
 
   useOutsideClick(popup, () => setPopupVisible(false));
 
+  const renderItem = (product, index) => (
+    <Product key={index} product={product} removeFromCart={removeFromCart} />
+  );
+
   return (
     <article className="popup drop-down" ref={popup}>
       <div className="popup__section popup__section--body">
         <Scrollbars>
           <div className="popup__scrollable-content">
             {isItemsInCart
-              ? items.map((product, index) => (
-                  <Product key={index} product={product} removeFromCart={removeFromCart} />
-                )
-              )
+              ? items.map(renderItem)
               : (
                 <div className="popup__wrapper">
                   <p className="popup__text">
