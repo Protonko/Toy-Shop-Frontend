@@ -1,0 +1,74 @@
+.delivery-card {
+    padding-top: rem(30px);
+    padding-bottom: rem(32px);
+    border-bottom: rem(2px) solid $athens-gray;
+
+    &:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+
+    &__section {
+        &--header {
+            margin-bottom: rem(20px);
+        }
+
+        &--body {
+            display: flex;
+            align-items: flex-start;
+        }
+    }
+
+    &__col {
+        width: rem(350px);
+        margin-right: rem(40px);
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__title {
+        font-size: rem($font-size-big);
+
+        @include margin-vertical(0px);
+    }
+
+    &__line {
+        margin-top: rem(10px);
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &-info {
+            border-bottom: rem(2px) dotted rgba($regent-gray, .5);
+        }
+
+        &-list {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &-item {
+            position: relative;
+            top: rem(3px);
+            margin-left: 0;
+            padding: rem(3px);
+            background-color: $white;
+
+            &--colored {
+                color: $emerald;
+            }
+        }
+
+        &-description {
+            font-size: rem($font-size-extra-small);
+            margin-top: rem(5px);
+            margin-bottom: 0;
+            padding: rem(3px);
+            color: $text-color-secondary;
+        }
+    }
+}

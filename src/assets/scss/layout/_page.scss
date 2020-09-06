@@ -54,5 +54,12 @@
             width: 100%;
             min-width: 0;
         }
+
+        &-title {
+            font-size: rem($font-size-large);
+            margin-top: 0;
+            margin-bottom: rem(40px);
+            color: $text-color;
+        }
     }
 }

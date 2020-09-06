@@ -1,0 +1,29 @@
+.payment {
+    &__block {
+        width: 60%;
+        margin-bottom: rem(25px);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &-title {
+            margin-top: 0;
+            margin-bottom: rem(15px);
+        }
+
+        &-description {
+            margin-top: 0;
+            margin-bottom: rem(15px);
+        }
+
+        &-image {
+            display: block;
+            max-width: 100%;
+
+            &-pic {
+                width: 100%;
+            }
+        }
+    }
+}
