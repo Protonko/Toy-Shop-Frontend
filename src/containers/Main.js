@@ -1,46 +1,15 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useCallback} from 'react';
 import PropTypes from 'prop-types';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import * as productsActions from 'store/actions/products';
 import * as filterActions from 'store/actions/filter';
-import {orderBy} from 'utils/orderBy';
-import {Loader} from 'components/Common/Loader';
-import {Cards} from 'components/Card/Cards';
-import {Notification} from 'components/Common/Notification';
-import Filter from 'containers/Filter';
-
-const filterProducts = (products, filterBy, searchQuery) =>
-  sortProducts(searchProducts(products, searchQuery), filterBy);
-
-const sortProducts = (products, filterBy) => {
-  switch (filterBy.toUpperCase()) {
-    case 'PRICE_LOW':
-      return orderBy(products, 'price', 'ASC');
-    case 'PRICE_HIGH':
-      return orderBy(products, 'price', 'DESC');
-    case 'CATEGORY':
-      return orderBy(products, 'category', 'ASC');
-    default:
-      return products;
-  }
-};
-
-const searchProducts = (products, searchQuery) => {
-  let searchQueryValue = searchQuery.toLowerCase();
-
-  return products.filter(product => {
-    const productTitle = product.title.toLowerCase();
-
-    return productTitle.indexOf(searchQueryValue) >= 0;
-  });
-};
+import {getFilteredProducts} from 'store/selectors/products';
+import {Main} from 'components/Main/Main';
 
 const mapStateToProps = ({products, filter, cart}) => ({
   selectedProducts: cart.items,
-  products:
-    products.items &&
-    filterProducts(products.items, filter.filterBy, filter.searchQuery),
+  products: getFilteredProducts({products, filter}),
   isLoaded: products.isLoaded,
 });
 
@@ -50,31 +19,35 @@ const mapDispatchToProps = dispatch => ({
     dispatch),
 });
 
-const Main = ({isLoaded, products, selectedProducts, setProducts, setSearchQuery}) => {
-  useEffect(() => {
+const MainContainer = ({
+  isLoaded,
+  products,
+  selectedProducts,
+  setProducts,
+  setSearchQuery,
+}) => {
+  const fetchProducts = useCallback(() => {
     setProducts();
+  }, [setProducts]);
+
+  const resetSearchQuery = useCallback(() => {
+    setSearchQuery('');
+  }, [setSearchQuery])
+
+  useEffect(() => {
+    fetchProducts();
 
     return () => {
-      setSearchQuery('');
+      resetSearchQuery();
     }
-  }, []);
+  }, [fetchProducts, resetSearchQuery]);
 
   return (
-    <>
-      {!isLoaded
-        ? <Loader />
-        : (
-          <>
-            {products.length ? (
-              <div className="page__content-main">
-                <Cards products={products} selectedProducts={selectedProducts} />
-              </div>
-            ) : <Notification text="Nothing found" />}
-            <Filter />
-          </>
-        )
-      }
-    </>
+    <Main
+      isLoaded={isLoaded}
+      products={products}
+      selectedProducts={selectedProducts}
+    />
   )
 };
 
@@ -86,4 +59,4 @@ Main.propTypes = {
   setSearchQuery: PropTypes.func,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Main);
+export default connect(mapStateToProps, mapDispatchToProps)(MainContainer);

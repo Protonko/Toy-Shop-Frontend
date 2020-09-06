@@ -14,6 +14,6 @@ export default (state = initialState, action) => {
         isLoaded: true,
       };
     default:
-      return state;
+      return {...state};
   }
 }

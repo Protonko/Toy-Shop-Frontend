@@ -18,6 +18,6 @@ export default (state = initialState, action) => {
         filterBy: action.payload,
       };
     default:
-      return state;
+      return {...state};
   }
 }
