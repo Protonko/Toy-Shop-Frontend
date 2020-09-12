@@ -1,6 +1,6 @@
 import buildAction from './buildAction';
 import keyMirror from 'utils/keyMirror';
-import {API_URL} from 'static';
+import {ProductsApi} from 'Api/Products';
 
 const PREFIX = '[PRODUCTS]';
 
@@ -12,9 +12,8 @@ export const ACTIONS = keyMirror(
 const setProductsSuccess = buildAction(ACTIONS.SET_PRODUCTS_SUCCESS);
 const setProductsError = buildAction(ACTIONS.SET_PRODUCTS_ERROR);
 
-export const setProducts = response => dispatch => {
-  fetch(API_URL)
-    .then(response => response.json())
-    .then(data => dispatch(setProductsSuccess(data)))
-    .catch(error => (setProductsError(error)));
-};
+export const setProducts = () => dispatch =>
+  ProductsApi.getProducts().then(
+    response => dispatch(setProductsSuccess(response)),
+    error => dispatch(setProductsError(error)),
+  );
