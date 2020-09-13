@@ -11,4 +11,6 @@ const baseConfig: IBaseConfig = {
   headers,
 }
 
-export const Api: FetchWrapper = new FetchWrapper(baseConfig);
+const Api: FetchWrapper = new FetchWrapper(baseConfig);
+
+export default Api;

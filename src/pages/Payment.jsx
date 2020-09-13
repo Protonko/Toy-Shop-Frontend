@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useCallback} from 'react';
-import {API_URL_PAYMENT} from 'static';
+import {PaymentApi} from 'Api/Payment';
 import {Loader} from 'components/Common/Loader';
 import {Notification} from 'components/Common/Notification';
 import {PaymentBlock} from 'components/PaymentBlock/PaymentBlock';
@@ -9,16 +9,16 @@ export const Payment = () => {
   const [errorMessage, setErrorMessage] = useState(null);
 
   const fetchData = useCallback(() => {
-    fetch(API_URL_PAYMENT)
-      .then(response => response.json())
-      .then(data => {
-        setData(data);
+    PaymentApi.getData().then(
+      response => {
+        setData(response);
         setErrorMessage(null);
-      })
-      .catch(error => {
+      },
+      error => {
         setData(null);
         setErrorMessage(error);
-      });
+      },
+    );
   }, [setData, setErrorMessage]);
 
   useEffect(() => {

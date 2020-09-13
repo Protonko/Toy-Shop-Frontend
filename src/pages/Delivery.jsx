@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useCallback} from 'react';
-import {API_URL_DELIVERY} from 'static';
+import {DeliveryApi} from 'Api/Delivery';
 import {Loader} from 'components/Common/Loader';
 import {Notification} from 'components/Common/Notification';
 import {DeliveryCard} from 'components/DeliveryCard/DeliveryCard';
@@ -9,16 +9,16 @@ export const Delivery = () => {
   const [errorMessage, setErrorMessage] = useState(null);
 
   const fetchCards = useCallback(() => {
-    fetch(API_URL_DELIVERY)
-      .then(response => response.json())
-      .then(data => {
-        setCards(data);
+    DeliveryApi.getData().then(
+      response => {
+        setCards(response);
         setErrorMessage(null);
-      })
-      .catch(error => {
+      },
+      error => {
         setCards(null);
         setErrorMessage(error);
-      });
+      },
+    );
   }, [setCards, setErrorMessage]);
 
   useEffect(() => {

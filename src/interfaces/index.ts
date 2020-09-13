@@ -3,6 +3,7 @@ export interface IBaseConfig {
   headers?: Headers
 }
 
+// Products
 export interface IProduct {
   category: string
   title: string
@@ -13,3 +14,35 @@ export interface IProduct {
   rating: number
   sale: number
 }
+// ./Products
+
+// Delivery
+export interface ILines {
+  id: string
+  description: string
+  items: Array<ILinesItems>
+}
+
+export interface ILinesItems {
+  id: string,
+  term: string
+  value: string
+  marked: boolean
+}
+
+export interface IDelivery {
+  id: string,
+  title: string,
+  description: string,
+  lines: ILines
+}
+// ./Delivery
+
+// Payment
+export interface IPayment {
+  id: string,
+  title: string
+  description: string
+  image?: string
+}
+// ./Payment
