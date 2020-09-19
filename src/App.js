@@ -18,7 +18,7 @@ import {Container} from 'components/Common/Container';
 const App = () => {
   return (
     <Router>
-      <Header/>
+      <Header />
 
       <main className="page__content">
         <Container classNames="container page__content-wrapper">

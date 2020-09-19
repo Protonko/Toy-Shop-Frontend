@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {NavLink} from 'react-router-dom';
 import {ReactComponent as Logo} from 'assets/icons/logo.svg';
 import {Container} from 'components/Common/Container';
 import {Navbar} from 'components/Navbar/Navbar';
 import Cart from 'containers/Cart';
 
-export const Header = () => (
+export const Header: FC = () => (
   <header className="header">
     <Container classNames="container page__header-wrapper">
       <NavLink to="/" className="header__logo logo">

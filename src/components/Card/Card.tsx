@@ -1,21 +1,35 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {Link} from 'react-router-dom';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import {IProduct} from 'interfaces';
 import {Button} from 'components/Common/Buttons/Button';
 
-export const Card = props => {
+interface ICardProps {
+  product: IProduct,
+  selectedProducts: Array<IProduct>,
+  addToCart: (product: IProduct) => any, // TODO - убрать
+  removeFromCart: (product: IProduct) => any, // TODO - убрать
+}
+
+enum TitlesButton {
+  ADDED = 'Added',
+  ADD = 'Add to card',
+}
+
+type TTitleButton = TitlesButton.ADDED | TitlesButton.ADD
+
+export const Card: FC<ICardProps> = props => {
   const {product, selectedProducts, addToCart, removeFromCart} = props;
   const {price, sale, image, title, id} = product;
-  const isAdded = selectedProducts.find(item => item.id === product.id);
-  const productPrice = sale ? Math.round(price * sale) : price;
-  const titleButton = isAdded ? 'Added' : 'Add to card';
-  const classNamesPrice = classNames('card__data-price-text', {'card__data-price-text--new': sale});
+  const productPrice: number = sale ? Math.round(price * sale) : price;
+  const isAdded: IProduct | undefined =
+    selectedProducts.find((item: IProduct) => item.id === product.id);
+  const titleButton: TTitleButton = isAdded ? TitlesButton.ADDED : TitlesButton.ADD;
+  const classNamesPrice: string =
+    classNames('card__data-price-text', {'card__data-price-text--new': sale});
 
-  const handleClickCartButton = product => {
-    isAdded
-      ? removeFromCart(product)
-      : addToCart(product);
+  const handleClickCartButton = (product: IProduct): void => {
+    isAdded ? removeFromCart(product) : addToCart(product);
   };
 
   return (
@@ -54,11 +68,4 @@ export const Card = props => {
       </div>
     </article>
   );
-};
-
-Card.propTypes = {
-  product: PropTypes.object,
-  selectedProducts: PropTypes.array,
-  addToCart: PropTypes.func,
-  removeFromCart: PropTypes.func,
 };

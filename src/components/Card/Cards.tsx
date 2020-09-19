@@ -1,14 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, {FC} from 'react';
 import {Card} from 'components/Card/Card';
+import {IProduct} from '../../interfaces';
 
-export const Cards = ({
+interface ICardsProps {
+  products: Array<IProduct>,
+  selectedProducts: Array<IProduct>,
+  addToCart: (product: IProduct) => any, // TODO - убрать
+  removeFromCart: (product: IProduct) => any, // TODO - убрать
+}
+
+export const Cards: FC<ICardsProps> = ({
   products,
   selectedProducts,
   addToCart,
   removeFromCart
 }) => {
-  const renderCard = product => (
+  const renderCard = (product: IProduct) => (
     <li key={product.id} className="cards__item">
       <Card
         product={product}
@@ -27,10 +34,3 @@ export const Cards = ({
     </div>
   );
 }
-
-Cards.propTypes = {
-  addToCart: PropTypes.func,
-  removeFromCart: PropTypes.func,
-  products: PropTypes.array,
-  selectedProducts: PropTypes.array
-};
