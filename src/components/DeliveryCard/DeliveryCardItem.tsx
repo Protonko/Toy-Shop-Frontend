@@ -1,9 +1,13 @@
-import React from 'react';
+import React, {FC} from 'react';
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
+import {ILinesItems} from 'typing/interfaces';
 
-export const DeliveryCardItem = ({term, value, marked}) => {
-  const valueClassnames = classNames(
+export const DeliveryCardItem: FC<ILinesItems> = ({
+  term,
+  value,
+  marked,
+}) => {
+  const valueClassnames: string = classNames(
     'delivery-card__line-item',
     'delivery-card__line-item--description',
     {'delivery-card__line-item--colored': marked}
@@ -20,9 +24,3 @@ export const DeliveryCardItem = ({term, value, marked}) => {
     </>
   )
 }
-
-DeliveryCardItem.propTypes = {
-  term: PropTypes.string,
-  value: PropTypes.string,
-  marked: PropTypes.bool,
-};

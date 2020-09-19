@@ -1,5 +1,5 @@
 import Api from './index';
-import {IPayment} from 'interfaces';
+import {IPayment} from 'typing/interfaces';
 
 export class PaymentApi {
   static async getData(): Promise<Array<IPayment>> {

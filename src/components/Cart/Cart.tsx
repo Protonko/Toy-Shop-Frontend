@@ -1,14 +1,27 @@
-import React, {useState} from 'react';
-import PropTypes from 'prop-types';
+import React, {FC, useState} from 'react';
 import {ReactComponent as CartLogo} from 'assets/icons/cart.svg';
+import {TClassName} from 'typing/types';
+import {IProduct} from 'typing/interfaces';
 import {CartPopup} from './CartPopup';
 import {ButtonIconed} from 'components/Common/Buttons/ButtonIconed';
 
-export const Cart = ({total, countProducts, items, removeFromCart}) => {
-  const [popupVisible, setPopupVisible] = useState(false);
-  const classNamesButton = [
+interface ICartProps {
+  total: number,
+  countProducts: number,
+  items: Array<IProduct>,
+  removeFromCart: (item: IProduct) => any, // TODO - убрать
+}
+
+export const Cart: FC<ICartProps> = ({
+  total,
+  countProducts,
+  items,
+  removeFromCart,
+}) => {
+  const [popupVisible, setPopupVisible] = useState<boolean>(false);
+  const classNamesButton: TClassName = [
     'cart__button',
-    {'cart__button--counter': countProducts},
+    {'cart__button--counter': !!countProducts},
     {'cart__button--active': popupVisible}
   ];
 
@@ -30,6 +43,7 @@ export const Cart = ({total, countProducts, items, removeFromCart}) => {
         <li className="cart__item">
           <ButtonIconed
             data-count={countProducts}
+            disabled={false}
             classNamesAdditional={classNamesButton}
             onClick={() => setPopupVisible(!popupVisible)}>
             <span className="cart__button-icon">
@@ -48,11 +62,4 @@ export const Cart = ({total, countProducts, items, removeFromCart}) => {
       </ul>
     </div>
   );
-};
-
-Cart.propTypes = {
-  total: PropTypes.number,
-  countProducts: PropTypes.number,
-  items: PropTypes.array,
-  removeFromCart: PropTypes.func,
 };

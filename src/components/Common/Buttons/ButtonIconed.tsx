@@ -1,8 +1,16 @@
-import React from 'react';
+import React, {FC, ReactNode} from 'react';
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
+import {TClassName} from 'typing/types';
 
-export const ButtonIconed = ({
+interface IButtonIconedProps {
+  children: ReactNode,
+  onClick: () => any, // TODO - убрать
+  disabled?: boolean,
+  classNamesAdditional: TClassName,
+  attrs?: Array<string | number>,
+}
+
+export const ButtonIconed: FC<IButtonIconedProps> = ({
   children,
   onClick,
   disabled,
@@ -22,9 +30,3 @@ export const ButtonIconed = ({
     </button>
   );
 }
-
-ButtonIconed.propTypes = {
-  onClick: PropTypes.func,
-  disabled: PropTypes.bool,
-  classNamesAdditional: PropTypes.array,
-};

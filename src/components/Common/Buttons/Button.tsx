@@ -1,15 +1,23 @@
-import React from 'react';
+import React, {FC} from 'react';
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
+import {TClassName} from 'typing/types';
 
-export const Button = ({
+interface IButtonProps {
+  title: string,
+  onClick: () => any, // TODO - убрать
+  isRemoved?: boolean,
+  disabled?: boolean,
+  classNamesAdditional: TClassName,
+}
+
+export const Button: FC<IButtonProps> = ({
   title,
   onClick,
   isRemoved,
   disabled,
   classNamesAdditional = []
 }) => {
-  const classNamesButton = classNames(
+  const classNamesButton: string = classNames(
     'button',
     {'button--disabled': disabled},
     {'button--red': isRemoved},
@@ -22,11 +30,3 @@ export const Button = ({
     </button>
   );
 }
-
-Button.propTypes = {
-  title: PropTypes.string,
-  onClick: PropTypes.func,
-  isRemoved: PropTypes.bool,
-  disabled: PropTypes.bool,
-  classNamesAdditional: PropTypes.array,
-};

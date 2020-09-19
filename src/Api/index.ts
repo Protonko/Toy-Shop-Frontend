@@ -1,6 +1,6 @@
 import {FetchWrapper} from 'fw-fetch-wrapper';
 import {API_URL} from '../static';
-import {IBaseConfig} from '../interfaces';
+import {IBaseConfig} from '../typing/interfaces';
 
 const headers = new Headers();
 

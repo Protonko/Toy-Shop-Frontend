@@ -8,7 +8,7 @@ import {FormSubmit} from './FormSubmit';
 export const FormTotalCost = ({amount, total, fullPrice, sale}) => {
   return (
     <div className="order__section order__section--footer order__box">
-      <Heading title="Your order"></Heading>
+      <Heading title="Your order" />
       <OrderPrice
         amount={amount}
         total={total}

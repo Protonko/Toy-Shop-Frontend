@@ -1,20 +1,31 @@
-import React, {useRef} from 'react';
-import PropTypes from 'prop-types';
+import React, {FC, useRef} from 'react';
 import {Link} from 'react-router-dom';
 import classNames from 'classnames';
 import {Scrollbars} from 'react-custom-scrollbars';
 import {useOutsideClick} from 'hooks/useOutsideClick';
 import {Product} from 'components/Product/Product';
+import {IProduct} from '../../typing/interfaces';
 
-export const CartPopup = ({setPopupVisible, removeFromCart, items}) => {
-  const popup = useRef();
-  const isItemsInCart = items.length;
-  const classNamesButton = classNames('popup__button', 'button', {'button--disabled': !isItemsInCart});
+interface ICartPopupProps {
+  setPopupVisible: (popupVisible: boolean) => void,
+  removeFromCart: (item: IProduct) => any, // TODO - убрать
+  items: Array<IProduct>,
+}
+
+export const CartPopup: FC<ICartPopupProps> = ({
+ setPopupVisible,
+ removeFromCart,
+ items,
+}) => {
+  const popup = useRef<HTMLInputElement>(null);
+  const isItemsInCart: boolean = !!items.length;
+  const classNamesButton: string =
+    classNames('popup__button', 'button', {'button--disabled': !isItemsInCart});
 
   useOutsideClick(popup, () => setPopupVisible(false));
 
-  const renderItem = (product, index) => (
-    <Product key={index} product={product} removeFromCart={removeFromCart} />
+  const renderItem = (product: IProduct) => (
+    <Product key={product.id} product={product} removeFromCart={removeFromCart} />
   );
 
   return (
@@ -37,16 +48,14 @@ export const CartPopup = ({setPopupVisible, removeFromCart, items}) => {
       </div>
 
       <footer className="popup__section popup__section--footer">
-        <Link to={'/order'} className={classNamesButton} onClick={() => setPopupVisible(false)}>
+        <Link
+          to={'/order'}
+          className={classNamesButton}
+          onClick={() => setPopupVisible(false)}
+        >
           Proceed to checkout
         </Link>
       </footer>
     </article>
   );
-};
-
-CartPopup.propTypes = {
-  setPopupVisible: PropTypes.func,
-  removeFromCart: PropTypes.func,
-  items: PropTypes.array,
 };

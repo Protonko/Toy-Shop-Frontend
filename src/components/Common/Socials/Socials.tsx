@@ -1,9 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, {FC} from 'react';
+import {ISocials} from 'typing/interfaces';
 import {SocialsItem} from './SocialsItem';
 
-export const Socials = ({data}) => {
-  const renderLink = (link, index) => (
+interface ISocialsProps {
+  data: Array<ISocials>,
+}
+
+export const Socials: FC<ISocialsProps> = ({data}) => {
+  const renderLink = (link: ISocials, index: number) => (
     <SocialsItem key={index} {...link} />
   );
 
@@ -14,8 +18,4 @@ export const Socials = ({data}) => {
       </ul>
     </div>
   )
-};
-
-Socials.propTypes = {
-  data: PropTypes.array,
 };

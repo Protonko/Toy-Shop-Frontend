@@ -1,9 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, {FC} from 'react';
+import {IDelivery, ILines} from 'typing/interfaces';
 import {DeliveryCardLine} from './DeliveryCardLine';
 
-export const DeliveryCard = ({lines, title, description}) => {
-  const renderLine = line => <DeliveryCardLine {...line} key={line.id}  />
+export const DeliveryCard: FC<IDelivery> = ({
+  lines,
+  title,
+  description,
+}) => {
+  const renderLine = (line: ILines) => <DeliveryCardLine {...line} key={line.id}  />
 
   return (
     <article className="delivery-card">
@@ -23,9 +27,3 @@ export const DeliveryCard = ({lines, title, description}) => {
     </article>
   );
 }
-
-DeliveryCard.propTypes = {
-  lines: PropTypes.array,
-  title: PropTypes.string,
-  description: PropTypes.string,
-};

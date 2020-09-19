@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {Link} from 'react-router-dom';
 import classNames from 'classnames';
-import {IProduct} from 'interfaces';
+import {IProduct} from 'typing/interfaces';
 import {Button} from 'components/Common/Buttons/Button';
 
 interface ICardProps {
@@ -22,8 +22,8 @@ export const Card: FC<ICardProps> = props => {
   const {product, selectedProducts, addToCart, removeFromCart} = props;
   const {price, sale, image, title, id} = product;
   const productPrice: number = sale ? Math.round(price * sale) : price;
-  const isAdded: IProduct | undefined =
-    selectedProducts.find((item: IProduct) => item.id === product.id);
+  const isAdded: boolean =
+    !!selectedProducts.find((item: IProduct) => item.id === product.id);
   const titleButton: TTitleButton = isAdded ? TitlesButton.ADDED : TitlesButton.ADD;
   const classNamesPrice: string =
     classNames('card__data-price-text', {'card__data-price-text--new': sale});

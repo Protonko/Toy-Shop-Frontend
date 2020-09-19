@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {Card} from 'components/Card/Card';
-import {IProduct} from '../../interfaces';
+import {IProduct} from '../../typing/interfaces';
 
 interface ICardsProps {
   products: Array<IProduct>,

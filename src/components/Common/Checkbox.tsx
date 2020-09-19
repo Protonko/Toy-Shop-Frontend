@@ -1,8 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, {FC} from 'react';
 import classNames from 'classnames';
+import {TClassName} from 'typing/types';
 
-export const Checkbox = ({
+interface ICheckboxProps {
+  text?: string,
+  classNamesText: TClassName,
+  checked: boolean,
+  onChange: () => any // TODO - убрать
+}
+
+export const Checkbox: FC<ICheckboxProps> = ({
   text,
   classNamesText = [],
   checked,
@@ -20,10 +27,3 @@ export const Checkbox = ({
     </label>
   );
 }
-
-Checkbox.propTypes = {
-  text: PropTypes.string,
-  classNamesAdditional: PropTypes.array,
-  checked: PropTypes.bool,
-  onChange: PropTypes.func,
-};

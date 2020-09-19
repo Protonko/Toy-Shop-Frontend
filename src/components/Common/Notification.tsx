@@ -1,8 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, {FC} from 'react';
 import {ReactComponent as LoupeLogo} from 'assets/icons/loupe.svg';
 
-export const Notification = ({text}) => {
+interface INotificationProps {
+  text: string,
+}
+
+export const Notification: FC<INotificationProps> = ({text}) => {
   return (
     <div className="notification">
       <div className="notification__wrapper">
@@ -14,7 +17,3 @@ export const Notification = ({text}) => {
     </div>
   )
 }
-
-Notification.protoTypes = {
-  text: PropTypes.string,
-};

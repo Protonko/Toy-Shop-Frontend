@@ -1,3 +1,5 @@
+import {ReactComponent} from '*.svg';
+
 export interface IBaseConfig {
   baseURL: string,
   headers?: Headers,
@@ -16,25 +18,32 @@ export interface IProduct {
 }
 // ./Products
 
+// Socials
+export interface ISocials {
+  href: string,
+  icon: typeof ReactComponent,
+}
+// ./Socials
+
 // Delivery
 export interface ILines {
-  id: string,
+  id?: string,
   description: string,
   items: Array<ILinesItems>,
 }
 
 export interface ILinesItems {
-  id: string,
+  id?: string,
   term: string,
   value: string,
   marked: boolean,
 }
 
 export interface IDelivery {
-  id: string,
+  id?: string,
   title: string,
   description: string,
-  lines: ILines,
+  lines: Array<ILines>,
 }
 // ./Delivery
 
