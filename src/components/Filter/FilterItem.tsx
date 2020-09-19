@@ -1,9 +1,18 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, {FC} from 'react';
 import classNames from 'classnames';
 
-export const FilterItem = ({active, title, onClick}) => {
-  const classNamesButton = classNames(
+interface IFilterItemProps {
+  active?: boolean,
+  title: string,
+  onClick: () => any // TODO - убрать
+}
+
+export const FilterItem: FC<IFilterItemProps> = ({
+  active,
+  title,
+  onClick,
+}) => {
+  const classNamesButton: string = classNames(
     'sidebar__button',
     'button',
     'button--grey',
@@ -19,10 +28,4 @@ export const FilterItem = ({active, title, onClick}) => {
       </button>
     </li>
   );
-};
-
-FilterItem.propTypes = {
-  active: PropTypes.bool,
-  title: PropTypes.string,
-  onClick: PropTypes.func,
 };

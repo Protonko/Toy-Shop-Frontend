@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 
 interface IInputProps {
   placeholder: string,
-  onChange: () => any, // TODO - убрать
+  onChange: (value: any) => any, // TODO - убрать
 }
 
 export const Input: FC<IInputProps> = ({placeholder, onChange}) => (

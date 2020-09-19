@@ -1,4 +1,5 @@
 import {ReactComponent} from '*.svg';
+import {TFilterData} from 'typing/types';
 
 export interface IBaseConfig {
   baseURL: string,
@@ -55,3 +56,11 @@ export interface IPayment {
   image?: string,
 }
 // ./Payment
+
+// Filter
+export interface IFilterData {
+  id: number,
+  title: string,
+  code: TFilterData,
+}
+// ./Filter

@@ -1,13 +1,24 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, {FC} from 'react';
+import {TFilterData} from 'typing/types';
+import {IFilterData} from 'typing/interfaces';
 import {filterData} from './filterData';
 import {FilterItem} from './FilterItem';
 import {FilterSearch} from './FilterSearch';
 
-export const Filter = ({setFilter, setSearchQuery, filterBy}) => {
-  const renderFilter = (elem, index) => (
+interface IFilterProps {
+  setFilter: (code: TFilterData) => any, // TODO - убрать
+  setSearchQuery: (value: string) => any, // TODO - убрать
+  filterBy: TFilterData,
+}
+
+export const Filter: FC<IFilterProps> = ({
+  setFilter,
+  setSearchQuery,
+  filterBy,
+}) => {
+  const renderFilter = (elem: IFilterData) => (
     <FilterItem
-      key={index}
+      key={elem.id}
       active={filterBy === elem.code}
       title={elem.title}
       onClick={() => setFilter(elem.code)}
@@ -25,10 +36,4 @@ export const Filter = ({setFilter, setSearchQuery, filterBy}) => {
       </ul>
     </aside>
   );
-};
-
-Filter.propTypes = {
-  setFilter: PropTypes.func,
-  setSearchQuery: PropTypes.func,
-  filterBy: PropTypes.string,
 };
