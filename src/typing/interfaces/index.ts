@@ -22,7 +22,7 @@ export interface IProduct {
 // Socials
 export interface ISocials {
   href: string,
-  icon: typeof ReactComponent,
+  Icon: typeof ReactComponent,
 }
 // ./Socials
 
@@ -64,3 +64,20 @@ export interface IFilterData {
   code: TFilterData,
 }
 // ./Filter
+
+// Navbar
+export interface INavData {
+  id?: number,
+  href: string,
+  title: string,
+}
+// ./Navbar
+
+// Order
+export interface IOrderCost {
+  amount: number,
+  total: number,
+  fullPrice: number,
+  sale: number,
+}
+// ./Order

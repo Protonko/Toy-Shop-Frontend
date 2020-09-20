@@ -3,12 +3,12 @@ import {ISocials} from 'typing/interfaces';
 
 export const SocialsItem: FC<ISocials> = ({
   href,
-  icon,
+  Icon,
 }) => {
   return (
     <li className="socials__item">
       <a href={href} target="_black" className="socials__link">
-        {icon}
+        <Icon />
       </a>
     </li>
   )

@@ -1,12 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, {FC} from 'react';
 import Dotdotdot from 'react-dotdotdot';
 import placeholder from 'assets/images/placeholder.jpg';
+import {IProduct} from 'typing/interfaces';
 import {Button} from 'components/Common/Buttons/Button';
 
-export const Product = ({product, removeFromCart}) => {
+interface IProductProps {
+  product: IProduct,
+  removeFromCart: (product: IProduct) => any, // TODO - убрать
+}
+
+export const Product: FC<IProductProps> = ({
+  product,
+  removeFromCart,
+}) => {
   const {image = placeholder, title, price, sale} = product;
-  const priceProduct = sale ? Math.round(price * sale) : price;
+  const priceProduct: number = sale ? Math.round(price * sale) : price;
 
   return (
     <div className="product">
@@ -35,9 +43,4 @@ export const Product = ({product, removeFromCart}) => {
       </div>
     </div>
   );
-};
-
-Product.propTypes = {
-  product: PropTypes.object,
-  removeFromCart: PropTypes.func,
 };

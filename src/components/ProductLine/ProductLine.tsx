@@ -1,9 +1,22 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, {FC} from 'react';
 import Dotdotdot from 'react-dotdotdot';
 import {Checkbox} from 'components/Common/Checkbox';
 
-export const ProductLine = ({title, price, image, checked, onChange}) => {
+interface IProductLineProps {
+  title: string,
+  image: string,
+  price: number,
+  checked?: boolean,
+  onChange: () => any, // TODO - убрать
+}
+
+export const ProductLine: FC<IProductLineProps> = ({
+  title,
+  image,
+  price,
+  checked,
+  onChange,
+}) => {
   return (
     <label className="product-line">
       <div className="product-line__info">
@@ -22,11 +35,3 @@ export const ProductLine = ({title, price, image, checked, onChange}) => {
     </label>
   )
 }
-
-ProductLine.propTypes = {
-  onChange: PropTypes.func,
-  title: PropTypes.string,
-  price: PropTypes.string,
-  image: PropTypes.string,
-  checked: PropTypes.bool,
-};

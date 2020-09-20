@@ -4,7 +4,7 @@ import {SIZES} from 'typing/enums';
 interface IHeadingProps {
   title?: string,
   subtitle?: string,
-  size: typeof SIZES,
+  size?: typeof SIZES,
 }
 
 export const Heading: FC<IHeadingProps> = ({

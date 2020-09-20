@@ -1,15 +1,26 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, {FC} from 'react';
 import classNames from 'classnames';
 
-export const PriceLine = ({text, price, isSale, isBig}) => {
-  const classNamesPrice = classNames(
+interface IPriceLineProps {
+  text: string,
+  price: string,
+  isSale: boolean,
+  isBig: boolean,
+}
+
+export const PriceLine: FC<IPriceLineProps> = ({
+  text,
+  price,
+  isSale,
+  isBig,
+}) => {
+  const classNamesPrice: string = classNames(
     'order__price-label',
     'order__price-label--bold',
     {'order__price-label--sale': isSale},
     {'order__price-label--big': isBig},
   );
-  const classNamesLabel = classNames(
+  const classNamesLabel: string = classNames(
     'order__price-label',
     {'order__price-label--bold': isBig},
     {'order__price-label--big': isBig},
@@ -24,12 +35,5 @@ export const PriceLine = ({text, price, isSale, isBig}) => {
         {price}
       </p>
     </div>
-  )
+  );
 };
-
-PriceLine.propTypes = {
-  text: PropTypes.string,
-  price: PropTypes.string,
-  isSale: PropTypes.bool,
-  isBig: PropTypes.bool,
-}

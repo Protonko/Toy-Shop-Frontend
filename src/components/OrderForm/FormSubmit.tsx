@@ -1,8 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, {FC} from 'react';
 import {Button} from 'components/Common/Buttons/Button';
 
-export const FormSubmit = ({text, onClick}) => {
+interface IFormSubmitProps {
+  text: string,
+  onClick: () => any // TODO - убрать
+}
+
+export const FormSubmit: FC<IFormSubmitProps> = ({
+  text,
+  onClick,
+}) => {
   return (
     <div className="order__submit">
       <ul className="order__submit-list list list--reset">
@@ -20,9 +27,4 @@ export const FormSubmit = ({text, onClick}) => {
       </ul>
     </div>
   );
-}
-
-FormSubmit.propTypes = {
-  text: PropTypes.string,
-  onClick: PropTypes.func,
 }

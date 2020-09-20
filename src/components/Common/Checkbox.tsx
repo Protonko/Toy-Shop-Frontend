@@ -4,8 +4,8 @@ import {TClassName} from 'typing/types';
 
 interface ICheckboxProps {
   text?: string,
-  classNamesText: TClassName,
-  checked: boolean,
+  classNamesText?: TClassName,
+  checked?: boolean,
   onChange: () => any // TODO - убрать
 }
 

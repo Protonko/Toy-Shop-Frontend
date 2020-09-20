@@ -1,7 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, {FC} from 'react';
 
-export const PaymentBlock = ({title, description, image}) => {
+interface IPaymentBlockProps {
+  title: string,
+  description: string,
+  image: string,
+}
+
+export const PaymentBlock: FC<IPaymentBlockProps> = ({
+  title,
+  description,
+  image,
+}) => {
   return (
     <div className="payment__block">
       <h2 className="payment__block-title">{title}</h2>
@@ -13,10 +22,4 @@ export const PaymentBlock = ({title, description, image}) => {
       )}
     </div>
   );
-};
-
-PaymentBlock.propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string,
-  img: PropTypes.string,
 };

@@ -1,11 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, {FC} from 'react';
+import {IProduct} from 'typing/interfaces';
 import {Loader} from 'components/Common/Loader';
 import {Notification} from 'components/Common/Notification';
 import Filter from 'containers/Filter';
 import Cards from 'containers/Cards';
 
-export const Main = ({isLoaded, products, selectedProducts}) => {
+interface IMainProps {
+  isLoaded: boolean,
+  products: Array<IProduct>,
+  selectedProducts: Array<IProduct>,
+}
+
+export const Main: FC<IMainProps> = ({
+  isLoaded,
+  products,
+  selectedProducts,
+}) => {
   if (isLoaded) {
     return (
       <>
@@ -14,6 +24,7 @@ export const Main = ({isLoaded, products, selectedProducts}) => {
             <Cards products={products} selectedProducts={selectedProducts} />
           </div>
         ) : <Notification text="Nothing found" />}
+
         <Filter />
       </>
     )
@@ -21,9 +32,3 @@ export const Main = ({isLoaded, products, selectedProducts}) => {
     return <Loader />;
   }
 }
-
-Main.propTypes = {
-  isLoaded: PropTypes.bool,
-  products: PropTypes.array,
-  selectedProducts: PropTypes.array,
-};

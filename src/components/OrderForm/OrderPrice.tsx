@@ -1,9 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, {FC} from 'react';
+import {IOrderCost} from 'typing/interfaces';
 import {PriceLine} from './PriceLine';
 
-export const OrderPrice = ({amount, total, fullPrice, sale}) => {
-  const salePrice = sale ? sale : 0;
+export const OrderPrice: FC<IOrderCost> = ({
+  amount,
+  total,
+  fullPrice,
+  sale,
+}) => {
+  const salePrice: number = sale ? sale : 0;
+
   return (
     <div className="order__price">
       <div className="order__price-block">
@@ -15,11 +21,4 @@ export const OrderPrice = ({amount, total, fullPrice, sale}) => {
       </div>
     </div>
   );
-};
-
-OrderPrice.propTypes = {
-  amount: PropTypes.number,
-  total: PropTypes.number,
-  fullPrice: PropTypes.number,
-  sale: PropTypes.number,
 };

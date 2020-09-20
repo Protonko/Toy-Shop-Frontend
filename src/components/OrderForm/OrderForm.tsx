@@ -1,16 +1,26 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, {FC} from 'react';
+import {IProduct} from 'typing/interfaces';
 import {FormHeader} from './FormHeader';
 import {FormTotalCost} from './FormTotalCost';
 import {ProductLines} from 'components/ProductLine/ProductLines';
 
-export const OrderForm = ({
+interface IOrderFormProps {
+  toggleSelectProduct: () => any, // TODO - убрать
+  deleteSelected: () => any, // TODO - убрать
+  cartItems: Array<IProduct>,
+  cartSelectedItems:Array<IProduct>,
+  total: number,
+  fullPrice: number,
+  sale: number,
+}
+
+export const OrderForm: FC<IOrderFormProps> = ({
   cartItems,
   toggleSelectProduct,
   deleteSelected,
   total,
   fullPrice,
-  sale
+  sale,
 }) => {
   const cartItemsAmount = cartItems.length;
 
@@ -33,13 +43,3 @@ export const OrderForm = ({
     </form>
   )
 }
-
-OrderForm.propTypes = {
-  toggleSelectProduct: PropTypes.func,
-  deleteSelected: PropTypes.func,
-  cartItems: PropTypes.array,
-  cartSelectedItems: PropTypes.array,
-  total: PropTypes.number,
-  fullPrice: PropTypes.number,
-  sale: PropTypes.number,
-};

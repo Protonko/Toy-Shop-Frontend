@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {FC} from 'react';
+import {INavData} from 'typing/interfaces';
 import {navData} from './navData';
 import {NavbarItem} from './NavbarItem';
 
-export const Navbar = () => {
-  const renderNav = (nav, index) => (
-    <NavbarItem key={index} href={nav.href} title={nav.title}/>
+export const Navbar: FC = () => {
+  const renderNav = (nav: INavData) => (
+    <NavbarItem key={nav.id} href={nav.href} title={nav.title}/>
   );
 
   return (

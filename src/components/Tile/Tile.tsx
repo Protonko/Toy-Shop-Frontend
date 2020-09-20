@@ -1,6 +1,18 @@
-import React from 'react';
+import React, {FC} from 'react';
 
-export const Tile = ({href, image, title, description}) => {
+interface ITileProps {
+  href: string,
+  image: string,
+  title: string,
+  description?: string,
+}
+
+export const Tile: FC<ITileProps> = ({
+  href,
+  image,
+  title,
+  description,
+}) => {
   return (
     <a href={href} className="tile">
       <div className="tile__image">

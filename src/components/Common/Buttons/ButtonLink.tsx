@@ -7,7 +7,7 @@ interface IButtonLinkProps {
   disabled?: boolean,
   isRemoved?: boolean,
   onClick: () => any, // TODO - убрать
-  classNamesAdditional: TClassName,
+  classNamesAdditional?: TClassName,
 }
 
 export const ButtonLink: FC<IButtonLinkProps> = ({
