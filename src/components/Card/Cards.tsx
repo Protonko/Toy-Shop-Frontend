@@ -1,12 +1,13 @@
 import React, {FC} from 'react';
+import {IProduct} from 'models/interfaces';
+import {IAddToCart, IRemoveFromCart} from 'models/actions/cart';
 import {Card} from 'components/Card/Card';
-import {IProduct} from '../../typing/interfaces';
 
 interface ICardsProps {
   products: Array<IProduct>,
   selectedProducts: Array<IProduct>,
-  addToCart: (product: IProduct) => any, // TODO - убрать
-  removeFromCart: (product: IProduct) => any, // TODO - убрать
+  addToCart: (product: IProduct) => IAddToCart,
+  removeFromCart: (product: IProduct) => IRemoveFromCart,
 }
 
 export const Cards: FC<ICardsProps> = ({

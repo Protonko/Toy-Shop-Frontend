@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {ISocials} from 'typing/interfaces';
+import {ISocials} from 'models/interfaces';
 
 export const SocialsItem: FC<ISocials> = ({
   href,

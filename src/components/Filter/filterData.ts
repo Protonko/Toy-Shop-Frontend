@@ -1,4 +1,4 @@
-import {IFilterData} from 'typing/interfaces';
+import {IFilterData} from 'models/interfaces';
 
 export const filterData: Array<IFilterData> = [
   {

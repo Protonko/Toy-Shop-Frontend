@@ -1,5 +1,5 @@
 import {ReactComponent} from '*.svg';
-import {TFilterData} from 'typing/types';
+import {TFilterData} from 'models/types';
 
 export interface IBaseConfig {
   baseURL: string,

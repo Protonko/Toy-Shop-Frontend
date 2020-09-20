@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {IDelivery, ILines} from 'typing/interfaces';
+import {IDelivery, ILines} from 'models/interfaces';
 import {DeliveryCardLine} from './DeliveryCardLine';
 
 export const DeliveryCard: FC<IDelivery> = ({

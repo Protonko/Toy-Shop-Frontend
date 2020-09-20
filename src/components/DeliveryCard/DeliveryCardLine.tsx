@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {ILinesItems} from 'typing/interfaces';
+import {ILinesItems} from 'models/interfaces';
 import {DeliveryCardItem} from './DeliveryCardItem';
 
 interface IDeliveryCardLineProps {

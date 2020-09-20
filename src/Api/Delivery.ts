@@ -1,5 +1,5 @@
 import Api from './index';
-import {IDelivery} from 'typing/interfaces';
+import {IDelivery} from 'models/interfaces';
 
 export class DeliveryApi {
   static async getData(): Promise<Array<IDelivery>> {

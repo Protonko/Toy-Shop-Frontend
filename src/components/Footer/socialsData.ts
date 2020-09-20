@@ -2,7 +2,7 @@ import {ReactComponent as Vk} from 'assets/icons/vk.svg';
 import {ReactComponent as Facebook} from 'assets/icons/facebook.svg';
 import {ReactComponent as Twitter} from 'assets/icons/twitter.svg';
 import {ReactComponent as Instagram} from 'assets/icons/instagram.svg';
-import {ISocials} from 'typing/interfaces';
+import {ISocials} from 'models/interfaces';
 
 export const socialsData: Array<ISocials> = [
   {

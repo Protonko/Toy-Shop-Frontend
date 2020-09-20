@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import {Scrollbars} from 'react-custom-scrollbars';
 import {useOutsideClick} from 'hooks/useOutsideClick';
 import {Product} from 'components/Product/Product';
-import {IProduct} from '../../typing/interfaces';
+import {IProduct} from '../../models/interfaces';
 
 interface ICartPopupProps {
   setPopupVisible: (popupVisible: boolean) => void,

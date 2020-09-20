@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {IProduct} from 'typing/interfaces';
+import {IProduct} from 'models/interfaces';
 import {FormHeader} from './FormHeader';
 import {FormTotalCost} from './FormTotalCost';
 import {ProductLines} from 'components/ProductLine/ProductLines';

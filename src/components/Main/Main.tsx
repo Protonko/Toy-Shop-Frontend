@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {IProduct} from 'typing/interfaces';
+import {IProduct} from 'models/interfaces';
 import {Loader} from 'components/Common/Loader';
 import {Notification} from 'components/Common/Notification';
 import Filter from 'containers/Filter';

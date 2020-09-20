@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import Dotdotdot from 'react-dotdotdot';
 import placeholder from 'assets/images/placeholder.jpg';
-import {IProduct} from 'typing/interfaces';
+import {IProduct} from 'models/interfaces';
 import {Button} from 'components/Common/Buttons/Button';
 
 interface IProductProps {

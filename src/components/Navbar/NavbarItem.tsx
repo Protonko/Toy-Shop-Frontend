@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {INavData} from 'typing/interfaces';
+import {INavData} from 'models/interfaces';
 import {NavLink} from 'react-router-dom';
 
 export const NavbarItem: FC<INavData> = ({

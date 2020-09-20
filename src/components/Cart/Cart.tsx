@@ -1,7 +1,7 @@
 import React, {FC, useState} from 'react';
 import {ReactComponent as CartLogo} from 'assets/icons/cart.svg';
-import {TClassName} from 'typing/types';
-import {IProduct} from 'typing/interfaces';
+import {TClassName} from 'models/types';
+import {IProduct} from 'models/interfaces';
 import {CartPopup} from './CartPopup';
 import {ButtonIconed} from 'components/Common/Buttons/ButtonIconed';
 
@@ -9,7 +9,7 @@ interface ICartProps {
   total: number,
   countProducts: number,
   items: Array<IProduct>,
-  removeFromCart: (item: IProduct) => any, // TODO - убрать
+  removeFromCart: (item: IProduct) => void, // TODO - убрать
 }
 
 export const Cart: FC<ICartProps> = ({

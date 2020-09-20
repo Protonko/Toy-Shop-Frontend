@@ -1,5 +1,5 @@
 import React from 'react';
-import {SIZES} from 'typing/enums';
+import {SIZES} from 'models/enums';
 import {Heading} from 'components/Common/Heading';
 import OrderForm from 'containers/OrderForm';
 

@@ -1,5 +1,7 @@
-export default type => (payload = null, meta = null) => ({
-  type,
-  payload,
-  meta,
-});
+export default (type) =>
+  (payload = null, meta = null) =>
+    ({
+      type,
+      payload,
+      meta,
+    });

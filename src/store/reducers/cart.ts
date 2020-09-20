@@ -1,13 +1,17 @@
 import {ACTIONS} from 'store/actions/cart';
+import {TActionsCartTypes} from 'models/actions/cart';
+import {IProduct} from 'models/interfaces';
 
 const initialState = {
-  items: [],
+  items: [] as Array<IProduct>,
   sale: 0,
   fullPrice: 0,
   total: 0,
 };
 
-export default (state = initialState, action) => {
+type TInitialState = typeof initialState;
+
+export default (state = initialState, action: TActionsCartTypes): TInitialState => {
   switch (action.type) {
     case ACTIONS.ADD_TO_CART:
       const itemsAdded = [...state.items, action.payload];
@@ -58,7 +62,7 @@ export default (state = initialState, action) => {
         items: deletedItems,
       }
 
-  default:
-    return {...state};
-}
+    default:
+      return {...state};
+  }
 }

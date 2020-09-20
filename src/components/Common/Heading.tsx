@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {SIZES} from 'typing/enums';
+import {SIZES} from 'models/enums';
 
 interface IHeadingProps {
   title?: string,

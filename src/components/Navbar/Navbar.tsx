@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {INavData} from 'typing/interfaces';
+import {INavData} from 'models/interfaces';
 import {navData} from './navData';
 import {NavbarItem} from './NavbarItem';
 

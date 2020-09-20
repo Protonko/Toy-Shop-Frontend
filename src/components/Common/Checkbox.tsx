@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import classNames from 'classnames';
-import {TClassName} from 'typing/types';
+import {TClassName} from 'models/types';
 
 interface ICheckboxProps {
   text?: string,

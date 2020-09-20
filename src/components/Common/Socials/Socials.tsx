@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {ISocials} from 'typing/interfaces';
+import {ISocials} from 'models/interfaces';
 import {SocialsItem} from './SocialsItem';
 
 interface ISocialsProps {

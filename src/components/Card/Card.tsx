@@ -1,14 +1,15 @@
 import React, {FC} from 'react';
 import {Link} from 'react-router-dom';
 import classNames from 'classnames';
-import {IProduct} from 'typing/interfaces';
+import {IProduct} from 'models/interfaces';
+import {IAddToCart, IRemoveFromCart} from 'models/actions/cart';
 import {Button} from 'components/Common/Buttons/Button';
 
 interface ICardProps {
   product: IProduct,
   selectedProducts: Array<IProduct>,
-  addToCart: (product: IProduct) => any, // TODO - убрать
-  removeFromCart: (product: IProduct) => any, // TODO - убрать
+  addToCart: (product: IProduct) => IAddToCart,
+  removeFromCart: (product: IProduct) => IRemoveFromCart,
 }
 
 enum TitlesButton {

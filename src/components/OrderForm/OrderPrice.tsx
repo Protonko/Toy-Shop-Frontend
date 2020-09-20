@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {IOrderCost} from 'typing/interfaces';
+import {IOrderCost} from 'models/interfaces';
 import {PriceLine} from './PriceLine';
 
 export const OrderPrice: FC<IOrderCost> = ({

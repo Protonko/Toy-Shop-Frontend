@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import classNames from 'classnames';
-import {ILinesItems} from 'typing/interfaces';
+import {ILinesItems} from 'models/interfaces';
 
 export const DeliveryCardItem: FC<ILinesItems> = ({
   term,

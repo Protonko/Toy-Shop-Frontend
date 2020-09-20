@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {IProduct} from 'typing/interfaces';
+import {IProduct} from 'models/interfaces';
 import {ProductLine} from './ProductLine';
 
 interface IProductLinesProps {

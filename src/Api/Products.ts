@@ -1,5 +1,5 @@
 import Api from './index';
-import {IProduct} from 'typing/interfaces';
+import {IProduct} from 'models/interfaces';
 
 export class ProductsApi {
   static async getProducts(): Promise<Array<IProduct>> {

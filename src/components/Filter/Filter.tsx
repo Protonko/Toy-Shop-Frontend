@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
-import {TFilterData} from 'typing/types';
-import {IFilterData} from 'typing/interfaces';
+import {TFilterData} from 'models/types';
+import {IFilterData} from 'models/interfaces';
 import {filterData} from './filterData';
 import {FilterItem} from './FilterItem';
 import {FilterSearch} from './FilterSearch';

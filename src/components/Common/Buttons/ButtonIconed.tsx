@@ -1,6 +1,6 @@
 import React, {FC, ReactNode} from 'react';
 import classNames from 'classnames';
-import {TClassName} from 'typing/types';
+import {TClassName} from 'models/types';
 
 interface IButtonIconedProps {
   children: ReactNode,
