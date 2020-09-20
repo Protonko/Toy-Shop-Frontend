@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,7 +15,7 @@ import {Header} from 'components/Header/Header';
 import {Footer} from 'components/Footer/Footer';
 import {Container} from 'components/Common/Container';
 
-const App = () => {
+const App: FC = () => {
   return (
     <Router>
       <Header />
