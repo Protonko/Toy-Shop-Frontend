@@ -1,7 +1,7 @@
 import {useRef, useEffect} from 'react';
 
-export const useIsMount = () => {
-  const isMountRef = useRef(true);
+export const useIsMount = (): boolean => {
+  const isMountRef = useRef<boolean>(true);
 
   useEffect(() => {
     isMountRef.current = false;

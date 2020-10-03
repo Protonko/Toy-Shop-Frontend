@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import {Scrollbars} from 'react-custom-scrollbars';
 import {useOutsideClick} from 'hooks/useOutsideClick';
 import {Product} from 'components/Product/Product';
-import {IProduct} from '../../models/interfaces';
+import {IProduct} from 'models/interfaces';
 
 interface ICartPopupProps {
   setPopupVisible: (popupVisible: boolean) => void,
@@ -17,12 +17,12 @@ export const CartPopup: FC<ICartPopupProps> = ({
  removeFromCart,
  items,
 }) => {
-  const popup = useRef<HTMLInputElement>(null);
+  const popup = useRef<HTMLElement>(null);
   const isItemsInCart: boolean = !!items.length;
   const classNamesButton: string =
     classNames('popup__button', 'button', {'button--disabled': !isItemsInCart});
 
-  useOutsideClick(popup, () => setPopupVisible(false));
+  useOutsideClick<HTMLElement>(popup, () => setPopupVisible(false));
 
   const renderItem = (product: IProduct) => (
     <Product key={product.id} product={product} removeFromCart={removeFromCart} />
