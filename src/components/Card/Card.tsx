@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import {Link} from 'react-router-dom';
 import classNames from 'classnames';
 import {IProduct} from 'models/interfaces';
-import {IAddToCart, IRemoveFromCart} from 'models/actions/cart';
+import {IAddToCart, IRemoveFromCart} from 'models/store/actions/cart';
 import {Button} from 'components/Common/Buttons/Button';
 
 interface ICardProps {

@@ -9,7 +9,7 @@ interface ICartProps {
   total: number,
   countProducts: number,
   items: Array<IProduct>,
-  removeFromCart: (item: IProduct) => void, // TODO - убрать
+  removeFromCart: (item: IProduct) => void,
 }
 
 export const Cart: FC<ICartProps> = ({

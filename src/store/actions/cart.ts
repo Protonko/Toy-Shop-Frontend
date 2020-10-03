@@ -1,11 +1,10 @@
-import buildAction from './buildAction';
 import keyMirror from 'utils/keyMirror';
 import {
   IAddToCart,
   IRemoveFromCart,
   IToggleSelectProduct,
   IDeleteSelected,
-} from 'models/actions/cart';
+} from 'models/store/actions/cart';
 import {IProduct} from 'models/interfaces';
 
 const PREFIX = '[CART]';

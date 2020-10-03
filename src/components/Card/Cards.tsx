@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {IProduct} from 'models/interfaces';
-import {IAddToCart, IRemoveFromCart} from 'models/actions/cart';
+import {IAddToCart, IRemoveFromCart} from 'models/store/actions/cart';
 import {Card} from 'components/Card/Card';
 
 interface ICardsProps {

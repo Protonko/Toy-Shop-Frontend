@@ -1,7 +1,7 @@
 import {ACTIONS} from 'store/actions/cart';
 import {IProduct} from 'models/interfaces';
 
-export type TActionsCartTypes =
+export type TActionsCart =
   | typeof ACTIONS.ADD_TO_CART
   | typeof ACTIONS.REMOVE_FROM_CART
   | typeof ACTIONS.TOGGLE_SELECT_PRODUCT

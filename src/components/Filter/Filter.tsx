@@ -6,8 +6,8 @@ import {FilterItem} from './FilterItem';
 import {FilterSearch} from './FilterSearch';
 
 interface IFilterProps {
-  setFilter: (code: TFilterData) => any, // TODO - убрать
-  setSearchQuery: (value: string) => any, // TODO - убрать
+  setFilter: (code: TFilterData) => void,
+  setSearchQuery: (value: string) => void,
   filterBy: TFilterData,
 }
 

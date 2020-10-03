@@ -1,6 +1,7 @@
 import {ACTIONS} from 'store/actions/cart';
-import {TActionsCartTypes} from 'models/actions/cart';
+import {TActionsCart} from 'models/store/actions/cart';
 import {IProduct} from 'models/interfaces';
+import {TAppAction} from 'models/store';
 
 const initialState = {
   items: [] as Array<IProduct>,
@@ -11,7 +12,10 @@ const initialState = {
 
 type TInitialState = typeof initialState;
 
-export default (state = initialState, action: TActionsCartTypes): TInitialState => {
+export default (
+  state = initialState,
+  action: TAppAction<TActionsCart>,
+): TInitialState => {
   switch (action.type) {
     case ACTIONS.ADD_TO_CART:
       const itemsAdded = [...state.items, action.payload];
