@@ -1,9 +1,9 @@
-import React, {FC} from 'react';
+import React, {ChangeEvent, FC} from 'react';
 import {Input} from 'components/Common/Input';
 
 interface IFilterSearchProps {
   placeholder: string,
-  onChange: (value: any) => any // TODO - убрать
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void,
 
 }
 

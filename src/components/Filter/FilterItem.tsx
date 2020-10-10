@@ -1,10 +1,10 @@
-import React, {FC} from 'react';
+import React, {FC, MouseEvent} from 'react';
 import classNames from 'classnames';
 
 interface IFilterItemProps {
   active?: boolean,
   title: string,
-  onClick: () => any // TODO - убрать
+  onClick: (event: MouseEvent) => void,
 }
 
 export const FilterItem: FC<IFilterItemProps> = ({
