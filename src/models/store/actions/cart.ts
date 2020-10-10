@@ -19,7 +19,7 @@ export interface IRemoveFromCart {
 
 export interface IToggleSelectProduct {
   type: typeof ACTIONS.TOGGLE_SELECT_PRODUCT,
-  payload: number,
+  payload: number | string,
 }
 
 export interface IDeleteSelected {

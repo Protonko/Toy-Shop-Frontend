@@ -25,7 +25,7 @@ export const addToCart = (payload: IProduct): IAddToCart =>
 export const removeFromCart = (payload: IProduct): IRemoveFromCart =>
   ({type: ACTIONS.REMOVE_FROM_CART, payload});
 
-export const toggleSelectProduct = (payload: number): IToggleSelectProduct =>
+export const toggleSelectProduct = (payload: number | string): IToggleSelectProduct =>
   ({type: ACTIONS.TOGGLE_SELECT_PRODUCT, payload});
 
 export const deleteSelected = (): IDeleteSelected => ({type: ACTIONS.DELETE_SELECTED});

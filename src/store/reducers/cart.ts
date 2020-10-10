@@ -10,7 +10,7 @@ const initialState = {
   total: 0,
 };
 
-type TInitialState = typeof initialState;
+export type TInitialState = typeof initialState;
 
 export default (
   state = initialState,

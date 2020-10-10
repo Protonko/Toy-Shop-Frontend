@@ -4,7 +4,7 @@ import {ProductLine} from './ProductLine';
 
 interface IProductLinesProps {
   products: Array<IProduct>,
-  toggleSelectProduct: (id: number | string) => any, // TODO - убрать
+  toggleSelectProduct: (id: number | string) => void,
 }
 
 export const ProductLines: FC<IProductLinesProps> = ({

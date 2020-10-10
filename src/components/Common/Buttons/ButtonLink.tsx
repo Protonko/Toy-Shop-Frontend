@@ -6,7 +6,7 @@ interface IButtonLinkProps {
   text: string,
   disabled?: boolean,
   isRemoved?: boolean,
-  onClick: () => any, // TODO - убрать
+  onClick: () => void,
   classNamesAdditional?: TClassName,
 }
 

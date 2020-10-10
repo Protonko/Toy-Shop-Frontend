@@ -14,7 +14,7 @@ export const Header: FC = () => (
 
       <Navbar/>
 
-      {/*<Cart/>*/}
+      <Cart/>
     </Container>
   </header>
 );

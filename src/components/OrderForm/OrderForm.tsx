@@ -5,8 +5,8 @@ import {FormTotalCost} from './FormTotalCost';
 import {ProductLines} from 'components/ProductLine/ProductLines';
 
 interface IOrderFormProps {
-  toggleSelectProduct: () => any, // TODO - убрать
-  deleteSelected: () => any, // TODO - убрать
+  toggleSelectProduct: (id: number | string) => void,
+  deleteSelected: () => void,
   cartItems: Array<IProduct>,
   cartSelectedItems:Array<IProduct>,
   total: number,

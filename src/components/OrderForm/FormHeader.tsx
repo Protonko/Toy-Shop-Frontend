@@ -13,7 +13,7 @@ type TToggleSelectProduct = TYPES_SELECT_PRODUCT.REMOVE | TYPES_SELECT_PRODUCT.S
 
 interface IFormHeaderProps {
   toggleSelectProduct: (type: TToggleSelectProduct) => any, // TODO - убрать
-  onClick: () => any, // TODO - убрать
+  onClick: () => void,
 }
 
 export const FormHeader: FC<IFormHeaderProps> = ({
