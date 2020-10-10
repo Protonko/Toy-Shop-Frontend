@@ -1,25 +1,40 @@
-import React, {useEffect, useCallback} from 'react';
-import PropTypes from 'prop-types';
-import {bindActionCreators} from 'redux';
+import {IProduct} from 'models/interfaces';
+import {TMerge} from 'models/types';
+
+import React, {FC, useEffect, useCallback} from 'react';
+import {bindActionCreators, Dispatch} from 'redux';
 import {connect} from 'react-redux';
 import * as productsActions from 'store/actions/products';
 import * as filterActions from 'store/actions/filter';
 import {getFilteredProducts} from 'store/selectors/products';
 import {Main} from 'components/Main/Main';
+import {RootState} from 'store/reducers';
 
-const mapStateToProps = ({products, filter, cart}) => ({
+type TState = {
+  isLoaded: boolean,
+  products: Array<IProduct>,
+  selectedProducts: Array<IProduct>,
+}
+
+type TActions = {
+  setProducts: () => void,
+  setSearchQuery: (value: string) => void,
+}
+
+const mapStateToProps = ({products, filter, cart}: RootState): TState => ({
   selectedProducts: cart.items,
   products: getFilteredProducts({products, filter}),
   isLoaded: products.isLoaded,
 });
 
-const mapDispatchToProps = dispatch => ({
-  ...bindActionCreators(
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+  ...bindActionCreators<TActions, TActions>(
     {...productsActions, ...filterActions},
-    dispatch),
+    dispatch
+  ),
 });
 
-const MainContainer = ({
+const MainContainer: FC<TMerge<TState, TActions>> = ({
   isLoaded,
   products,
   selectedProducts,
@@ -49,14 +64,6 @@ const MainContainer = ({
       selectedProducts={selectedProducts}
     />
   )
-};
-
-Main.propTypes = {
-  isLoaded: PropTypes.bool,
-  products: PropTypes.array,
-  selectedProducts: PropTypes.array,
-  setProducts: PropTypes.func,
-  setSearchQuery: PropTypes.func,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainContainer);
