@@ -1,24 +1,19 @@
-export const orderBy = (collection, iteratees, orders) =>
+type TOrder = 'DESC' | 'ASC';
+
+export const orderBy = (collection: Array<any>, iteratees: string, orders: TOrder) =>
     collection.concat().sort(sortBy(iteratees, orders));
 
-const sortBy = (iteratees, orders) => {
+const sortBy = (iteratees: string, orders: string) => {
   switch (orders.toUpperCase()) {
-    case 'ASC':
-      return (firstItem, lastItem) =>
-          (firstItem[iteratees] > lastItem[iteratees])
-              ? 1
-              : ((lastItem[iteratees] > firstItem[iteratees])
-              ? -1
-              : 0);
     case 'DESC':
-      return (firstItem, lastItem) =>
+      return (firstItem: any, lastItem: any) =>
           (firstItem[iteratees] < lastItem[iteratees])
               ? 1
               : ((lastItem[iteratees] < firstItem[iteratees])
               ? -1
               : 0);
-    default:
-      return (firstItem, lastItem) =>
+    default: // ASC
+      return (firstItem: any, lastItem: any) =>
           (firstItem[iteratees] > lastItem[iteratees])
               ? 1
               : ((lastItem[iteratees] > firstItem[iteratees])

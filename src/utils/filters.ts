@@ -1,9 +1,19 @@
+// types
+import {IProduct} from 'models/interfaces';
+
 import {orderBy} from './orderBy';
 
-export const filterProducts = (products, filterBy, searchQuery) =>
+export const filterProducts = (
+  products: Array<IProduct>,
+  filterBy: string,
+  searchQuery: string
+) =>
   sortProducts(searchProducts(products, searchQuery), filterBy);
 
-const sortProducts = (products, filterBy) => {
+const sortProducts = (
+  products: Array<IProduct>,
+  filterBy: string,
+) => {
   switch (filterBy.toUpperCase()) {
     case 'PRICE_LOW':
       return orderBy(products, 'price', 'ASC');
@@ -16,7 +26,10 @@ const sortProducts = (products, filterBy) => {
   }
 };
 
-const searchProducts = (products, searchQuery) => {
+const searchProducts = (
+  products: Array<IProduct>,
+  searchQuery: string,
+) => {
   let searchQueryValue = searchQuery.toLowerCase();
 
   return products.filter(product => {
