@@ -1,7 +1,10 @@
+// types
+import {IProduct} from 'models/interfaces';
+
 import {createSelector} from 'reselect';
 import {priceFullReducer, saleReducer, totalPriceReducer} from 'utils/priceReducers';
 
-const getProducts = products => products;
+const getProducts = (products: Array<IProduct>) => products;
 
 const getSelectedItems = createSelector(
   getProducts,
