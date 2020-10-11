@@ -1,9 +1,13 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {useParams} from "react-router-dom";
 import {ProductDetail} from 'components/ProductDetail/ProductDetail';
 
-export const ProductDetailPage = () => {
-  const {id} = useParams();
+interface IRouteParams {
+  id?: string,
+}
+
+export const ProductDetailPage: FC = () => {
+  const {id} = useParams<IRouteParams>();
   return (
     <div>
       Hello {id}

@@ -1,12 +1,15 @@
-import React, {useState, useEffect, useCallback} from 'react';
+// types
+import {IDelivery} from 'models/interfaces';
+
+import React, {FC, useState, useEffect, useCallback} from 'react';
 import {DeliveryApi} from 'Api/Delivery';
 import {Loader} from 'components/Common/Loader';
 import {Notification} from 'components/Common/Notification';
 import {DeliveryCard} from 'components/DeliveryCard/DeliveryCard';
 
-export const Delivery = () => {
-  const [cards, setCards] = useState(null);
-  const [errorMessage, setErrorMessage] = useState(null);
+export const Delivery: FC = () => {
+  const [cards, setCards] = useState<Array<IDelivery> | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const fetchCards = useCallback(() => {
     DeliveryApi.getData().then(
@@ -14,7 +17,7 @@ export const Delivery = () => {
         setCards(response);
         setErrorMessage(null);
       },
-      error => {
+      (error: string) => {
         setCards(null);
         setErrorMessage(error);
       },
@@ -25,7 +28,7 @@ export const Delivery = () => {
     fetchCards();
   }, [fetchCards]);
 
-  const renderCards = card => <DeliveryCard key={card.id} {...card} />;
+  const renderCards = (card: IDelivery) => <DeliveryCard key={card.id} {...card} />;
 
   if (cards) {
     return (

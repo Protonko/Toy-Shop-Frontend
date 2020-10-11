@@ -1,6 +1,8 @@
+// types
+import {IOrderCost} from 'models/interfaces';
+
 import React, {FC} from 'react';
 import {DESCRIPTION_ORDER} from 'static';
-import {IOrderCost} from 'models/interfaces';
 import {Heading} from 'components/Common/Heading';
 import {OrderPrice} from './OrderPrice';
 import {FormSubmit} from './FormSubmit';

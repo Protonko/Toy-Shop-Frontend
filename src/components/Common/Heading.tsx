@@ -1,25 +1,35 @@
-import React, {FC} from 'react';
+// types
 import {SIZES} from 'models/enums';
+import {TValueOf} from 'models/types';
+
+import React, {FC} from 'react';
 
 interface IHeadingProps {
   title?: string,
   subtitle?: string,
-  size?: typeof SIZES,
+  itemsLength?: number,
+  size?: TValueOf<typeof SIZES>,
 }
 
 export const Heading: FC<IHeadingProps> = ({
   title,
   subtitle,
-  size = SIZES.MEDIUM
+  itemsLength,
+  size,
 }) => {
   const modifier = size ?? 'md';
+  const description = itemsLength ? `${itemsLength} items` : subtitle;
 
   return (
     <div className={`heading heading--${modifier}`}>
       <h2 className="heading__text heading__text--title">{title}</h2>
       {subtitle && (
-        <h3 className="heading__text heading__text--subtitle">{subtitle}</h3>
+        <h3 className="heading__text heading__text--subtitle">{description}</h3>
       )}
     </div>
   )
 }
+
+Heading.defaultProps = {
+  size: SIZES.MEDIUM,
+};

@@ -6,5 +6,7 @@ export type TMerge<A, B> = ({ [K in keyof A]: K extends keyof B ? B[K] : A[K] } 
   ? { [K in keyof O]: O[K] }
   : never;
 
+export type TValueOf<T> = T[keyof T];
+
 // Filter
 export type TFilterData = 'ALL' | 'PRICE_LOW' | 'PRICE_HIGH' | 'CATEGORY'

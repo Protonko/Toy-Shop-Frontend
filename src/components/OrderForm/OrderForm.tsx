@@ -8,7 +8,7 @@ interface IOrderFormProps {
   toggleSelectProduct: (id: number | string) => void,
   deleteSelected: () => void,
   cartItems: Array<IProduct>,
-  cartSelectedItems:Array<IProduct>,
+  cartSelectedItems?: Array<IProduct>,
   total: number,
   fullPrice: number,
   sale: number,

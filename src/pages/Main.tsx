@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {FC} from 'react';
 import MainContainer from 'containers/Main';
 
-export const Main = () => {
+export const Main: FC = () => {
   return <MainContainer />
 };

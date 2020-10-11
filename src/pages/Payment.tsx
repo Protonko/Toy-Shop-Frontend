@@ -1,12 +1,15 @@
-import React, {useState, useEffect, useCallback} from 'react';
+// types
+import {IPayment} from 'models/interfaces';
+
+import React, {FC, useState, useEffect, useCallback} from 'react';
 import {PaymentApi} from 'Api/Payment';
 import {Loader} from 'components/Common/Loader';
 import {Notification} from 'components/Common/Notification';
 import {PaymentBlock} from 'components/PaymentBlock/PaymentBlock';
 
-export const Payment = () => {
-  const [data, setData] = useState(null);
-  const [errorMessage, setErrorMessage] = useState(null);
+export const Payment: FC = () => {
+  const [data, setData] = useState<Array<IPayment> | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const fetchData = useCallback(() => {
     PaymentApi.getData().then(
@@ -14,7 +17,7 @@ export const Payment = () => {
         setData(response);
         setErrorMessage(null);
       },
-      error => {
+      (error: string) => {
         setData(null);
         setErrorMessage(error);
       },
@@ -25,7 +28,7 @@ export const Payment = () => {
     fetchData();
   }, [fetchData]);
 
-  const renderItem = item => <PaymentBlock key={item.id} {...item} />;
+  const renderItem = (item: IPayment) => <PaymentBlock key={item.id} {...item} />;
 
   if (data) {
     return (

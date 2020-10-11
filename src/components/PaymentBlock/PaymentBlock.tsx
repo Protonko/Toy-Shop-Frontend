@@ -1,9 +1,10 @@
 import React, {FC} from 'react';
 
 interface IPaymentBlockProps {
+  id: string,
   title: string,
   description: string,
-  image: string,
+  image?: string,
 }
 
 export const PaymentBlock: FC<IPaymentBlockProps> = ({
