@@ -1,3 +1,5 @@
+@import "~react-image-gallery/styles/scss/image-gallery.scss";
+
 @import "abstract/functions";
 @import "abstract/mixins";
 @import "abstract/variables";
@@ -25,8 +27,10 @@
 @import "blocks/popup";
 @import "blocks/order";
 @import "blocks/payment";
+@import "blocks/line";
 @import "blocks/delivery-card";
 @import "blocks/delivery-cards";
+@import "blocks/product-content";
 @import "blocks/product-line";
 @import "blocks/product-lines";
 

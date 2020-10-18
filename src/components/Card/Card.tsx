@@ -35,9 +35,9 @@ export const Card: FC<ICardProps> = props => {
 
   return (
     <article className="card">
-      <div className="card__image">
+      <Link to={`/product/${id}`} className="card__image">
         <img src={image} alt={title} className="card__image-pic"/>
-      </div>
+      </Link>
 
       <div className="card__data">
         <div className="card__section card__section--body">

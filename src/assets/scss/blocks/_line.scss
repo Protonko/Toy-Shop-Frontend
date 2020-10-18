@@ -1,0 +1,35 @@
+.line {
+    margin-top: rem(10px);
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        border-bottom: rem(2px) dotted rgba($regent-gray, .5);
+    }
+
+    &__item {
+        position: relative;
+        top: rem(3px);
+        margin-left: 0;
+        padding: rem(3px);
+        background-color: $white;
+
+        &--colored {
+            color: $emerald;
+        }
+    }
+
+    &__description {
+        font-size: rem($font-size-extra-small);
+        margin-top: rem(5px);
+        margin-bottom: 0;
+        padding: rem(3px);
+        color: $text-color-secondary;
+    }
+}

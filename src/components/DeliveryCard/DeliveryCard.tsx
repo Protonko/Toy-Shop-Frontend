@@ -1,13 +1,14 @@
 import React, {FC} from 'react';
 import {IDelivery, ILines} from 'models/interfaces';
-import {DeliveryCardLine} from './DeliveryCardLine';
+import {DottedLine} from 'components/Common/DottedLine/DottedLine';
 
 export const DeliveryCard: FC<IDelivery> = ({
   lines,
   title,
   description,
 }) => {
-  const renderLine = (line: ILines) => <DeliveryCardLine {...line} key={line.id}  />
+  const renderLine = (line: ILines) =>
+    <DottedLine {...line} key={line.id}  />
 
   return (
     <article className="delivery-card">

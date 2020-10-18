@@ -9,8 +9,7 @@ interface IRouteParams {
 export const ProductDetailPage: FC = () => {
   const {id} = useParams<IRouteParams>();
   return (
-    <div>
-      Hello {id}
+    <div className="product-content">
       <ProductDetail />
     </div>
   );
