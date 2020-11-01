@@ -2,6 +2,8 @@ import React, {FC} from 'react';
 import {Link} from 'react-router-dom';
 import classNames from 'classnames';
 import {IProduct} from 'models/interfaces';
+import {TitlesButton} from 'models/enums';
+import {TTitleButton} from 'models/types';
 import {IAddToCart, IRemoveFromCart} from 'models/store/actions/cart';
 import {Button} from 'components/Common/Buttons/Button';
 
@@ -11,13 +13,6 @@ interface ICardProps {
   addToCart: (product: IProduct) => IAddToCart,
   removeFromCart: (product: IProduct) => IRemoveFromCart,
 }
-
-enum TitlesButton {
-  ADDED = 'Added',
-  ADD = 'Add to card',
-}
-
-type TTitleButton = TitlesButton.ADDED | TitlesButton.ADD
 
 export const Card: FC<ICardProps> = props => {
   const {product, selectedProducts, addToCart, removeFromCart} = props;

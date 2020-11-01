@@ -12,7 +12,6 @@ export const DottedLineItem: FC<IProps> = ({
   marked,
   classesItem,
 }) => {
-  console.log({...classesItem})
   const valueClassNames: string = classNames(
     'line__item',
     'line__item--description',

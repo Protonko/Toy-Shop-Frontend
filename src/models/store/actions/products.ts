@@ -14,3 +14,13 @@ export interface ISetProductsError {
   type: typeof ACTIONS.SET_PRODUCTS_ERROR,
   payload: any, // TODO: change on add error processing
 }
+
+export interface IGetDetailSuccess {
+  type: typeof ACTIONS.GET_DETAIL_SUCCESS,
+  payload: any, // TODO: create model for detail product
+}
+
+export interface IGetDetailError {
+  type: typeof ACTIONS.GET_DETAIL_ERROR,
+  payload: any, // TODO: change on add error processing
+}

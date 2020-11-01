@@ -8,17 +8,43 @@
         flex-shrink: 0;
         flex-basis: 75%;
         max-width: 75%;
+
+        .image-gallery-thumbnail.active,
+        .image-gallery-thumbnail:hover,
+        .image-gallery-thumbnail:focus {
+            border: rem(4px) solid $brand-color;
+        }
     }
 
     &__order {
         display: flex;
-        flex-grow: 0;
-        flex-shrink: 0;
-        flex-basis: 25%;
+        flex: 0 0 25%;
+        flex-direction: column;
         max-width: 25%;
 
         &:not(:first-child) {
             margin-left: rem(24px);
+        }
+
+        &-price {
+            margin-bottom: rem(15px);
+
+            &-relevant {
+                font-size: rem($font-size-large);
+                font-weight: $font-weight-bold;
+                margin-right: rem(10px);
+                color: $red-ribbon;
+            }
+
+            &-old {
+                font-size: rem($font-size-big);
+                font-weight: $font-weight-bold;
+                color: rgba($text-color-secondary, .6);
+            }
+        }
+
+        &-button {
+            @include padding-vertical(20px);
         }
     }
 

@@ -10,4 +10,13 @@ export class ProductsApi {
 
     return response.getContent();
   }
+
+  static async getProductDetail(): Promise<any> {
+    const response = await Api.send(
+      Api.sendRequest()
+        .url('product-detail-1.json')
+    );
+
+    return response.getContent();
+  }
 }

@@ -7,6 +7,9 @@ import {ACTIONS} from 'store/actions/products';
 
 const initialState = {
   isLoaded: false,
+  isLoadedDetail: false,
+  errorDetailMessage: null,
+  detail: {} as any, // TODO: remove
   items: [] as Array<IProduct>,
 };
 
@@ -23,6 +26,20 @@ export default (
         items: action.payload,
         isLoaded: true,
       };
+    case ACTIONS.GET_DETAIL_SUCCESS:
+      return {
+        ...state,
+        detail: action.payload,
+        isLoadedDetail: true,
+        errorDetailMessage: null,
+      };
+    case ACTIONS.GET_DETAIL_ERROR:
+      return {
+        ...state,
+        detail: {},
+        isLoadedDetail: true,
+        errorDetailMessage: action.payload,
+      }
     default:
       return {...state};
   }

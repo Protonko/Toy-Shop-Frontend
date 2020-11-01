@@ -1,6 +1,5 @@
 import React, {FC} from 'react';
 import ImageGallery from 'react-image-gallery';
-import {Description} from 'components/Common/Description/Description';
 import {DottedLine} from 'components/Common/DottedLine/DottedLine';
 import {OrderBlock} from 'components/OrderBlock/OrderBlock';
 
