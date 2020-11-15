@@ -1,24 +1,38 @@
 import React, {FC} from 'react';
 import {Button} from 'components/Common/Buttons/Button';
 
-export const OrderBlock: FC = () => {
+interface IProps {
+  price: number,
+  priceWithSale: number,
+  sale: boolean,
+  onClick: () => void,
+}
+
+export const OrderBlock: FC<IProps> = ({
+  price,
+  priceWithSale,
+  sale,
+  onClick,
+}) => {
   return (
     <>
       <div className="product-content__order-price">
         <span className="product-content__order-price-relevant">
-          $ 213
+          ${priceWithSale}
         </span>
-        <s className="product-content__order-price-old">
-          $ 68867
-        </s>
+        {sale && (
+          <s className="product-content__order-price-old">
+            ${price}
+          </s>
+        )}
       </div>
       <Button
-        title={'titleButton'}
+        title="Add to cart"
         classNamesAdditional={[
           {'button--active': false},
           'product-content__order-button'
         ]}
-        onClick={() => true}
+        onClick={onClick}
       />
     </>
   )

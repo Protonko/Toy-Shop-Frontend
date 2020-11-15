@@ -54,6 +54,13 @@
         }
     }
 
+    &__description {
+        @include margin-vertical(0);
+
+        font-size: rem(18px);
+        color: $text-color;
+    }
+
     &__carousel {
         $max-height: 300px;
 

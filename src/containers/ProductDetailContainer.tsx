@@ -53,7 +53,12 @@ const ProductDetailContainer: FC<TMerge<TState, TActions>> = ({
   }, []);
 
   return (
-    <ProductDetail detail={detail} images={images} />
+    <ProductDetail
+      detail={detail}
+      images={images}
+      isLoaded={isLoadedDetail}
+      errorMessage={errorDetailMessage}
+    />
   )
 }
 

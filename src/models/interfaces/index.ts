@@ -26,7 +26,7 @@ export interface IProduct {
 export interface IProductDetail {
   id: number,
   title: string,
-  price: string,
+  price: number,
   images: Array<string>,
   sale?: number,
   rating: number,
