@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import {Link} from 'react-router-dom';
 import classNames from 'classnames';
 import {IProduct} from 'models/interfaces';
-import {TitlesButton} from 'models/enums';
+import {TITLES_BUTTON} from 'models/enums';
 import {TTitleButton} from 'models/types';
 import {IAddToCart, IRemoveFromCart} from 'models/store/actions/cart';
 import {Button} from 'components/Common/Buttons/Button';
@@ -20,7 +20,7 @@ export const Card: FC<ICardProps> = props => {
   const productPrice: number = sale ? Math.round(price * sale) : price;
   const isAdded: boolean =
     !!selectedProducts.find((item: IProduct) => item.id === product.id);
-  const titleButton: TTitleButton = isAdded ? TitlesButton.ADDED : TitlesButton.ADD;
+  const titleButton: TTitleButton = isAdded ? TITLES_BUTTON.ADDED : TITLES_BUTTON.ADD;
   const classNamesPrice: string =
     classNames('card__data-price-text', {'card__data-price-text--new': sale});
 

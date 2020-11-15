@@ -1,7 +1,7 @@
-import {TitlesButton} from 'models/enums';
+import {TITLES_BUTTON} from 'models/enums';
 
 export type TClassName = Array<string | {[key: string]: boolean}>
-export type TTitleButton = TitlesButton.ADDED | TitlesButton.ADD
+export type TTitleButton = TITLES_BUTTON.ADDED | TITLES_BUTTON.ADD
 
 // common
 export type TMerge<A, B> = ({ [K in keyof A]: K extends keyof B ? B[K] : A[K] } &

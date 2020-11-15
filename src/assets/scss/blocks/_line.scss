@@ -7,7 +7,7 @@
 
     &__list {
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         justify-content: space-between;
         flex-wrap: wrap;
         border-bottom: rem(2px) dotted rgba($regent-gray, .5);
@@ -22,6 +22,10 @@
 
         &--colored {
             color: $emerald;
+        }
+
+        &--term {
+            max-width: 35%;
         }
     }
 

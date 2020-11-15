@@ -1,5 +1,5 @@
 import Api from './index';
-import {IProduct} from 'models/interfaces';
+import {IProduct, IProductDetail} from 'models/interfaces';
 
 export class ProductsApi {
   static async getProducts(): Promise<Array<IProduct>> {
@@ -11,10 +11,10 @@ export class ProductsApi {
     return response.getContent();
   }
 
-  static async getProductDetail(): Promise<any> {
+  static async getProductDetail(id: number): Promise<IProductDetail> {
     const response = await Api.send(
       Api.sendRequest()
-        .url('product-detail-1.json')
+        .url(`detail/product-detail-${id}.json`),
     );
 
     return response.getContent();

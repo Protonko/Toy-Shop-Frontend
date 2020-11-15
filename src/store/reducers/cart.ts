@@ -1,7 +1,10 @@
-import {ACTIONS} from 'store/actions/cart';
+// types
 import {TActionsCart} from 'models/store/actions/cart';
 import {IProduct} from 'models/interfaces';
 import {TAppAction} from 'models/store';
+import {TOGGLE_SELECT_TYPES} from 'models/enums';
+
+import {ACTIONS} from 'store/actions/cart';
 
 const initialState = {
   items: [] as Array<IProduct>,
@@ -25,7 +28,9 @@ export default (
       };
 
     case ACTIONS.REMOVE_FROM_CART:
-      const itemsRemoved = state.items.filter(product => product.id !== action.payload.id);
+      const itemsRemoved = state.items.filter(
+        product => product.id !== action.payload.id
+      );
       return {
         ...state,
         items: itemsRemoved,
@@ -38,12 +43,12 @@ export default (
             ...item,
             checked: !item.checked,
           }
-        } else if (action.payload === 'remove') {
+        } else if (action.payload === TOGGLE_SELECT_TYPES.REMOVE) {
           return {
             ...item,
             checked: false,
           }
-        } else if (action.payload === 'select') {
+        } else if (action.payload === TOGGLE_SELECT_TYPES.SELECT) {
           return {
             ...item,
             checked: true,

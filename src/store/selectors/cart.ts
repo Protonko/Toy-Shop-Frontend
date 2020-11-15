@@ -8,7 +8,7 @@ const getProducts = (products: Array<IProduct>) => products;
 
 const getSelectedItems = createSelector(
   getProducts,
-  products => products.filter(item => item.checked === true),
+  products => products.filter(item => item.checked),
 );
 
 export const getTotalPrice = createSelector(

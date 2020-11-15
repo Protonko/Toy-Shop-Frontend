@@ -1,10 +1,12 @@
+// types
+import {ILinesItems} from 'models/interfaces';
+
 import React, {FC} from 'react';
 import classNames from 'classnames';
-import {ILinesItems} from 'models/interfaces';
 import {DottedLineItem} from './DottedLineItem';
 
 interface IProps {
-  items: Array<ILinesItems>,
+  items: Array<ILinesItems | void>,
   description?: string,
   className?: string,
   classesItem?: Array<string>,
@@ -21,8 +23,13 @@ export const DottedLine: FC<IProps> = ({
     [className]
   )
 
-  const renderItem = (item: ILinesItems) =>
-    <DottedLineItem {...item} key={item.id} classesItem={classesItem} />;
+  const renderItem = (item: (ILinesItems | void), index?: number) => {
+    if (item) {
+      return <DottedLineItem {...item} key={index} classesItem={classesItem} />;
+    } else {
+      return null;
+    }
+  }
 
   return (
     <div className={classNamesLine}>

@@ -1,6 +1,12 @@
 .product-content {
-    display: flex;
-    width: 100%;
+    &__main {
+        display: flex;
+        width: 100%;
+
+        &:not(:last-child) {
+            margin-bottom: rem(40px);
+        }
+    }
 
     &__detail {
         display: flex;
@@ -57,6 +63,11 @@
     &__info {
         flex: 1;
         margin-left: rem(24px);
+
+        &-title {
+            margin-top: 0;
+            margin-bottom: rem(20px);
+        }
     }
 
     &__line {

@@ -1,19 +1,19 @@
 // types
 import {TActionsProducts} from 'models/store/actions/products';
 import {TAppAction} from 'models/store';
-import {IProduct} from 'models/interfaces';
+import {IProduct, IProductDetail} from 'models/interfaces';
 
 import {ACTIONS} from 'store/actions/products';
 
 const initialState = {
   isLoaded: false,
   isLoadedDetail: false,
-  errorDetailMessage: null,
-  detail: {} as any, // TODO: remove
+  errorDetailMessage: null as null | string,
+  detail: null as IProductDetail | null,
   items: [] as Array<IProduct>,
 };
 
-type TInitialState = typeof initialState
+export type TInitialState = typeof initialState
 
 export default (
   state = initialState,
@@ -27,6 +27,7 @@ export default (
         isLoaded: true,
       };
     case ACTIONS.GET_DETAIL_SUCCESS:
+
       return {
         ...state,
         detail: action.payload,
@@ -36,7 +37,7 @@ export default (
     case ACTIONS.GET_DETAIL_ERROR:
       return {
         ...state,
-        detail: {},
+        detail: null,
         isLoadedDetail: true,
         errorDetailMessage: action.payload,
       }

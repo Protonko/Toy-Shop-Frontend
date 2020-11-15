@@ -6,6 +6,11 @@ export interface IBaseConfig {
   headers?: Headers,
 }
 
+export interface IImageThumbnails {
+  original: string,
+  thumbnail: string
+}
+
 // Products
 export interface IProduct {
   category: string,
@@ -17,7 +22,19 @@ export interface IProduct {
   rating: number,
   sale: number,
 }
-// ./Products
+
+export interface IProductDetail {
+  id: number,
+  title: string,
+  price: string,
+  images: Array<string>,
+  sale?: number,
+  rating: number,
+  checked: boolean,
+  description: Array<ILinesItems | void>,
+  about?: string,
+}
+// ./Product
 
 // Socials
 export interface ISocials {

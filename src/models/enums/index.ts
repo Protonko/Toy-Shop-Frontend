@@ -4,7 +4,12 @@ export enum SIZES {
   LARGE = 'lg',
 }
 
-export enum TitlesButton {
+export enum TITLES_BUTTON {
   ADDED = 'Added',
   ADD = 'Add to card',
+}
+
+export enum TOGGLE_SELECT_TYPES {
+  SELECT = 'select',
+  REMOVE = 'remove'
 }
