@@ -55,9 +55,17 @@
     }
 
     &__carousel {
+        $max-height: 300px;
+
         display: flex;
         flex-basis: calc(60% - 24px);
         max-width: calc(60% - 24px);
+        height: rem($max-height);
+
+        .image-gallery-content .left .image-gallery-slide .image-gallery-image,
+        .image-gallery-content .right .image-gallery-slide .image-gallery-image {
+            height: rem($max-height);
+        }
     }
 
     &__info {
