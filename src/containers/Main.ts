@@ -1,14 +1,13 @@
+// types
 import {IProduct} from 'models/interfaces';
-import {TMerge} from 'models/types';
+import {RootState} from 'store/reducers';
 
-import React, {FC, useEffect, useCallback} from 'react';
 import {bindActionCreators, Dispatch} from 'redux';
 import {connect} from 'react-redux';
 import * as productsActions from 'store/actions/products';
 import * as filterActions from 'store/actions/filter';
 import {getFilteredProducts} from 'store/selectors/products';
 import {Main} from 'components/Main/Main';
-import {RootState} from 'store/reducers';
 
 type TState = {
   isLoaded: boolean,
@@ -34,36 +33,4 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
   ),
 });
 
-const MainContainer: FC<TMerge<TState, TActions>> = ({
-  isLoaded,
-  products,
-  selectedProducts,
-  setProducts,
-  setSearchQuery,
-}) => {
-  const fetchProducts = useCallback(() => {
-    setProducts();
-  }, [setProducts]);
-
-  const resetSearchQuery = useCallback(() => {
-    setSearchQuery('');
-  }, [setSearchQuery])
-
-  useEffect(() => {
-    fetchProducts();
-
-    return () => {
-      resetSearchQuery();
-    }
-  }, [fetchProducts, resetSearchQuery]);
-
-  return (
-    <Main
-      isLoaded={isLoaded}
-      products={products}
-      selectedProducts={selectedProducts}
-    />
-  )
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(MainContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(Main);

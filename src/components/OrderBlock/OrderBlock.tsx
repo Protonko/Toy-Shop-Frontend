@@ -5,6 +5,7 @@ interface IProps {
   price: number,
   priceWithSale: number,
   sale: boolean,
+  isAdded: boolean,
   onClick: () => void,
 }
 
@@ -13,7 +14,10 @@ export const OrderBlock: FC<IProps> = ({
   priceWithSale,
   sale,
   onClick,
+  isAdded,
 }) => {
+  const title = isAdded ? 'Remove from cart' : 'Add to cart';
+
   return (
     <>
       <div className="product-content__order-price">
@@ -27,9 +31,9 @@ export const OrderBlock: FC<IProps> = ({
         )}
       </div>
       <Button
-        title="Add to cart"
+        title={title}
         classNamesAdditional={[
-          {'button--active': false},
+          {'button--active': isAdded},
           'product-content__order-button'
         ]}
         onClick={onClick}

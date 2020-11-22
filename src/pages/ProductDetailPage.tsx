@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import ProductDetailContainer from 'containers/ProductDetailContainer';
+import ProductDetailContainer from 'containers/ProductDetail';
 
 export const ProductDetailPage: FC = () => {
   return (

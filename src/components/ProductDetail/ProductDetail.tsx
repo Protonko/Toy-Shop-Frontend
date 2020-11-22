@@ -62,7 +62,7 @@ export const ProductDetail: FC<IProps> = ({
     return () => refreshDetail();
   }, []);
 
-  const ImageComponent = () => {
+  const renderImageCarousel = () => {
     if (images) {
       return (
         <ImageGallery
@@ -85,7 +85,7 @@ export const ProductDetail: FC<IProps> = ({
           <div className="product-content__main">
             <div className="product-content__detail">
               <div className="product-content__carousel">
-                <ImageComponent />
+                {renderImageCarousel()}
               </div>
               <div className="product-content__info">
                 <h2 className="product-content__info-title">{title}</h2>
@@ -101,6 +101,7 @@ export const ProductDetail: FC<IProps> = ({
                 priceWithSale={productPrice!}
                 price={price!}
                 sale={!!sale}
+                isAdded={isAdded}
                 onClick={handlePressAddButton}
               />
             </div>
