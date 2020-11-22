@@ -2,6 +2,7 @@
 import {IProduct} from 'models/interfaces';
 
 import React, {FC, useCallback, useEffect} from 'react';
+import {usePagination} from 'hooks/usePagination';
 import {Loader} from 'components/Common/Loader';
 import {Notification} from 'components/Common/Notification';
 import Filter from 'containers/Filter';
@@ -39,6 +40,8 @@ export const Main: FC<IProps> = ({
       resetSearchQuery();
     }
   }, [fetchProducts, resetSearchQuery]);
+
+  usePagination(() => {console.log('+1')}, setProducts);
 
   if (isLoaded) {
     return (
