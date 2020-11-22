@@ -3,7 +3,7 @@ import Dotdotdot from 'react-dotdotdot';
 import placeholder from 'assets/images/placeholder.jpg';
 import {Checkbox} from 'components/Common/Checkbox';
 
-interface IProductLineProps {
+interface IProps {
   title: string,
   image?: string,
   price: number,
@@ -11,7 +11,7 @@ interface IProductLineProps {
   onChange: () => void,
 }
 
-export const ProductLine: FC<IProductLineProps> = ({
+export const ProductLine: FC<IProps> = ({
   title,
   image,
   price,

@@ -4,14 +4,14 @@ import {TValueOf} from 'models/types';
 
 import React, {FC} from 'react';
 
-interface IHeadingProps {
+interface IProps {
   title?: string,
   subtitle?: string,
   itemsLength?: number,
   size?: TValueOf<typeof SIZES>,
 }
 
-export const Heading: FC<IHeadingProps> = ({
+export const Heading: FC<IProps> = ({
   title,
   subtitle,
   itemsLength,

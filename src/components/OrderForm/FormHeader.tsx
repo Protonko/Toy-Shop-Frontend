@@ -7,12 +7,12 @@ import {ButtonLink} from 'components/Common/Buttons/ButtonLink';
 
 type TToggleSelectProduct = TOGGLE_SELECT_TYPES.REMOVE | TOGGLE_SELECT_TYPES.SELECT;
 
-interface IFormHeaderProps {
+interface IProps {
   toggleSelectProduct: (type: TToggleSelectProduct) => void,
   onClick: () => void,
 }
 
-export const FormHeader: FC<IFormHeaderProps> = ({
+export const FormHeader: FC<IProps> = ({
   toggleSelectProduct,
   onClick,
 }) => {

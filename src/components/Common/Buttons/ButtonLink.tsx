@@ -4,7 +4,7 @@ import {TClassName} from 'models/types';
 import React, {FC} from 'react';
 import classNames from 'classnames';
 
-interface IButtonLinkProps {
+interface IProps {
   text: string,
   disabled?: boolean,
   isRemoved?: boolean,
@@ -12,7 +12,7 @@ interface IButtonLinkProps {
   classNamesAdditional?: TClassName,
 }
 
-export const ButtonLink: FC<IButtonLinkProps> = ({
+export const ButtonLink: FC<IProps> = ({
   text,
   disabled,
   isRemoved,

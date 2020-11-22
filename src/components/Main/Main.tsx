@@ -7,7 +7,7 @@ import {Notification} from 'components/Common/Notification';
 import Filter from 'containers/Filter';
 import Cards from 'containers/Cards';
 
-interface IMainProps {
+interface IProps {
   isLoaded: boolean,
   products: Array<IProduct>,
   selectedProducts: Array<IProduct>,
@@ -15,7 +15,7 @@ interface IMainProps {
   setSearchQuery: (value: string) => void,
 }
 
-export const Main: FC<IMainProps> = ({
+export const Main: FC<IProps> = ({
   isLoaded,
   products,
   selectedProducts,

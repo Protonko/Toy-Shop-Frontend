@@ -6,12 +6,12 @@ import Dotdotdot from 'react-dotdotdot';
 import placeholder from 'assets/images/placeholder.jpg';
 import {Button} from 'components/Common/Buttons/Button';
 
-interface IProductProps {
+interface IProps {
   product: IProduct,
   removeFromCart: (product: IProduct) => void,
 }
 
-export const Product: FC<IProductProps> = ({
+export const Product: FC<IProps> = ({
   product,
   removeFromCart,
 }) => {

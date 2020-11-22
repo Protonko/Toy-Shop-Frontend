@@ -4,7 +4,7 @@ import {TClassName} from 'models/types';
 import React, {FC} from 'react';
 import classNames from 'classnames';
 
-interface IButtonProps {
+interface IProps {
   title: string,
   onClick: () => void,
   isRemoved?: boolean,
@@ -12,7 +12,7 @@ interface IButtonProps {
   classNamesAdditional: TClassName,
 }
 
-export const Button: FC<IButtonProps> = ({
+export const Button: FC<IProps> = ({
   title,
   onClick,
   isRemoved,

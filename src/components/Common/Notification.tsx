@@ -1,11 +1,11 @@
 import React, {FC} from 'react';
 import {ReactComponent as LoupeLogo} from 'assets/icons/loupe.svg';
 
-interface INotificationProps {
+interface IProps {
   text: string,
 }
 
-export const Notification: FC<INotificationProps> = ({text}) => {
+export const Notification: FC<IProps> = ({text}) => {
   return (
     <div className="notification">
       <div className="notification__wrapper">

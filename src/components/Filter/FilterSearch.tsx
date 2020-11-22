@@ -1,13 +1,13 @@
 import React, {ChangeEvent, FC} from 'react';
 import {Input} from 'components/Common/Input';
 
-interface IFilterSearchProps {
+interface IProps {
   placeholder: string,
   onChange: (event: ChangeEvent<HTMLInputElement>) => void,
 
 }
 
-export const FilterSearch: FC<IFilterSearchProps> = ({
+export const FilterSearch: FC<IProps> = ({
   placeholder,
   onChange,
 }) => (

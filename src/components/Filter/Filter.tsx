@@ -7,13 +7,13 @@ import {filterData} from './filterData';
 import {FilterItem} from './FilterItem';
 import {FilterSearch} from './FilterSearch';
 
-interface IFilterProps {
+interface IProps {
   setFilter: (code: TFilterData) => void,
   setSearchQuery: (value: string) => void,
   filterBy: TFilterData,
 }
 
-export const Filter: FC<IFilterProps> = ({
+export const Filter: FC<IProps> = ({
   setFilter,
   setSearchQuery,
   filterBy,

@@ -6,7 +6,7 @@ import {ProductLines} from 'components/ProductLine/ProductLines';
 import {FormHeader} from './FormHeader';
 import {FormTotalCost} from './FormTotalCost';
 
-interface IOrderFormProps {
+interface IProps {
   toggleSelectProduct: (id: number | string) => void,
   deleteSelected: () => void,
   cartItems: Array<IProduct>,
@@ -16,7 +16,7 @@ interface IOrderFormProps {
   sale: number,
 }
 
-export const OrderForm: FC<IOrderFormProps> = ({
+export const OrderForm: FC<IProps> = ({
   cartItems,
   toggleSelectProduct,
   deleteSelected,
@@ -41,6 +41,7 @@ export const OrderForm: FC<IOrderFormProps> = ({
         total={total}
         fullPrice={fullPrice}
         sale={sale}
+        cartItemsAmount={cartItemsAmount}
       />
     </form>
   )

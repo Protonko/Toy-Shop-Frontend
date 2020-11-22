@@ -7,11 +7,16 @@ import {Heading} from 'components/Common/Heading';
 import {OrderPrice} from './OrderPrice';
 import {FormSubmit} from './FormSubmit';
 
-export const FormTotalCost: FC<IOrderCost> = ({
+interface IProps extends IOrderCost {
+  cartItemsAmount: number
+}
+
+export const FormTotalCost: FC<IProps> = ({
   amount,
   total,
   fullPrice,
   sale,
+  cartItemsAmount,
 }) => {
   return (
     <div className="order__section order__section--footer order__box">
@@ -22,7 +27,11 @@ export const FormTotalCost: FC<IOrderCost> = ({
         fullPrice={fullPrice}
         sale={sale}
       />
-      <FormSubmit text={DESCRIPTION_ORDER} onClick={() => true} />
+      <FormSubmit
+        text={DESCRIPTION_ORDER}
+        onClick={() => true}
+        cartItemsAmount={cartItemsAmount}
+      />
     </div>
   );
 };

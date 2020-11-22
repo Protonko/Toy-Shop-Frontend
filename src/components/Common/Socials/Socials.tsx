@@ -4,11 +4,11 @@ import {ISocials} from 'models/interfaces';
 import React, {FC} from 'react';
 import {SocialsItem} from './SocialsItem';
 
-interface ISocialsProps {
+interface IProps {
   data: Array<ISocials>,
 }
 
-export const Socials: FC<ISocialsProps> = ({data}) => {
+export const Socials: FC<IProps> = ({data}) => {
   const renderLink = (link: ISocials, index: number) => (
     <SocialsItem key={index} {...link} />
   );

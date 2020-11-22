@@ -1,11 +1,11 @@
 import React, {FC, ReactNode} from 'react';
 
-interface IContainerProps {
+interface IProps {
   children: ReactNode,
   classNames: string,
 }
 
-export const Container: FC<IContainerProps> = ({
+export const Container: FC<IProps> = ({
   children,
   classNames,
 }) => (

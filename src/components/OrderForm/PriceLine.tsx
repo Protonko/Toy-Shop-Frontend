@@ -1,14 +1,14 @@
 import React, {FC} from 'react';
 import classNames from 'classnames';
 
-interface IPriceLineProps {
+interface IProps {
   text: string,
   price: string,
   isSale: boolean,
   isBig: boolean,
 }
 
-export const PriceLine: FC<IPriceLineProps> = ({
+export const PriceLine: FC<IProps> = ({
   text,
   price,
   isSale,

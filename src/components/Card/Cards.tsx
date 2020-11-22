@@ -3,14 +3,14 @@ import {IProduct} from 'models/interfaces';
 import {IAddToCart, IRemoveFromCart} from 'models/store/actions/cart';
 import {Card} from 'components/Card/Card';
 
-interface ICardsProps {
+interface IProps {
   products: Array<IProduct>,
   selectedProducts: Array<IProduct>,
   addToCart: (product: IProduct) => IAddToCart,
   removeFromCart: (product: IProduct) => IRemoveFromCart,
 }
 
-export const Cards: FC<ICardsProps> = ({
+export const Cards: FC<IProps> = ({
   products,
   selectedProducts,
   addToCart,

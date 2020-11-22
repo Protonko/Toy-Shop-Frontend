@@ -1,13 +1,15 @@
 import React, {FC} from 'react';
 import {Button} from 'components/Common/Buttons/Button';
 
-interface IFormSubmitProps {
+interface IProps {
   text: string,
+  cartItemsAmount: number,
   onClick: () => void,
 }
 
-export const FormSubmit: FC<IFormSubmitProps> = ({
+export const FormSubmit: FC<IProps> = ({
   text,
+  cartItemsAmount,
   onClick,
 }) => {
   return (
@@ -22,6 +24,7 @@ export const FormSubmit: FC<IFormSubmitProps> = ({
             title="Checkout"
             classNamesAdditional={['order__submit-button']}
             onClick={onClick}
+            disabled={!cartItemsAmount}
           />
         </li>
       </ul>

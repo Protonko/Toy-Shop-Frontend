@@ -1,13 +1,13 @@
 import React, {FC} from 'react';
 
-interface ITileProps {
+interface IProps {
   href: string,
   image: string,
   title: string,
   description?: string,
 }
 
-export const Tile: FC<ITileProps> = ({
+export const Tile: FC<IProps> = ({
   href,
   image,
   title,

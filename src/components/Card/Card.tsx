@@ -7,14 +7,14 @@ import {TTitleButton} from 'models/types';
 import {IAddToCart, IRemoveFromCart} from 'models/store/actions/cart';
 import {Button} from 'components/Common/Buttons/Button';
 
-interface ICardProps {
+interface IProps {
   product: IProduct,
   selectedProducts: Array<IProduct>,
   addToCart: (product: IProduct) => IAddToCart,
   removeFromCart: (product: IProduct) => IRemoveFromCart,
 }
 
-export const Card: FC<ICardProps> = props => {
+export const Card: FC<IProps> = props => {
   const {product, selectedProducts, addToCart, removeFromCart} = props;
   const {price, sale, image, title, id} = product;
   const productPrice = sale ? Math.round(price * sale) : price;

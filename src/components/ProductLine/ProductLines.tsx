@@ -4,12 +4,12 @@ import {IProduct} from 'models/interfaces';
 import React, {FC} from 'react';
 import {ProductLine} from './ProductLine';
 
-interface IProductLinesProps {
+interface IProps {
   products: Array<IProduct>,
   toggleSelectProduct: (id: number | string) => void,
 }
 
-export const ProductLines: FC<IProductLinesProps> = ({
+export const ProductLines: FC<IProps> = ({
   products,
   toggleSelectProduct,
 }) => {

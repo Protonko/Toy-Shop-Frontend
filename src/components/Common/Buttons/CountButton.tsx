@@ -1,12 +1,12 @@
 import React, {FC} from 'react';
 import classNames from 'classnames';
 
-interface ICountButtonProps {
+interface IProps {
   isMinus?: boolean,
   onClick: () => void,
 }
 
-export const CountButton: FC<ICountButtonProps> = ({
+export const CountButton: FC<IProps> = ({
   isMinus,
   onClick,
 }) => {

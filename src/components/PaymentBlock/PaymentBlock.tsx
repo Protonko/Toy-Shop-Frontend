@@ -1,13 +1,13 @@
 import React, {FC} from 'react';
 
-interface IPaymentBlockProps {
+interface IProps {
   id: string,
   title: string,
   description: string,
   image?: string,
 }
 
-export const PaymentBlock: FC<IPaymentBlockProps> = ({
+export const PaymentBlock: FC<IProps> = ({
   title,
   description,
   image,

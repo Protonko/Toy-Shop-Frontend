@@ -4,7 +4,7 @@ import {TClassName} from 'models/types';
 import React, {FC, ReactNode} from 'react';
 import classNames from 'classnames';
 
-interface IButtonIconedProps {
+interface IProps {
   children: ReactNode,
   onClick: () => void,
   disabled?: boolean,
@@ -12,7 +12,7 @@ interface IButtonIconedProps {
   attrs?: Array<string | number>,
 }
 
-export const ButtonIconed: FC<IButtonIconedProps> = ({
+export const ButtonIconed: FC<IProps> = ({
   children,
   onClick,
   disabled,

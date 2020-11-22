@@ -1,11 +1,11 @@
 import React, {ChangeEvent, FC} from 'react';
 
-interface IInputProps {
+interface IProps {
   placeholder: string,
   onChange: (event: ChangeEvent<HTMLInputElement>) => void,
 }
 
-export const Input: FC<IInputProps> = ({placeholder, onChange}) => (
+export const Input: FC<IProps> = ({placeholder, onChange}) => (
     <input
         type="text"
         placeholder={placeholder}

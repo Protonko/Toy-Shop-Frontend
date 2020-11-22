@@ -5,14 +5,14 @@ import {IProduct} from 'models/interfaces';
 import {CartPopup} from './CartPopup';
 import {ButtonIconed} from 'components/Common/Buttons/ButtonIconed';
 
-interface ICartProps {
+interface IProps {
   total: number,
   countProducts: number,
   items: Array<IProduct>,
   removeFromCart: (item: IProduct) => void,
 }
 
-export const Cart: FC<ICartProps> = ({
+export const Cart: FC<IProps> = ({
   total,
   countProducts,
   items,

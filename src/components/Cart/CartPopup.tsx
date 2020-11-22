@@ -6,13 +6,13 @@ import {useOutsideClick} from 'hooks/useOutsideClick';
 import {Product} from 'components/Product/Product';
 import {IProduct} from 'models/interfaces';
 
-interface ICartPopupProps {
+interface IProps {
   setPopupVisible: (popupVisible: boolean) => void,
   removeFromCart: (item: IProduct) => void,
   items: Array<IProduct>,
 }
 
-export const CartPopup: FC<ICartPopupProps> = ({
+export const CartPopup: FC<IProps> = ({
  setPopupVisible,
  removeFromCart,
  items,
