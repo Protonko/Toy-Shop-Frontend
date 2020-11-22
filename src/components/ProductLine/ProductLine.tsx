@@ -1,10 +1,11 @@
 import React, {FC} from 'react';
 import Dotdotdot from 'react-dotdotdot';
+import placeholder from 'assets/images/placeholder.jpg';
 import {Checkbox} from 'components/Common/Checkbox';
 
 interface IProductLineProps {
   title: string,
-  image: string,
+  image?: string,
   price: number,
   checked?: boolean,
   onChange: () => any, // TODO - убрать
@@ -17,12 +18,14 @@ export const ProductLine: FC<IProductLineProps> = ({
   checked,
   onChange,
 }) => {
+  const picture = image ?? placeholder;
+
   return (
     <label className="product-line">
       <div className="product-line__info">
         <Checkbox checked={checked} onChange={onChange} />
 
-        <div className="product-line__image" style={{backgroundImage: `url(${image})`} }/>
+        <div className="product-line__image" style={{backgroundImage: `url(${picture})`}}/>
 
         <Dotdotdot className="product-line__truncate" clamp={2}>
           <div className="product-line__title">{title}</div>

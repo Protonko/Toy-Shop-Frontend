@@ -1,28 +1,66 @@
 // types
-import {IImageThumbnails, IProductDetail} from 'models/interfaces';
+import {IImageThumbnails, IProduct, IProductDetail} from 'models/interfaces';
+import {IAddToCart, IRemoveFromCart} from 'models/store/actions/cart';
 
-import React, {FC} from 'react';
+import React, {FC, useEffect} from 'react';
+import {useParams} from 'react-router-dom';
 import ImageGallery from 'react-image-gallery';
 import placeholder from 'assets/images/placeholder.jpg';
 import {Loader} from 'components/Common/Loader';
+import {ErrorMessage} from 'components/Common/ErrorMessage';
 import {DottedLine} from 'components/Common/DottedLine/DottedLine';
 import {OrderBlock} from 'components/OrderBlock/OrderBlock';
+
+interface IRouteParams {
+  id?: string,
+}
 
 interface IProps {
   detail: IProductDetail | null,
   images: Array<IImageThumbnails> | null,
-  isLoaded: boolean,
-  errorMessage: string | null,
+  isLoadedDetail: boolean,
+  errorDetailMessage: string | null,
+  addToCart: (product: IProduct) => IAddToCart,
+  removeFromCart: (product: IProduct) => IRemoveFromCart,
+  selectedProducts: Array<IProduct>,
+  getProductDetail: (id: number) => void,
+  refreshDetail: () => void,
 }
 
 export const ProductDetail: FC<IProps> = ({
   detail,
   images,
-  isLoaded,
-  errorMessage,
+  isLoadedDetail,
+  errorDetailMessage,
+  addToCart,
+  removeFromCart,
+  selectedProducts,
+  refreshDetail,
+  getProductDetail,
 }) => {
+  const {id} = useParams<IRouteParams>();
   const {title, about, description, price, sale} = detail ?? {};
   const productPrice = sale ? Math.round(price! * sale) : price;
+  const isAdded = !!selectedProducts.find(
+    (item: IProduct) => item.id === detail?.id);
+  const handlePressAddButton = () => {
+    isAdded ? removeFromCart(detail!) : addToCart(detail!);
+  }
+
+  const refreshDetailPage = () => {
+    if (id) {
+      refreshDetail();
+      getProductDetail(+id);
+    }
+  }
+
+  useEffect(() => {
+    if (id) {
+      getProductDetail(+id);
+    }
+
+    return () => refreshDetail();
+  }, []);
 
   const ImageComponent = () => {
     if (images) {
@@ -40,7 +78,7 @@ export const ProductDetail: FC<IProps> = ({
     }
   }
 
-  if (isLoaded) {
+  if (isLoadedDetail) {
     if (detail) {
       return (
         <>
@@ -63,7 +101,7 @@ export const ProductDetail: FC<IProps> = ({
                 priceWithSale={productPrice!}
                 price={price!}
                 sale={!!sale}
-                onClick={() => true}
+                onClick={handlePressAddButton}
               />
             </div>
           </div>
@@ -74,7 +112,10 @@ export const ProductDetail: FC<IProps> = ({
       );
     } else {
       return (
-        <div>{errorMessage}</div>
+        <ErrorMessage
+          message={errorDetailMessage ?? 'Error'}
+          onClick={refreshDetailPage}
+        />
       )
     }
   } else {

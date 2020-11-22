@@ -8,30 +8,29 @@ export interface IBaseConfig {
 
 export interface IImageThumbnails {
   original: string,
-  thumbnail: string
+  thumbnail: string,
+}
+
+export interface IError {
+  message: string,
+  stack?: string,
 }
 
 // Products
 export interface IProduct {
+  id: number,
   category: string,
   title: string,
-  image: string,
-  checked: boolean,
-  id: number,
   price: number,
-  rating: number,
-  sale: number,
-}
-
-export interface IProductDetail {
-  id: number,
-  title: string,
-  price: number,
-  images: Array<string>,
+  image?: string,
   sale?: number,
   rating: number,
   checked: boolean,
+}
+
+export interface IProductDetail extends  IProduct{
   description: Array<ILinesItems | void>,
+  images?: Array<string>,
   about?: string,
 }
 // ./Product

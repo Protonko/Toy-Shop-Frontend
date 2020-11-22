@@ -7,7 +7,8 @@ export type TActionsProducts =
   | typeof ACTIONS.SET_PRODUCTS_SUCCESS
   | typeof ACTIONS.SET_PRODUCTS_ERROR
   | typeof ACTIONS.GET_DETAIL_SUCCESS
-  | typeof ACTIONS.GET_DETAIL_ERROR;
+  | typeof ACTIONS.GET_DETAIL_ERROR
+  | typeof ACTIONS.REFRESH_DETAIL;
 
 export interface ISetProductsSuccess {
   type: typeof ACTIONS.SET_PRODUCTS_SUCCESS,
@@ -27,4 +28,8 @@ export interface IGetDetailSuccess {
 export interface IGetDetailError {
   type: typeof ACTIONS.GET_DETAIL_ERROR,
   payload: string,
+}
+
+export interface IRefreshDetail {
+  type: typeof ACTIONS.REFRESH_DETAIL,
 }

@@ -1,4 +1,6 @@
 .product-content {
+    width: 100%;
+
     &__main {
         display: flex;
         width: 100%;
@@ -72,6 +74,20 @@
         .image-gallery-content .left .image-gallery-slide .image-gallery-image,
         .image-gallery-content .right .image-gallery-slide .image-gallery-image {
             height: rem($max-height);
+        }
+
+        .image-gallery-thumbnail {
+            height: rem(100px);
+
+            &-inner {
+                height: rem(85px);
+            }
+
+            &-image {
+                height: 100%;
+
+                @include object-fit(contain);
+            }
         }
     }
 

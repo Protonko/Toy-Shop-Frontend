@@ -1,12 +1,13 @@
 import keyMirror from 'utils/keyMirror';
 import {ProductsApi} from 'Api/Products';
 import {TAppThunk} from 'models/store';
-import {IProduct, IProductDetail} from 'models/interfaces';
+import {IProduct, IProductDetail, IError} from 'models/interfaces';
 import {
   ISetProductsSuccess,
   ISetProductsError,
   IGetDetailSuccess,
   IGetDetailError,
+  IRefreshDetail,
 } from 'models/store/actions/products';
 
 const PREFIX = '[PRODUCTS]';
@@ -15,7 +16,8 @@ export const ACTIONS = keyMirror([
     'SET_PRODUCTS_SUCCESS',
     'SET_PRODUCTS_ERROR',
     'GET_DETAIL_SUCCESS',
-    'GET_DETAIL_ERROR'
+    'GET_DETAIL_ERROR',
+    'REFRESH_DETAIL',
   ],
   PREFIX,
 );
@@ -32,6 +34,9 @@ const getDetailSuccess = (payload: IProductDetail): IGetDetailSuccess =>
 const getDetailError = (payload: string): IGetDetailError =>
   ({type: ACTIONS.GET_DETAIL_ERROR, payload});
 
+export const refreshDetail = (): IRefreshDetail =>
+  ({type: ACTIONS.REFRESH_DETAIL})
+
 export const setProducts = (): TAppThunk =>
     dispatch =>
       ProductsApi.getProducts().then(
@@ -43,5 +48,5 @@ export const getProductDetail = (id: number): TAppThunk =>
   dispatch =>
     ProductsApi.getProductDetail(id).then(
       response => dispatch(getDetailSuccess(response)),
-      error => dispatch(getDetailError(error)),
+      (error: IError) => dispatch(getDetailError(error.message)),
     );

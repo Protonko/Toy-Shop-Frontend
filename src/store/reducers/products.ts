@@ -41,6 +41,13 @@ export default (
         isLoadedDetail: true,
         errorDetailMessage: action.payload,
       }
+    case ACTIONS.REFRESH_DETAIL:
+      return {
+        ...state,
+        detail: null,
+        isLoadedDetail: false,
+        errorDetailMessage: null,
+      }
     default:
       return {...state};
   }

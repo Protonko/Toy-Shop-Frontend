@@ -1,5 +1,4 @@
-import React, {FC, useEffect} from 'react';
-import {useParams} from 'react-router-dom';
+import React, {FC} from 'react';
 import ProductDetailContainer from 'containers/ProductDetailContainer';
 
 export const ProductDetailPage: FC = () => {

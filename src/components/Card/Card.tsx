@@ -17,11 +17,11 @@ interface ICardProps {
 export const Card: FC<ICardProps> = props => {
   const {product, selectedProducts, addToCart, removeFromCart} = props;
   const {price, sale, image, title, id} = product;
-  const productPrice: number = sale ? Math.round(price * sale) : price;
-  const isAdded: boolean =
-    !!selectedProducts.find((item: IProduct) => item.id === product.id);
+  const productPrice = sale ? Math.round(price * sale) : price;
+  const isAdded = !!selectedProducts.find(
+    (item: IProduct) => item.id === product.id);
   const titleButton: TTitleButton = isAdded ? TITLES_BUTTON.ADDED : TITLES_BUTTON.ADD;
-  const classNamesPrice: string =
+  const classNamesPrice =
     classNames('card__data-price-text', {'card__data-price-text--new': sale});
 
   const handleClickCartButton = (product: IProduct): void => {
