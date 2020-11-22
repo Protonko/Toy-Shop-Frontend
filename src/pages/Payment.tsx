@@ -1,5 +1,5 @@
 // types
-import {IPayment} from 'models/interfaces';
+import {IError, IPayment} from 'models/interfaces';
 
 import React, {FC, useState, useEffect, useCallback} from 'react';
 import {PaymentApi} from 'Api/Payment';
@@ -17,9 +17,9 @@ export const Payment: FC = () => {
         setData(response);
         setErrorMessage(null);
       },
-      (error: string) => {
+      (error: IError) => {
         setData(null);
-        setErrorMessage(error);
+        setErrorMessage(error.message);
       },
     );
   }, [setData, setErrorMessage]);

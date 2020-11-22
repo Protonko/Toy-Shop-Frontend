@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 interface ICountButtonProps {
   isMinus?: boolean,
-  onClick: () => any // TODO - убрать
+  onClick: () => void,
 }
 
 export const CountButton: FC<ICountButtonProps> = ({
@@ -17,6 +17,10 @@ export const CountButton: FC<ICountButtonProps> = ({
   );
 
   return (
-      <button className={classNamesButton} onClick={onClick} data-symbol={isMinus ? '-' : '+'} />
+      <button
+        className={classNamesButton}
+        onClick={onClick}
+        data-symbol={isMinus ? '-' : '+'}
+      />
   );
 };

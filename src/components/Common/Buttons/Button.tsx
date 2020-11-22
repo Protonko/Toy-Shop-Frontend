@@ -1,10 +1,12 @@
+// types
+import {TClassName} from 'models/types';
+
 import React, {FC} from 'react';
 import classNames from 'classnames';
-import {TClassName} from 'models/types';
 
 interface IButtonProps {
   title: string,
-  onClick: () => any, // TODO - убрать
+  onClick: () => void,
   isRemoved?: boolean,
   disabled?: boolean,
   classNamesAdditional: TClassName,

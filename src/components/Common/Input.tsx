@@ -1,8 +1,8 @@
-import React, {FC} from 'react';
+import React, {ChangeEvent, FC} from 'react';
 
 interface IInputProps {
   placeholder: string,
-  onChange: (value: any) => any, // TODO - убрать
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void,
 }
 
 export const Input: FC<IInputProps> = ({placeholder, onChange}) => (

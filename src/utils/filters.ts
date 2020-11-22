@@ -1,5 +1,6 @@
 // types
 import {IProduct} from 'models/interfaces';
+import {FILTER_TYPES, ORDER_BY} from 'models/enums';
 
 import {orderBy} from './orderBy';
 
@@ -15,12 +16,12 @@ const sortProducts = (
   filterBy: string,
 ) => {
   switch (filterBy.toUpperCase()) {
-    case 'PRICE_LOW':
-      return orderBy(products, 'price', 'ASC');
-    case 'PRICE_HIGH':
-      return orderBy(products, 'price', 'DESC');
-    case 'CATEGORY':
-      return orderBy(products, 'category', 'ASC');
+    case FILTER_TYPES.PRICE_LOW:
+      return orderBy(products, 'price', ORDER_BY.ASC);
+    case FILTER_TYPES.PRICE_HIGH:
+      return orderBy(products, 'price', ORDER_BY.DESC);
+    case FILTER_TYPES.CATEGORY:
+      return orderBy(products, 'category', ORDER_BY.ASC);
     default:
       return products;
   }

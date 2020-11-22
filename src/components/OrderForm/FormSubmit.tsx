@@ -3,7 +3,7 @@ import {Button} from 'components/Common/Buttons/Button';
 
 interface IFormSubmitProps {
   text: string,
-  onClick: () => any // TODO - убрать
+  onClick: () => void,
 }
 
 export const FormSubmit: FC<IFormSubmitProps> = ({

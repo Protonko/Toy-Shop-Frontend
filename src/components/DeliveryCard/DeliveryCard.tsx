@@ -1,5 +1,7 @@
-import React, {FC} from 'react';
+// types
 import {IDelivery, ILines} from 'models/interfaces';
+
+import React, {FC} from 'react';
 import {DottedLine} from 'components/Common/DottedLine/DottedLine';
 
 export const DeliveryCard: FC<IDelivery> = ({

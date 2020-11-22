@@ -1,8 +1,10 @@
-import React, {FC} from 'react';
+// types
 import {IProduct} from 'models/interfaces';
+
+import React, {FC} from 'react';
+import {ProductLines} from 'components/ProductLine/ProductLines';
 import {FormHeader} from './FormHeader';
 import {FormTotalCost} from './FormTotalCost';
-import {ProductLines} from 'components/ProductLine/ProductLines';
 
 interface IOrderFormProps {
   toggleSelectProduct: (id: number | string) => void,

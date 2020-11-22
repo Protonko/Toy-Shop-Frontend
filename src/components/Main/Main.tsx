@@ -1,5 +1,7 @@
-import React, {FC, useCallback, useEffect} from 'react';
+// types
 import {IProduct} from 'models/interfaces';
+
+import React, {FC, useCallback, useEffect} from 'react';
 import {Loader} from 'components/Common/Loader';
 import {Notification} from 'components/Common/Notification';
 import Filter from 'containers/Filter';

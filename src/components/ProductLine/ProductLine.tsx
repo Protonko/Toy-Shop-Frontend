@@ -8,7 +8,7 @@ interface IProductLineProps {
   image?: string,
   price: number,
   checked?: boolean,
-  onChange: () => any, // TODO - убрать
+  onChange: () => void,
 }
 
 export const ProductLine: FC<IProductLineProps> = ({

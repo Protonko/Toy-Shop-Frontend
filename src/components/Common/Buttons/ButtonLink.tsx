@@ -1,6 +1,8 @@
+// types
+import {TClassName} from 'models/types';
+
 import React, {FC} from 'react';
 import classNames from 'classnames';
-import {TClassName} from 'models/types';
 
 interface IButtonLinkProps {
   text: string,

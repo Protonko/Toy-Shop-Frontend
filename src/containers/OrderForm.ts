@@ -1,3 +1,4 @@
+// types
 import {TInitialState} from 'store/reducers/cart';
 
 import {connect} from 'react-redux';

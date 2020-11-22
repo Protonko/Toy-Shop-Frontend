@@ -1,11 +1,9 @@
 import React, {FC} from 'react';
-import {ReactComponent as Vk} from 'assets/icons/vk.svg';
 import {socialsData} from './socialsData';
 import {Container} from 'components/Common/Container';
 import {Socials} from 'components/Common/Socials/Socials';
 
 export const Footer: FC = () => {
-  console.log(Vk)
   return (
     <footer className="page__footer footer">
       <Container classNames="container page__footer-wrapper">

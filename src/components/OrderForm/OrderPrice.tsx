@@ -1,5 +1,7 @@
-import React, {FC} from 'react';
+// types
 import {IOrderCost} from 'models/interfaces';
+
+import React, {FC} from 'react';
 import {PriceLine} from './PriceLine';
 
 export const OrderPrice: FC<IOrderCost> = ({

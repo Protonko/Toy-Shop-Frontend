@@ -1,5 +1,7 @@
-import {ACTIONS} from 'store/actions/cart';
+// types
 import {IProduct} from 'models/interfaces';
+
+import {ACTIONS} from 'store/actions/cart';
 
 export type TActionsCart =
   | typeof ACTIONS.ADD_TO_CART

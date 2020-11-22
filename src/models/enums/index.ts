@@ -11,5 +11,17 @@ export enum TITLES_BUTTON {
 
 export enum TOGGLE_SELECT_TYPES {
   SELECT = 'select',
-  REMOVE = 'remove'
+  REMOVE = 'remove',
+}
+
+export enum FILTER_TYPES {
+  ALL = 'ALL',
+  PRICE_LOW = 'PRICE_LOW',
+  PRICE_HIGH = 'PRICE_HIGH',
+  CATEGORY = 'CATEGORY',
+}
+
+export enum ORDER_BY {
+  ASC = 'ASC',
+  DESC = 'DESC',
 }

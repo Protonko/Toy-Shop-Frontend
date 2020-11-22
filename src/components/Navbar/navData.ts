@@ -1,3 +1,4 @@
+// types
 import {INavData} from 'models/interfaces';
 
 export const navData: Array<INavData> = [

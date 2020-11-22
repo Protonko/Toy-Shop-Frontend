@@ -1,12 +1,14 @@
+// types
+import {IProduct} from 'models/interfaces';
+
 import React, {FC} from 'react';
 import Dotdotdot from 'react-dotdotdot';
 import placeholder from 'assets/images/placeholder.jpg';
-import {IProduct} from 'models/interfaces';
 import {Button} from 'components/Common/Buttons/Button';
 
 interface IProductProps {
   product: IProduct,
-  removeFromCart: (product: IProduct) => any, // TODO - убрать
+  removeFromCart: (product: IProduct) => void,
 }
 
 export const Product: FC<IProductProps> = ({

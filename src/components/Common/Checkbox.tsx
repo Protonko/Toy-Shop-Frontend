@@ -1,12 +1,14 @@
+// types
+import {TClassName} from 'models/types';
+
 import React, {FC} from 'react';
 import classNames from 'classnames';
-import {TClassName} from 'models/types';
 
 interface ICheckboxProps {
   text?: string,
   classNamesText?: TClassName,
   checked?: boolean,
-  onChange: () => any // TODO - убрать
+  onChange: () => void,
 }
 
 export const Checkbox: FC<ICheckboxProps> = ({

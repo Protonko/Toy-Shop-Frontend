@@ -1,5 +1,7 @@
-import {ACTIONS} from 'store/actions/filter';
+// types
 import {TFilterData} from 'models/types';
+
+import {ACTIONS} from 'store/actions/filter';
 
 export type TActionsFilters =
   | typeof ACTIONS.SET_FILTER

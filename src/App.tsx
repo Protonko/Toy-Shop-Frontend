@@ -1,9 +1,5 @@
 import React, {FC} from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from 'react-router-dom';
+import {Switch, Route} from 'react-router-dom';
 import {Main} from 'pages/Main';
 import {Delivery} from 'pages/Delivery';
 import {ErrorPage} from 'pages/ErrorPage';
@@ -17,7 +13,7 @@ import {Container} from 'components/Common/Container';
 
 const App: FC = () => {
   return (
-    <Router>
+    <>
       <Header />
 
       <main className="page__content">
@@ -49,7 +45,7 @@ const App: FC = () => {
       </main>
 
       <Footer/>
-    </Router>
+    </>
   );
 };
 

@@ -1,6 +1,8 @@
+// types
+import {ILinesItems} from 'models/interfaces';
+
 import React, {FC} from 'react';
 import classNames from 'classnames';
-import {ILinesItems} from 'models/interfaces';
 
 interface IProps extends ILinesItems {
   classesItem?: Array<string>,

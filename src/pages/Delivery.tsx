@@ -1,5 +1,5 @@
 // types
-import {IDelivery} from 'models/interfaces';
+import {IDelivery, IError} from 'models/interfaces';
 
 import React, {FC, useState, useEffect, useCallback} from 'react';
 import {DeliveryApi} from 'Api/Delivery';
@@ -17,9 +17,9 @@ export const Delivery: FC = () => {
         setCards(response);
         setErrorMessage(null);
       },
-      (error: string) => {
+      (error: IError) => {
         setCards(null);
-        setErrorMessage(error);
+        setErrorMessage(error.message);
       },
     );
   }, [setCards, setErrorMessage]);

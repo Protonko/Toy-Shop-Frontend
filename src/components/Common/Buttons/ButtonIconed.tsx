@@ -1,10 +1,12 @@
+// types
+import {TClassName} from 'models/types';
+
 import React, {FC, ReactNode} from 'react';
 import classNames from 'classnames';
-import {TClassName} from 'models/types';
 
 interface IButtonIconedProps {
   children: ReactNode,
-  onClick: () => any, // TODO - убрать
+  onClick: () => void,
   disabled?: boolean,
   classNamesAdditional: TClassName,
   attrs?: Array<string | number>,

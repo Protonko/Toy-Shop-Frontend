@@ -1,18 +1,14 @@
+// types
+import {TOGGLE_SELECT_TYPES} from 'models/enums';
+
 import React, {FC, useState} from 'react';
 import {Checkbox} from 'components/Common/Checkbox';
 import {ButtonLink} from 'components/Common/Buttons/ButtonLink';
 
-// tmp
-enum TYPES_SELECT_PRODUCT {
-  REMOVE = 'remove',
-  SELECT = 'select'
-}
-
-// tmp
-type TToggleSelectProduct = TYPES_SELECT_PRODUCT.REMOVE | TYPES_SELECT_PRODUCT.SELECT;
+type TToggleSelectProduct = TOGGLE_SELECT_TYPES.REMOVE | TOGGLE_SELECT_TYPES.SELECT;
 
 interface IFormHeaderProps {
-  toggleSelectProduct: (type: TToggleSelectProduct) => any, // TODO - убрать
+  toggleSelectProduct: (type: TToggleSelectProduct) => void,
   onClick: () => void,
 }
 
@@ -25,8 +21,8 @@ export const FormHeader: FC<IFormHeaderProps> = ({
     setChecked(!checked);
     toggleSelectProduct(
       checked
-        ? TYPES_SELECT_PRODUCT.REMOVE
-        : TYPES_SELECT_PRODUCT.REMOVE
+        ? TOGGLE_SELECT_TYPES.REMOVE
+        : TOGGLE_SELECT_TYPES.REMOVE
     );
   }
 

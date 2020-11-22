@@ -8,7 +8,7 @@ import {IProduct} from 'models/interfaces';
 
 interface ICartPopupProps {
   setPopupVisible: (popupVisible: boolean) => void,
-  removeFromCart: (item: IProduct) => any, // TODO - убрать
+  removeFromCart: (item: IProduct) => void,
   items: Array<IProduct>,
 }
 
