@@ -56,7 +56,7 @@ export const CartPopup: FC<IProps> = ({
       mountOnEnter={true}
       unmountOnExit={true}
     >
-      {(state: TransitionStatus) => {
+      {state => {
         const classNamesPopup = classNames(
           'popup',
           {[TRANSITION_CLASSNAMES[state]]: !!TRANSITION_CLASSNAMES[state]}
