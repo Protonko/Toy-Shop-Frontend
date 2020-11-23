@@ -1,12 +1,12 @@
 // types
-import {TActionsDelivery} from 'models/store/actions/delivery';
-import {IDelivery} from 'models/interfaces';
+import {TActionsPayment} from 'models/store/actions/payment';
+import {IPayment} from 'models/interfaces';
 import {TAppAction} from 'models/store';
 
-import {ACTIONS} from 'store/actions/delivery';
+import {ACTIONS} from 'store/actions/payment';
 
 const initialState = {
-  items: null as Array<IDelivery> | null,
+  items: null as Array<IPayment> | null,
   errorMessage: null as null | string,
 }
 
@@ -14,7 +14,7 @@ export type TInitialState = typeof initialState;
 
 export default (
   state = initialState,
-  action: TAppAction<TActionsDelivery>,
+  action: TAppAction<TActionsPayment>,
 ): TInitialState => {
   switch (action.type) {
     case ACTIONS.GET_DATA_SUCCESS:

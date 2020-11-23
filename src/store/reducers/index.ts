@@ -3,6 +3,7 @@ import cart from './cart';
 import delivery from './delivery';
 import filter from './filter';
 import order from './order';
+import payment from './payment';
 import products from './products';
 
 const rootReducer = combineReducers({
@@ -10,6 +11,7 @@ const rootReducer = combineReducers({
     delivery,
     filter,
     order,
+    payment,
     products,
 });
 
