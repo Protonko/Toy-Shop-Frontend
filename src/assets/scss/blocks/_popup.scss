@@ -1,5 +1,3 @@
-$popup-height: 180px;
-
 .popup {
     position: absolute;
     z-index: $z-index-popup;
@@ -10,12 +8,20 @@ $popup-height: 180px;
     width: rem(250px);
     height: rem($popup-height);
     padding: rem(15px);
-    animation-name: dropDown;
-    animation-duration: $transition-duration-long;
     border-radius: rem(5px);
     background-color: $white;
     box-shadow: 0 rem(3px) rem(10px) rgba($midnight, .03),
                 0 rem(12px) rem(40px) rgba($midnight, .03);
+
+    &--drop {
+        animation-name: drop-down;
+        animation-duration: $transition-duration-long;
+    }
+
+    &--up {
+        animation-name: drop-down-reverse;
+        animation-duration: $transition-duration-long;
+    }
 
     &__section {
         flex-shrink: 0;
@@ -58,8 +64,4 @@ $popup-height: 180px;
         text-align: center;
         color: $text-color;
     }
-}
-
-@keyframes dropDown {
-    @include drop(100vh, rem(-$popup-height))
 }

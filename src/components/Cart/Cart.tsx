@@ -51,13 +51,12 @@ export const Cart: FC<IProps> = ({
             </span>
           </ButtonIconed>
 
-          {popupVisible &&
-            <CartPopup
-              items={items}
-              setPopupVisible={setPopupVisible}
-              removeFromCart={removeFromCart}
-            />
-          }
+          <CartPopup
+            items={items}
+            popupVisible={popupVisible}
+            setPopupVisible={setPopupVisible}
+            removeFromCart={removeFromCart}
+          />
         </li>
       </ul>
     </div>

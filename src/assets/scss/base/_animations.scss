@@ -1,0 +1,7 @@
+@keyframes drop-down {
+    @include drop(100vh, rem(-$popup-height));
+}
+
+@keyframes drop-down-reverse {
+    @include drop(rem(-$popup-height), 100vh)
+}
