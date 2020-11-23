@@ -4,12 +4,12 @@ import {TClassName} from 'models/types';
 import React, {FC} from 'react';
 import classNames from 'classnames';
 
-interface IProps {
+export interface IProps {
   title: string,
   onClick: () => void,
   isRemoved?: boolean,
   disabled?: boolean,
-  classNamesAdditional: TClassName,
+  classNamesAdditional?: TClassName,
 }
 
 export const Button: FC<IProps> = ({

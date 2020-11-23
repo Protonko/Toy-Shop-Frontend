@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Match snapshot 1`] = `
+<article
+  className="card"
+>
+  <Link
+    className="card__image"
+    to="/product/0"
+  >
+    <img
+      alt="title"
+      className="card__image-pic"
+    />
+  </Link>
+  <div
+    className="card__data"
+  >
+    <div
+      className="card__section card__section--body"
+    >
+      <div
+        className="card__data-price"
+      >
+        <span
+          className="card__data-price-text card__data-price-text--new"
+        >
+          $
+          9
+        </span>
+        <s
+          className="card__data-price-text card__data-price-text--old"
+        >
+          $
+          10
+        </s>
+      </div>
+      <Link
+        className="card__data-title"
+        to="/product/0"
+      >
+        title
+      </Link>
+    </div>
+    <div
+      className="card__section card__section--footer"
+    >
+      <div
+        className="card__data-actions"
+      >
+        <ul
+          className="card__data-actions-list list list--reset"
+        >
+          <li
+            className="card__data-actions-item"
+          >
+            <Component
+              classNamesAdditional={
+                Array [
+                  Object {
+                    "button--active": true,
+                  },
+                ]
+              }
+              onClick={[Function]}
+              title="Added"
+            />
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</article>
+`;

@@ -4,14 +4,13 @@ import classNames from 'classnames';
 import {IProduct} from 'models/interfaces';
 import {TITLES_BUTTON} from 'models/enums';
 import {TTitleButton} from 'models/types';
-import {IAddToCart, IRemoveFromCart} from 'models/store/actions/cart';
 import {Button} from 'components/Common/Buttons/Button';
 
-interface IProps {
+export interface IProps {
   product: IProduct,
   selectedProducts: Array<IProduct>,
-  addToCart: (product: IProduct) => IAddToCart,
-  removeFromCart: (product: IProduct) => IRemoveFromCart,
+  addToCart: (product: IProduct) => void,
+  removeFromCart: (product: IProduct) => void,
 }
 
 export const Card: FC<IProps> = props => {

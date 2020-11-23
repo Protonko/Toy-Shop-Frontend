@@ -1,13 +1,12 @@
 import React, {FC} from 'react';
 import {IProduct} from 'models/interfaces';
-import {IAddToCart, IRemoveFromCart} from 'models/store/actions/cart';
 import {Card} from 'components/Card/Card';
 
-interface IProps {
+export interface IProps {
   products: Array<IProduct>,
   selectedProducts: Array<IProduct>,
-  addToCart: (product: IProduct) => IAddToCart,
-  removeFromCart: (product: IProduct) => IRemoveFromCart,
+  addToCart: (product: IProduct) => void,
+  removeFromCart: (product: IProduct) => void,
 }
 
 export const Cards: FC<IProps> = ({

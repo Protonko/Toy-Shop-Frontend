@@ -1,0 +1,144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cards Match snapshot 1`] = `
+<div
+  class="cards"
+>
+  <ul
+    class="cards__list list list--reset"
+  >
+    <li
+      class="cards__item"
+    >
+      <article
+        class="card"
+      >
+        <a
+          class="card__image"
+          href="/product/0"
+        >
+          <img
+            alt="title"
+            class="card__image-pic"
+          />
+        </a>
+        <div
+          class="card__data"
+        >
+          <div
+            class="card__section card__section--body"
+          >
+            <div
+              class="card__data-price"
+            >
+              <span
+                class="card__data-price-text card__data-price-text--new"
+              >
+                $9
+              </span>
+              <s
+                class="card__data-price-text card__data-price-text--old"
+              >
+                $10
+              </s>
+            </div>
+            <a
+              class="card__data-title"
+              href="/product/0"
+            >
+              title
+            </a>
+          </div>
+          <div
+            class="card__section card__section--footer"
+          >
+            <div
+              class="card__data-actions"
+            >
+              <ul
+                class="card__data-actions-list list list--reset"
+              >
+                <li
+                  class="card__data-actions-item"
+                >
+                  <button
+                    class="button button--active"
+                  >
+                    Added
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+    </li>
+    <li
+      class="cards__item"
+    >
+      <article
+        class="card"
+      >
+        <a
+          class="card__image"
+          href="/product/1"
+        >
+          <img
+            alt="title 1"
+            class="card__image-pic"
+          />
+        </a>
+        <div
+          class="card__data"
+        >
+          <div
+            class="card__section card__section--body"
+          >
+            <div
+              class="card__data-price"
+            >
+              <span
+                class="card__data-price-text card__data-price-text--new"
+              >
+                $1
+              </span>
+              <s
+                class="card__data-price-text card__data-price-text--old"
+              >
+                $1
+              </s>
+            </div>
+            <a
+              class="card__data-title"
+              href="/product/1"
+            >
+              title 1
+            </a>
+          </div>
+          <div
+            class="card__section card__section--footer"
+          >
+            <div
+              class="card__data-actions"
+            >
+              <ul
+                class="card__data-actions-list list list--reset"
+              >
+                <li
+                  class="card__data-actions-item"
+                >
+                  <button
+                    class="button"
+                  >
+                    Add to card
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+    </li>
+  </ul>
+</div>
+`;
