@@ -1,5 +1,6 @@
 // types
 import {IProduct} from 'models/interfaces';
+import {TransitionStatus} from 'react-transition-group/Transition';
 
 import React, {FC, useRef} from 'react';
 import {Link} from 'react-router-dom';
@@ -17,11 +18,16 @@ interface IProps {
   popupVisible: boolean,
 }
 
-const TRANSITION_CLASSNAMES: any = {
+type TTransitionClassnames = {
+  [K in TransitionStatus]: string
+}
+
+const TRANSITION_CLASSNAMES: TTransitionClassnames = {
   entering: 'popup--drop',
   entered: '',
   exiting: 'popup--up',
   exited: '',
+  unmounted: '',
 }
 
 export const CartPopup: FC<IProps> = ({
@@ -50,7 +56,7 @@ export const CartPopup: FC<IProps> = ({
       mountOnEnter={true}
       unmountOnExit={true}
     >
-      {state => {
+      {(state: TransitionStatus) => {
         const classNamesPopup = classNames(
           'popup',
           {[TRANSITION_CLASSNAMES[state]]: !!TRANSITION_CLASSNAMES[state]}
