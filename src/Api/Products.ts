@@ -2,10 +2,10 @@ import Api from './index';
 import {IProduct, IProductDetail} from 'models/interfaces';
 
 export class ProductsApi {
-  static async getProducts(): Promise<Array<IProduct>> {
+  static async getProducts(page: number): Promise<Array<IProduct>> {
     const response = await Api.send(
       Api.sendRequest()
-        .url('products.json'),
+        .url(`list/products-${page}.json`),
     );
 
     return response.getContent();

@@ -13,6 +13,7 @@ type TState = {
   isLoaded: boolean,
   products: Array<IProduct>,
   selectedProducts: Array<IProduct>,
+  page: number,
 }
 
 type TActions = {
@@ -24,6 +25,7 @@ const mapStateToProps = ({products, filter, cart}: RootState): TState => ({
   selectedProducts: cart.items,
   products: getFilteredProducts({products, filter}),
   isLoaded: products.isLoaded,
+  page: products.page,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({

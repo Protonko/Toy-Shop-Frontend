@@ -12,8 +12,9 @@ interface IProps {
   isLoaded: boolean,
   products: Array<IProduct>,
   selectedProducts: Array<IProduct>,
-  setProducts: () => void,
+  setProducts: (page?: number) => void,
   setSearchQuery: (value: string) => void,
+  page: number,
 }
 
 export const Main: FC<IProps> = ({
@@ -22,6 +23,7 @@ export const Main: FC<IProps> = ({
   selectedProducts,
   setProducts,
   setSearchQuery,
+  page,
 }) => {
   const fetchProducts = useCallback(() => {
     setProducts();
@@ -30,6 +32,10 @@ export const Main: FC<IProps> = ({
   const resetSearchQuery = useCallback(() => {
     setSearchQuery('');
   }, [setSearchQuery])
+
+  const handleLoadMore = () => {
+    setProducts(page + 1);
+  }
 
   useEffect(() => {
     if (!products.length) {
@@ -41,7 +47,7 @@ export const Main: FC<IProps> = ({
     }
   }, [fetchProducts, resetSearchQuery]);
 
-  usePagination(() => {console.log('+1')}, setProducts);
+  usePagination(handleLoadMore);
 
   if (isLoaded) {
     return (

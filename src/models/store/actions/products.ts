@@ -10,9 +10,14 @@ export type TActionsProducts =
   | typeof ACTIONS.GET_DETAIL_ERROR
   | typeof ACTIONS.REFRESH_DETAIL;
 
+export interface IPaginationPayload {
+  response: Array<IProduct>,
+  page: number,
+}
+
 export interface ISetProductsSuccess {
   type: typeof ACTIONS.SET_PRODUCTS_SUCCESS,
-  payload: Array<IProduct>,
+  payload: IPaginationPayload,
 }
 
 export interface ISetProductsError {

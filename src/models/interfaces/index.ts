@@ -52,7 +52,7 @@ export interface ILines {
 export interface ILinesItems {
   id?: string,
   term: string,
-  value: string,
+  value: string | number,
   marked: boolean,
 }
 

@@ -1,8 +1,8 @@
 import {useEffect} from 'react';
 
 export const usePagination = (
-  pageIncrease: () => void,
-  callback: () => void
+  callback: () => void,
+  pageIncrease?: () => void,
 ) => {
   const onScroll = () => {
     const windowHeight = window.innerHeight
@@ -10,8 +10,8 @@ export const usePagination = (
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop
 
     if (windowHeight + scrollTop >= documentHeight) {
-      pageIncrease();
-      return callback();
+      pageIncrease?.();
+      callback();
     }
   }
 

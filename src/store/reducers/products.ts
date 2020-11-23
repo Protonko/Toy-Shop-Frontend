@@ -11,6 +11,7 @@ const initialState = {
   errorDetailMessage: null as null | string,
   detail: null as IProductDetail | null,
   items: [] as Array<IProduct>,
+  page: 0,
 };
 
 export type TInitialState = typeof initialState
@@ -23,8 +24,9 @@ export default (
     case ACTIONS.SET_PRODUCTS_SUCCESS:
       return {
         ...state,
-        items: action.payload,
+        items: [...state.items, ...action.payload.response],
         isLoaded: true,
+        page: action.payload.page,
       };
     case ACTIONS.GET_DETAIL_SUCCESS:
 
