@@ -1,7 +1,9 @@
-import React, {FC, useState} from 'react';
-import {ReactComponent as CartLogo} from 'assets/icons/cart.svg';
+// types
 import {TClassName} from 'models/types';
 import {IProduct} from 'models/interfaces';
+
+import React, {FC, useState} from 'react';
+import {ReactComponent as CartLogo} from 'assets/icons/cart.svg';
 import {CartPopup} from './CartPopup';
 import {ButtonIconed} from 'components/Common/Buttons/ButtonIconed';
 

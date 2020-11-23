@@ -1,3 +1,6 @@
+// types
+import {IProduct} from 'models/interfaces';
+
 import React, {FC, useRef} from 'react';
 import {Link} from 'react-router-dom';
 import {Transition} from 'react-transition-group';
@@ -6,7 +9,6 @@ import {Scrollbars} from 'react-custom-scrollbars';
 import {TRANSITION_DURATION_LONG} from 'static';
 import {useOutsideClick} from 'hooks/useOutsideClick';
 import {Product} from 'components/Product/Product';
-import {IProduct} from 'models/interfaces';
 
 interface IProps {
   setPopupVisible: (popupVisible: boolean) => void,
