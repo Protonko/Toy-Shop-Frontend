@@ -1,11 +1,10 @@
 // types
-import {IProps} from 'components/Card/Card';
 import {IProduct} from 'models/interfaces';
 
 import React from 'react';
-import {render, shallow} from 'enzyme';
+import {shallow} from 'enzyme';
 import {product, product1, selectedProducts} from 'static/__test__/card';
-import {Card} from 'components/Card/Card';
+import {Card, IProps} from 'components/Card/Card';
 
 const shallowCardComponent = (props: IProps) => (
   shallow(<Card {...props} />)

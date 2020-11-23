@@ -5,7 +5,7 @@ import {IProduct} from 'models/interfaces';
 import {CartPopup} from './CartPopup';
 import {ButtonIconed} from 'components/Common/Buttons/ButtonIconed';
 
-interface IProps {
+export interface IProps {
   total: number,
   countProducts: number,
   items: Array<IProduct>,
