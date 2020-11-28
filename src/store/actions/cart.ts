@@ -8,6 +8,7 @@ import {
 } from 'models/store/actions/cart';
 import {IProduct} from 'models/interfaces';
 import {TAppThunk} from 'models/store';
+
 import keyMirror from 'utils/keyMirror';
 import CartStorage from 'classes/LocalStorage/CartStorage';
 
@@ -28,14 +29,14 @@ export const ACTIONS = keyMirror(
   PREFIX,
 );
 
-const addToCartReducer = (payload: IProduct): IAddToCart =>
+const addToCartAction = (payload: IProduct): IAddToCart =>
   ({type: ACTIONS.ADD_TO_CART, payload});
 
 const addToCartFromLocalStorage = (payload: Array<IProduct>):
   IAddToCartFromLocalStorage =>
     ({type: ACTIONS.ADD_TO_CART_FROM_LOCAL_STORAGE, payload});
 
-export const removeFromCartReducer = (payload: IProduct): IRemoveFromCart =>
+export const removeFromCartAction = (payload: IProduct): IRemoveFromCart =>
   ({type: ACTIONS.REMOVE_FROM_CART, payload});
 
 export const toggleSelectProduct = (payload: number | string): IToggleSelectProduct =>
@@ -53,11 +54,11 @@ export const getSelectedItems = (): TAppThunk =>
 export const addToCart = (product: IProduct): TAppThunk =>
   dispatch => {
     CartStorage.setValue(product.id.toString(), product);
-    dispatch(addToCartReducer(product));
+    dispatch(addToCartAction(product));
   }
 
 export const removeFromCart = (product: IProduct): TAppThunk =>
   dispatch => {
     CartStorage.removeValue(product.id.toString());
-    dispatch(removeFromCartReducer(product));
+    dispatch(removeFromCartAction(product));
   }
