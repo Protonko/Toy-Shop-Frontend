@@ -27,6 +27,7 @@ export interface IToggleSelectProduct {
 
 export interface IDeleteSelected {
   type: typeof ACTIONS.DELETE_SELECTED,
+  payload: Array<IProduct | void>,
 }
 
 export interface IAddToCartFromLocalStorage {

@@ -32,23 +32,35 @@ export const ACTIONS = keyMirror(
 const addToCartAction = (payload: IProduct): IAddToCart =>
   ({type: ACTIONS.ADD_TO_CART, payload});
 
+const removeFromCartAction = (payload: IProduct): IRemoveFromCart =>
+  ({type: ACTIONS.REMOVE_FROM_CART, payload});
+
 const addToCartFromLocalStorage = (payload: Array<IProduct>):
   IAddToCartFromLocalStorage =>
     ({type: ACTIONS.ADD_TO_CART_FROM_LOCAL_STORAGE, payload});
 
-export const removeFromCartAction = (payload: IProduct): IRemoveFromCart =>
-  ({type: ACTIONS.REMOVE_FROM_CART, payload});
+const deleteSelectedAction = (payload: Array<IProduct | void>): IDeleteSelected =>
+  ({type: ACTIONS.DELETE_SELECTED, payload});
 
 export const toggleSelectProduct = (payload: number | string): IToggleSelectProduct =>
   ({type: ACTIONS.TOGGLE_SELECT_PRODUCT, payload});
-
-export const deleteSelected = (): IDeleteSelected => ({type: ACTIONS.DELETE_SELECTED});
 
 export const getSelectedItems = (): TAppThunk =>
   dispatch => {
     const selectedItems: IItemsFromLocalStorage = CartStorage.getData();
     const selectedItemsArray = Object.values(selectedItems);
+
     dispatch(addToCartFromLocalStorage(selectedItemsArray));
+  }
+
+export const deleteSelected = (): TAppThunk =>
+  (dispatch, getState) => {
+    const cartState = getState().cart;
+    const deletedItems = cartState.items
+      .filter(item => !item.checked);
+
+    CartStorage.setData(deletedItems);
+    dispatch(deleteSelectedAction(deletedItems));
   }
 
 export const addToCart = (product: IProduct): TAppThunk =>

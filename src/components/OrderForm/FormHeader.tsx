@@ -22,7 +22,7 @@ export const FormHeader: FC<IProps> = ({
     toggleSelectProduct(
       checked
         ? TOGGLE_SELECT_TYPES.REMOVE
-        : TOGGLE_SELECT_TYPES.REMOVE
+        : TOGGLE_SELECT_TYPES.SELECT
     );
   }
 

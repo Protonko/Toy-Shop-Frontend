@@ -70,11 +70,9 @@ export default (
       }
 
     case ACTIONS.DELETE_SELECTED:
-      const deletedItems = state.items.filter(item => !item.checked);
-
       return {
         ...state,
-        items: deletedItems,
+        items: action.payload,
       }
 
     default:
