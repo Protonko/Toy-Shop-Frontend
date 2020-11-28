@@ -1,10 +1,7 @@
-// types
-import {IProps} from 'components/Common/Buttons/CountButton';
-
 import React from 'react';
 import {shallow} from 'enzyme';
 import {ELEMENT_SELECTORS_BUTTON} from 'static/__test__/button';
-import {CountButton} from 'components/Common/Buttons/CountButton';
+import {CountButton, IProps} from 'components/Common/Buttons/CountButton';
 
 const shallowCardComponent = (props: IProps) => (
   shallow(<CountButton {...props} />)
@@ -36,4 +33,14 @@ describe('CountButton', () => {
 
     expect(classNameButton).toEqual(true);
   });
+
+  it('Should render + if prop isMinus === false', () => {
+    props = {...props, isMinus: false};
+    const countButtonComponent = shallowCardComponent(props);
+    const symbolButton = countButtonComponent
+      .find(ELEMENT_SELECTORS_BUTTON.button)
+      .prop(ELEMENT_SELECTORS_BUTTON.symbolAttr);
+
+    expect(symbolButton).toBe('+');
+  })
 });

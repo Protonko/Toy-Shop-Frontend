@@ -1,10 +1,7 @@
-// types
-import {IProps} from 'components/Common/Buttons/ButtonLink';
-
 import React from 'react';
 import {shallow} from 'enzyme';
 import {ELEMENT_SELECTORS_BUTTON} from 'static/__test__/button';
-import {ButtonLink} from 'components/Common/Buttons/ButtonLink';
+import {ButtonLink, IProps} from 'components/Common/Buttons/ButtonLink';
 
 const shallowCardComponent = (props: IProps) => (
   shallow(<ButtonLink {...props} />)

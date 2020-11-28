@@ -6,6 +6,10 @@ import {shallow} from 'enzyme';
 import {product, product1, selectedProducts} from 'static/__test__/card';
 import {Card, IProps} from 'components/Card/Card';
 
+const ELEMENT_SELECTORS = {
+  card: 'card',
+};
+
 const shallowCardComponent = (props: IProps) => (
   shallow(<Card {...props} />)
 );
@@ -32,7 +36,7 @@ describe('Card', () => {
 
   it('Should render Card component', () => {
     const component = shallowCardComponent(props);
-    const wrapper = component.find('.card');
+    const wrapper = component.find(`.${ELEMENT_SELECTORS.card}`);
     expect(wrapper.length).toBe(1);
   });
 

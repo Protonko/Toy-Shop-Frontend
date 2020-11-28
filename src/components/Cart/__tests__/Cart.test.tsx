@@ -1,20 +1,19 @@
 import React from 'react';
 import {MemoryRouter} from 'react-router';
-import {mount} from 'enzyme';
+import {shallow} from 'enzyme';
 import {products} from 'static/__test__/card';
 import {Cart, IProps} from 'components/Cart/Cart';
 
-const mountCartComponent = (props: IProps, isRouter: boolean) => {
+const shallowCartComponent = (props: IProps, isRouter: boolean) => {
   if (isRouter) {
-    return mount(<MemoryRouter><Cart {...props} /></MemoryRouter>);
+    return shallow(<MemoryRouter><Cart {...props} /></MemoryRouter>);
   } else {
-    return mount(<Cart {...props} />);
+    return shallow(<Cart {...props} />);
   }
 }
 
 describe('Cart', () => {
   let props: IProps;
-  let popupVisible: boolean;
 
   beforeEach(() => {
     props = {
@@ -23,11 +22,10 @@ describe('Cart', () => {
       items: products,
       removeFromCart: () => {},
     };
-    popupVisible = false;
   });
 
   it('Match snapshot', () => {
-    const component = mountCartComponent(props, true);
+    const component = shallowCartComponent(props, true);
 
     expect(component).toMatchSnapshot();
   });

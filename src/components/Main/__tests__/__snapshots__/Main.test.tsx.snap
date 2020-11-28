@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main Match snapshot 1`] = `
+<Fragment>
+  <div
+    className="page__content-main"
+  >
+    <Connect(Component)
+      products={
+        Array [
+          Object {
+            "category": "category",
+            "checked": true,
+            "id": 0,
+            "price": 10,
+            "rating": 5,
+            "sale": 0.9,
+            "title": "title",
+          },
+          Object {
+            "category": "category 1",
+            "checked": true,
+            "id": 1,
+            "price": 1,
+            "rating": 3,
+            "sale": 0.5,
+            "title": "title 1",
+          },
+        ]
+      }
+      selectedProducts={
+        Array [
+          Object {
+            "category": "category",
+            "checked": true,
+            "id": 0,
+            "price": 10,
+            "rating": 5,
+            "sale": 0.9,
+            "title": "title",
+          },
+        ]
+      }
+    />
+  </div>
+  <Connect(Component) />
+</Fragment>
+`;
