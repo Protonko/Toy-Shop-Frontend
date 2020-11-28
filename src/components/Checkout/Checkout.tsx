@@ -41,7 +41,7 @@ export const Checkout: FC<IProps> = ({modalVisibility, toggleVisibilityModal}) =
 
   const renderButtons = (elem: IButtons) => {
     return (
-      <li className="checkout__button">
+      <li className="checkout__button" key={elem.id}>
         <Button title={elem.title} onClick={elem.onPress} />
       </li>
     )
