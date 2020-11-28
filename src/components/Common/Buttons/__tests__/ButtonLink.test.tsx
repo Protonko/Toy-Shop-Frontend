@@ -1,23 +1,23 @@
 // types
-import {IProps} from 'components/Common/Buttons/Button';
+import {IProps} from 'components/Common/Buttons/ButtonLink';
 
 import React from 'react';
 import {shallow} from 'enzyme';
 import {ELEMENT_SELECTORS_BUTTON} from 'static/__test__/button';
-import {Button} from 'components/Common/Buttons/Button';
+import {ButtonLink} from 'components/Common/Buttons/ButtonLink';
 
 const shallowCardComponent = (props: IProps) => (
-  shallow(<Button {...props} />)
+  shallow(<ButtonLink {...props} />)
 )
 
-describe('Button', () => {
+describe('ButtonLink', () => {
   let props: IProps;
   let fn: jest.Mock<void, []>;
 
   beforeEach(() => {
     fn = jest.fn(() => {});
     props = {
-      title: 'Test',
+      text: 'Test',
       onClick: fn,
     };
   });
@@ -28,18 +28,10 @@ describe('Button', () => {
     expect(component).toMatchSnapshot();
   });
 
-  it('Should call fn onClick', () => {
-    const buttonComponent = shallowCardComponent(props);
-    const button = buttonComponent.find(ELEMENT_SELECTORS_BUTTON.button);
-
-    button.simulate('click');
-    expect(fn.mock.calls.length).toEqual(1);
-  });
-
   it('Should add className "test-button"', () => {
     props = {...props, classNamesAdditional: [ELEMENT_SELECTORS_BUTTON.testButton]}
-    const buttonComponent = shallowCardComponent(props);
-    const classNameButton = buttonComponent
+    const buttonLinkComponent = shallowCardComponent(props);
+    const classNameButton = buttonLinkComponent
       .find(ELEMENT_SELECTORS_BUTTON.button)
       .hasClass(ELEMENT_SELECTORS_BUTTON.testButton);
 

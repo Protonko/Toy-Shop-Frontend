@@ -4,11 +4,11 @@ import {TClassName} from 'models/types';
 import React, {FC, ReactNode} from 'react';
 import classNames from 'classnames';
 
-interface IProps {
+export interface IProps {
   children: ReactNode,
   onClick: () => void,
   disabled?: boolean,
-  classNamesAdditional: TClassName,
+  classNamesAdditional?: TClassName,
   attrs?: Array<string | number>,
 }
 

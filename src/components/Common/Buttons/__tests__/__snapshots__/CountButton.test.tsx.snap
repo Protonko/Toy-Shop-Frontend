@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CountButton Match snapshot 1`] = `
+<button
+  className="button button--count button--count-minus"
+  data-symbol="-"
+  onClick={[MockFunction]}
+/>
+`;

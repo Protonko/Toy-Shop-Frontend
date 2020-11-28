@@ -4,7 +4,7 @@ import {TClassName} from 'models/types';
 import React, {FC} from 'react';
 import classNames from 'classnames';
 
-interface IProps {
+export interface IProps {
   text: string,
   disabled?: boolean,
   isRemoved?: boolean,

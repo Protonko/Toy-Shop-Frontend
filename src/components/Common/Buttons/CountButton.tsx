@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import classNames from 'classnames';
 
-interface IProps {
+export interface IProps {
   isMinus?: boolean,
   onClick: () => void,
 }

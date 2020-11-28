@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonLink Match snapshot 1`] = `
+<button
+  className="button button--linked"
+  onClick={[MockFunction]}
+  type="button"
+>
+  Test
+</button>
+`;
