@@ -27,6 +27,12 @@ export default (
         items: itemsAdded,
       };
 
+    case ACTIONS.ADD_TO_CART_FROM_LOCAL_STORAGE:
+      return {
+        ...state,
+        items: action.payload,
+      };
+
     case ACTIONS.REMOVE_FROM_CART:
       const itemsRemoved = state.items.filter(
         product => product.id !== action.payload.id

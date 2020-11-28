@@ -1,6 +1,5 @@
 // types
 import {IImageThumbnails, IProduct, IProductDetail} from 'models/interfaces';
-import {IAddToCart, IRemoveFromCart} from 'models/store/actions/cart';
 
 import React, {FC, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
@@ -20,8 +19,8 @@ interface IProps {
   images: Array<IImageThumbnails> | null,
   isLoadedDetail: boolean,
   errorDetailMessage: string | null,
-  addToCart: (product: IProduct) => IAddToCart,
-  removeFromCart: (product: IProduct) => IRemoveFromCart,
+  addToCart: (product: IProduct) => void,
+  removeFromCart: (product: IProduct) => void,
   selectedProducts: Array<IProduct>,
   getProductDetail: (id: number) => void,
   refreshDetail: () => void,

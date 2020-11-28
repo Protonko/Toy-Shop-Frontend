@@ -1,5 +1,4 @@
 // types
-import {IAddToCart, IRemoveFromCart} from 'models/store/actions/cart';
 import {IProduct} from 'models/interfaces';
 
 import {connect} from 'react-redux';
@@ -13,8 +12,8 @@ type TOwnProps = {
 }
 
 type TActions = {
-  addToCart: (product: IProduct) => IAddToCart,
-  removeFromCart: (product: IProduct) => IRemoveFromCart,
+  addToCart: (product: IProduct) => void,
+  removeFromCart: (product: IProduct) => void,
 }
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({

@@ -4,7 +4,7 @@ import {TAppThunk} from 'models/store';
 import {IGetDataSuccess, IGetDataError} from 'models/store/actions/payment';
 
 import keyMirror from 'utils/keyMirror';
-import {PaymentApi} from 'Api/Payment';
+import {PaymentApi} from 'classes/Api/Payment';
 
 const PREFIX = '[PAYMENT]';
 

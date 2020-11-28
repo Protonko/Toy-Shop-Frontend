@@ -2,7 +2,7 @@
 import {TClassName} from 'models/types';
 import {IProduct} from 'models/interfaces';
 
-import React, {FC, useState} from 'react';
+import React, {FC, useState, useEffect, useCallback} from 'react';
 import {ReactComponent as CartLogo} from 'assets/icons/cart.svg';
 import {CartPopup} from './CartPopup';
 import {ButtonIconed} from 'components/Common/Buttons/ButtonIconed';
@@ -12,6 +12,7 @@ export interface IProps {
   countProducts: number,
   items: Array<IProduct>,
   removeFromCart: (item: IProduct) => void,
+  getSelectedItems: () => void,
 }
 
 export const Cart: FC<IProps> = ({
@@ -19,6 +20,7 @@ export const Cart: FC<IProps> = ({
   countProducts,
   items,
   removeFromCart,
+  getSelectedItems,
 }) => {
   const [popupVisible, setPopupVisible] = useState<boolean>(false);
   const classNamesButton: TClassName = [
@@ -26,6 +28,14 @@ export const Cart: FC<IProps> = ({
     {'cart__button--counter': !!countProducts},
     {'cart__button--active': popupVisible}
   ];
+
+  const getSelectedItemsCallback = useCallback(() => {
+    getSelectedItems();
+  }, [getSelectedItems]);
+
+  useEffect(() => {
+    getSelectedItemsCallback();
+  }, [getSelectedItemsCallback]);
 
   return (
     <div className="cart">

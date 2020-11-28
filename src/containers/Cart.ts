@@ -10,6 +10,7 @@ import {Cart} from 'components/Cart/Cart';
 
 type TActions = {
   removeFromCart: (item: IProduct) => void,
+  getSelectedItems: () => void,
 }
 
 const mapStateToProps = ({cart}: {cart: TInitialState}) => ({

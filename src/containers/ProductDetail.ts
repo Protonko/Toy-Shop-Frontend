@@ -1,6 +1,5 @@
 //types
 import {IImageThumbnails, IProduct, IProductDetail} from 'models/interfaces';
-import {IAddToCart, IRemoveFromCart} from 'models/store/actions/cart';
 import {RootState} from 'store/reducers';
 
 import {bindActionCreators, Dispatch} from 'redux';
@@ -21,8 +20,8 @@ type TState = {
 type TActions = {
   getProductDetail: (id: number) => void,
   refreshDetail: () => void,
-  addToCart: (product: IProduct) => IAddToCart,
-  removeFromCart: (product: IProduct) => IRemoveFromCart,
+  addToCart: (product: IProduct) => void,
+  removeFromCart: (product: IProduct) => void,
 }
 
 const mapStateToProps = ({cart, products}: RootState): TState => ({

@@ -4,7 +4,7 @@ import {TAppThunk} from 'models/store';
 import {IGetDataSuccess, IGetDataError} from 'models/store/actions/delivery';
 
 import keyMirror from 'utils/keyMirror';
-import {DeliveryApi} from 'Api/Delivery';
+import {DeliveryApi} from 'classes/Api/Delivery';
 
 const PREFIX = '[DELIVERY]';
 

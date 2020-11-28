@@ -1,5 +1,5 @@
 import keyMirror from 'utils/keyMirror';
-import {ProductsApi} from 'Api/Products';
+import {ProductsApi} from 'classes/Api/Products';
 import {TAppThunk} from 'models/store';
 import {IProductDetail, IError} from 'models/interfaces';
 import {
