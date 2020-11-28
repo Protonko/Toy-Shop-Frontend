@@ -1,6 +1,7 @@
 // types
 import {IProduct} from 'models/interfaces';
 import {RootState} from 'store/reducers';
+import {TErrorMessage} from 'models/types';
 
 import {bindActionCreators, Dispatch} from 'redux';
 import {connect} from 'react-redux';
@@ -14,7 +15,7 @@ type TState = {
   products: Array<IProduct>,
   selectedProducts: Array<IProduct>,
   page: number,
-  errorMessage: string | null,
+  errorMessage: TErrorMessage,
 }
 
 type TActions = {

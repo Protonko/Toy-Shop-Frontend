@@ -2,12 +2,13 @@
 import {TActionsPayment} from 'models/store/actions/payment';
 import {IPayment} from 'models/interfaces';
 import {TAppAction} from 'models/store';
+import {TErrorMessage} from 'models/types';
 
 import {ACTIONS} from 'store/actions/payment';
 
 const initialState = {
   items: null as Array<IPayment> | null,
-  errorMessage: null as null | string,
+  errorMessage: null as TErrorMessage,
 }
 
 export type TInitialState = typeof initialState;

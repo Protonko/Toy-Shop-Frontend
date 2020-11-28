@@ -2,14 +2,15 @@
 import {TActionsProducts} from 'models/store/actions/products';
 import {TAppAction} from 'models/store';
 import {IProduct, IProductDetail} from 'models/interfaces';
+import {TErrorMessage} from 'models/types';
 
 import {ACTIONS} from 'store/actions/products';
 
 const initialState = {
   isLoaded: false,
   isLoadedDetail: false,
-  errorMessage: null as null | string,
-  errorDetailMessage: null as null | string,
+  errorMessage: null as TErrorMessage,
+  errorDetailMessage: null as TErrorMessage,
   detail: null as IProductDetail | null,
   items: [] as Array<IProduct>,
   page: 0,

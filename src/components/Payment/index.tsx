@@ -1,5 +1,6 @@
 // types
 import {IPayment} from 'models/interfaces';
+import {TErrorMessage} from 'models/types';
 
 import React, {FC, useEffect} from 'react';
 import {Loader} from 'components/Common/Loader';
@@ -8,7 +9,7 @@ import {PaymentBlock} from 'components/PaymentBlock/PaymentBlock';
 
 interface IProps {
   items: Array<IPayment> | null,
-  errorMessage: string | null,
+  errorMessage: TErrorMessage,
   getPayment: () => void,
 }
 

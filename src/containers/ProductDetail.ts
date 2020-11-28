@@ -1,5 +1,6 @@
 //types
 import {IImageThumbnails, IProduct, IProductDetail} from 'models/interfaces';
+import {TErrorMessage} from 'models/types';
 import {RootState} from 'store/reducers';
 
 import {bindActionCreators, Dispatch} from 'redux';
@@ -12,7 +13,7 @@ import {ProductDetail} from 'components/ProductDetail/ProductDetail';
 type TState = {
   detail: IProductDetail | null,
   isLoadedDetail: boolean,
-  errorDetailMessage: null | string,
+  errorDetailMessage: TErrorMessage,
   images: Array<IImageThumbnails> | null,
   selectedProducts: Array<IProduct>,
 }

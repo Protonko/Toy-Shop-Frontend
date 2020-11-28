@@ -11,6 +11,7 @@ export type TTitleButton = TITLES_BUTTON.ADDED | TITLES_BUTTON.ADD
 export type TTransitionClassnames = {
   [K in TransitionStatus]: string
 }
+export type TErrorMessage = null | string;
 
 // common
 export type TMerge<A, B> = ({ [K in keyof A]: K extends keyof B ? B[K] : A[K] } &

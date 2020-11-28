@@ -1,5 +1,6 @@
 // types
 import {IDelivery} from 'models/interfaces';
+import {TErrorMessage} from 'models/types';
 
 import React, {FC, useEffect} from 'react';
 import {DeliveryCard} from 'components/DeliveryCard/DeliveryCard';
@@ -8,7 +9,7 @@ import {Loader} from 'components/Common/Loader';
 
 interface IProps {
   items: Array<IDelivery> | null,
-  errorMessage: string | null,
+  errorMessage: TErrorMessage,
   getDelivery: () => void,
 }
 

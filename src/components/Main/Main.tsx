@@ -1,5 +1,6 @@
 // types
 import {IProduct} from 'models/interfaces';
+import {TErrorMessage} from 'models/types';
 
 import React, {FC, useCallback, useEffect} from 'react';
 import {usePagination} from 'hooks/usePagination';
@@ -15,7 +16,7 @@ export interface IProps {
   setProducts: (page?: number) => void,
   setSearchQuery: (value: string) => void,
   page: number,
-  errorMessage: string | null,
+  errorMessage: TErrorMessage,
 }
 
 export const Main: FC<IProps> = ({

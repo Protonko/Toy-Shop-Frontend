@@ -2,12 +2,13 @@
 import {TActionsDelivery} from 'models/store/actions/delivery';
 import {IDelivery} from 'models/interfaces';
 import {TAppAction} from 'models/store';
+import {TErrorMessage} from 'models/types';
 
 import {ACTIONS} from 'store/actions/delivery';
 
 const initialState = {
   items: null as Array<IDelivery> | null,
-  errorMessage: null as null | string,
+  errorMessage: null as TErrorMessage,
 }
 
 export type TInitialState = typeof initialState;

@@ -1,6 +1,7 @@
 // types
 import {TInitialState} from 'store/reducers/payment';
 import {IPayment} from 'models/interfaces';
+import {TErrorMessage} from 'models/types';
 
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
@@ -9,7 +10,7 @@ import {Payment} from 'components/Payment';
 
 type TState = {
   items: Array<IPayment> | null,
-  errorMessage: string | null,
+  errorMessage: TErrorMessage,
 }
 
 type TActions = {

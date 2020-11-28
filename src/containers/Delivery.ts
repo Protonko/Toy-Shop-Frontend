@@ -1,6 +1,7 @@
 // types
 import {TInitialState} from 'store/reducers/delivery';
 import {IDelivery} from 'models/interfaces';
+import {TErrorMessage} from 'models/types';
 
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
@@ -9,7 +10,7 @@ import {Delivery} from 'components/Delivery';
 
 type TState = {
   items: Array<IDelivery> | null,
-  errorMessage: string | null,
+  errorMessage: TErrorMessage,
 }
 
 type TActions = {

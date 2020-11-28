@@ -1,5 +1,6 @@
 // types
 import {IImageThumbnails, IProduct, IProductDetail} from 'models/interfaces';
+import {TErrorMessage} from 'models/types';
 
 import React, {FC, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
@@ -18,7 +19,7 @@ interface IProps {
   detail: IProductDetail | null,
   images: Array<IImageThumbnails> | null,
   isLoadedDetail: boolean,
-  errorDetailMessage: string | null,
+  errorDetailMessage: TErrorMessage,
   addToCart: (product: IProduct) => void,
   removeFromCart: (product: IProduct) => void,
   selectedProducts: Array<IProduct>,
