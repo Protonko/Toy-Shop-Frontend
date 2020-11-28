@@ -6,7 +6,7 @@ import Dotdotdot from 'react-dotdotdot';
 import placeholder from 'assets/images/placeholder.jpg';
 import {Button} from 'components/Common/Buttons/Button';
 
-interface IProps {
+export interface IProps {
   product: IProduct,
   removeFromCart: (product: IProduct) => void,
 }
@@ -16,7 +16,7 @@ export const Product: FC<IProps> = ({
   removeFromCart,
 }) => {
   const {image = placeholder, title, price, sale} = product;
-  const priceProduct: number = sale ? Math.round(price * sale) : price;
+  const priceProduct = sale ? Math.round(price * sale) : price;
 
   return (
     <div className="product">

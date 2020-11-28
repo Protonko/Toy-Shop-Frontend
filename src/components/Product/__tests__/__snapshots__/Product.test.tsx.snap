@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product Match snapshot 1`] = `
+<div
+  className="product"
+>
+  <div
+    className="product__info"
+  >
+    <div
+      className="product__image"
+      style={
+        Object {
+          "backgroundImage": "url([object Object])",
+        }
+      }
+    />
+    <div
+      className="product__data"
+    >
+      <Dotdotdot
+        clamp={1}
+        tagName="div"
+        truncationChar="…"
+        useNativeClamp={false}
+      >
+        <div
+          className="product__data-name"
+        >
+          title
+        </div>
+      </Dotdotdot>
+      <div
+        className="product__data-price"
+      >
+        $
+        9
+      </div>
+    </div>
+  </div>
+  <div
+    className="product__actions"
+  >
+    <ul
+      className="product__actions-list list list--reset"
+    >
+      <li
+        className="product__actions-item"
+      >
+        <Component
+          classNamesAdditional={
+            Array [
+              "product__action",
+            ]
+          }
+          isRemoved={true}
+          onClick={[Function]}
+          title="Remove"
+        />
+      </li>
+    </ul>
+  </div>
+</div>
+`;

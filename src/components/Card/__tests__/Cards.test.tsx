@@ -10,7 +10,7 @@ const renderCardsComponent = (props: IProps) => (
       <Cards {...props} />
     </MemoryRouter>
   )
-)
+);
 
 describe('Cards', () => {
   let props: IProps;
@@ -30,4 +30,4 @@ describe('Cards', () => {
 
     expect(component).toMatchSnapshot();
   });
-})
+});

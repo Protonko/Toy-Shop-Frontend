@@ -8,7 +8,7 @@ import {Card, IProps} from 'components/Card/Card';
 
 const shallowCardComponent = (props: IProps) => (
   shallow(<Card {...props} />)
-)
+);
 
 describe('Card', () => {
   let props: IProps;
@@ -27,8 +27,8 @@ describe('Card', () => {
     addToCart = jest.fn((product) => true);
     handleClickCartButton = jest.fn((product, isAdded) => {
       isAdded ? removeFromCart(product) : addToCart(product);
-    })
-  })
+    });
+  });
 
   it('Should render Card component', () => {
     const component = shallowCardComponent(props);
@@ -40,7 +40,7 @@ describe('Card', () => {
     const component = shallowCardComponent(props);
 
     expect(component).toMatchSnapshot();
-  })
+  });
 
   it('Should call function addToCart if array doesn\'t\n contains product', () => {
     props = {...props, selectedProducts: []};

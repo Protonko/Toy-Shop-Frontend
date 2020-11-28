@@ -36,8 +36,8 @@ describe('Button', () => {
 
   it('Should add className "test-button"', () => {
     props = {...props, classNamesAdditional: [ELEMENT_SELECTORS.testButton]}
-    const button = shallowCardComponent(props);
-    const classNameButton = button
+    const buttonComponent = shallowCardComponent(props);
+    const classNameButton = buttonComponent
       .find(ELEMENT_SELECTORS.button)
       .hasClass(ELEMENT_SELECTORS.testButton);
 
