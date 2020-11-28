@@ -3,13 +3,13 @@ import {Button} from 'components/Common/Buttons/Button';
 
 interface IProps {
   text: string,
-  cartItemsAmount: number,
+  disabled: boolean,
   onClick: () => void,
 }
 
 export const FormSubmit: FC<IProps> = ({
   text,
-  cartItemsAmount,
+  disabled,
   onClick,
 }) => {
   return (
@@ -24,7 +24,7 @@ export const FormSubmit: FC<IProps> = ({
             title="Checkout"
             classNamesAdditional={['order__submit-button']}
             onClick={onClick}
-            disabled={!cartItemsAmount}
+            disabled={disabled}
           />
         </li>
       </ul>

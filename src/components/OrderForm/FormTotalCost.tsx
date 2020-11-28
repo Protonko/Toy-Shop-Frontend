@@ -20,6 +20,8 @@ export const FormTotalCost: FC<IProps> = ({
   cartItemsAmount,
   onClick,
 }) => {
+  const disabled = !(total && cartItemsAmount);
+
   return (
     <div className="order__section order__section--footer order__box">
       <Heading title="Your order" />
@@ -32,7 +34,7 @@ export const FormTotalCost: FC<IProps> = ({
       <FormSubmit
         text={DESCRIPTION_ORDER}
         onClick={onClick}
-        cartItemsAmount={cartItemsAmount}
+        disabled={disabled}
       />
     </div>
   );
