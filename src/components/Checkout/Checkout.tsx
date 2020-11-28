@@ -66,7 +66,7 @@ export const Checkout: FC<IProps> = ({modalVisibility, toggleVisibilityModal}) =
           <form className={classNamesModal}>
             <article className="checkout__popup" ref={modal}>
               <header className="checkout__section checkout__section--header">
-                <Heading title="Shopping cart" size={SIZES.MEDIUM} />
+                <Heading title="Checkout" size={SIZES.MEDIUM} />
               </header>
               <div className="checkout__section checkout__section--body">
                 <ul className="checkout__inputs list list--reset">
