@@ -8,6 +8,7 @@ import {ACTIONS} from 'store/actions/products';
 const initialState = {
   isLoaded: false,
   isLoadedDetail: false,
+  errorMessage: null as null | string,
   errorDetailMessage: null as null | string,
   detail: null as IProductDetail | null,
   items: [] as Array<IProduct>,
@@ -27,9 +28,19 @@ export default (
         items: [...state.items, ...action.payload.response],
         isLoaded: true,
         page: action.payload.page,
+        errorMessage: null,
       };
-    case ACTIONS.GET_DETAIL_SUCCESS:
 
+    case ACTIONS.SET_PRODUCTS_ERROR:
+      return {
+        ...state,
+        items: [],
+        isLoaded: true,
+        page: 0,
+        errorMessage: action.payload,
+      };
+
+    case ACTIONS.GET_DETAIL_SUCCESS:
       return {
         ...state,
         detail: action.payload,

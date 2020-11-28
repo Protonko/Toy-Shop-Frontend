@@ -15,6 +15,7 @@ export interface IProps {
   setProducts: (page?: number) => void,
   setSearchQuery: (value: string) => void,
   page: number,
+  errorMessage: string | null,
 }
 
 export const Main: FC<IProps> = ({
@@ -24,6 +25,7 @@ export const Main: FC<IProps> = ({
   setProducts,
   setSearchQuery,
   page,
+  errorMessage,
 }) => {
   const fetchProducts = useCallback(() => {
     setProducts();
@@ -56,11 +58,11 @@ export const Main: FC<IProps> = ({
           <div className="page__content-main">
             <Cards products={products} selectedProducts={selectedProducts} />
           </div>
-        ) : <Notification text="Nothing found" />}
+        ) : <Notification text={errorMessage ?? 'Nothing found'} />}
 
         <Filter />
       </>
-    )
+    );
   } else {
     return <Loader />;
   }
