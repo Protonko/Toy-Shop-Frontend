@@ -1,61 +1,175 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Cart Match snapshot 1`] = `
-<div
-  className="cart"
->
-  <ul
-    className="cart__list list list--reset"
+<MemoryRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "3rbqhr",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "3rbqhr",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
   >
-    <li
-      className="cart__item"
+    <Component
+      countProducts={1}
+      items={
+        Array [
+          Object {
+            "category": "category",
+            "checked": true,
+            "id": 0,
+            "price": 10,
+            "rating": 5,
+            "sale": 0.9,
+            "title": "title",
+          },
+          Object {
+            "category": "category 1",
+            "checked": true,
+            "id": 1,
+            "price": 1,
+            "rating": 3,
+            "sale": 0.5,
+            "title": "title 1",
+          },
+        ]
+      }
+      removeFromCart={[Function]}
+      total={1}
     >
       <div
-        className="cart__price"
+        className="cart"
       >
-        <dl
-          className="cart__price-list list list--reset"
+        <ul
+          className="cart__list list list--reset"
         >
-          <dt
-            className="cart__price-item cart__price-item--term"
+          <li
+            className="cart__item"
           >
-            Total:
-          </dt>
-          <dd
-            className="cart__price-item cart__price-item--description"
+            <div
+              className="cart__price"
+            >
+              <dl
+                className="cart__price-list list list--reset"
+              >
+                <dt
+                  className="cart__price-item cart__price-item--term"
+                >
+                  Total:
+                </dt>
+                <dd
+                  className="cart__price-item cart__price-item--description"
+                >
+                  $
+                  1
+                </dd>
+              </dl>
+            </div>
+          </li>
+          <li
+            className="cart__item"
           >
-            $
-            1
-          </dd>
-        </dl>
+            <Component
+              classNamesAdditional={
+                Array [
+                  "cart__button",
+                  Object {
+                    "cart__button--counter": true,
+                  },
+                  Object {
+                    "cart__button--active": false,
+                  },
+                ]
+              }
+              data-count={1}
+              disabled={false}
+              onClick={[Function]}
+            >
+              <button
+                className="button button--iconed cart__button cart__button--counter"
+                data-count={1}
+                onClick={[Function]}
+              >
+                <span
+                  className="cart__button-icon"
+                >
+                  <div />
+                </span>
+              </button>
+            </Component>
+            <Component
+              items={
+                Array [
+                  Object {
+                    "category": "category",
+                    "checked": true,
+                    "id": 0,
+                    "price": 10,
+                    "rating": 5,
+                    "sale": 0.9,
+                    "title": "title",
+                  },
+                  Object {
+                    "category": "category 1",
+                    "checked": true,
+                    "id": 1,
+                    "price": 1,
+                    "rating": 3,
+                    "sale": 0.5,
+                    "title": "title 1",
+                  },
+                ]
+              }
+              popupVisible={false}
+              removeFromCart={[Function]}
+              setPopupVisible={[Function]}
+            >
+              <Transition
+                appear={false}
+                enter={true}
+                exit={true}
+                in={false}
+                mountOnEnter={true}
+                onEnter={[Function]}
+                onEntered={[Function]}
+                onEntering={[Function]}
+                onExit={[Function]}
+                onExited={[Function]}
+                onExiting={[Function]}
+                timeout={400}
+                unmountOnExit={true}
+              />
+            </Component>
+          </li>
+        </ul>
       </div>
-    </li>
-    <li
-      className="cart__item"
-    >
-      <Component
-        classNamesAdditional={
-          Array [
-            "cart__button",
-            Object {
-              "cart__button--counter": true,
-            },
-            Object {
-              "cart__button--active": false,
-            },
-          ]
-        }
-        data-count={1}
-        disabled={false}
-        onClick={[Function]}
-      >
-        <span
-          className="cart__button-icon"
-        >
-          <div />
-        </span>
-      </Component>
-    </li>
-  </ul>
-</div>
+    </Component>
+  </Router>
+</MemoryRouter>
 `;

@@ -1,15 +1,8 @@
 import React from 'react';
 import {MemoryRouter} from 'react-router';
-import {shallow, mount} from 'enzyme';
+import {mount} from 'enzyme';
 import {products} from 'static/__test__/card';
 import {Cart, IProps} from 'components/Cart/Cart';
-import {ButtonIconed} from 'components/Common/Buttons/ButtonIconed';
-
-const shallowCartComponent = (props: IProps) => (
-  shallow(
-    <Cart {...props} />
-  )
-);
 
 const mountCartComponent = (props: IProps, isRouter: boolean) => {
   if (isRouter) {
@@ -38,14 +31,4 @@ describe('Cart', () => {
 
     expect(component).toMatchSnapshot();
   });
-
-  it('Should change state', () => {
-    const component = mountCartComponent(props, false);
-    const button = component.find(ButtonIconed);
-    button.simulate('click', {
-      popupVisible: true,
-    });
-
-    expect(popupVisible).toBe(true);
-  })
 });
