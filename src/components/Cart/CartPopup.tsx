@@ -1,6 +1,6 @@
 // types
 import {IProduct} from 'models/interfaces';
-import {TransitionStatus} from 'react-transition-group/Transition';
+import {TTransitionClassnames} from 'models/types';
 
 import React, {FC, useRef} from 'react';
 import {Link} from 'react-router-dom';
@@ -16,10 +16,6 @@ interface IProps {
   removeFromCart: (item: IProduct) => void,
   items: Array<IProduct>,
   popupVisible: boolean,
-}
-
-type TTransitionClassnames = {
-  [K in TransitionStatus]: string
 }
 
 const TRANSITION_CLASSNAMES: TTransitionClassnames = {

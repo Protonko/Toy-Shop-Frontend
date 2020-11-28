@@ -4,6 +4,7 @@ exports[`ButtonIconed Match snapshot 1`] = `
 <button
   className="button button--iconed"
   onClick={[MockFunction]}
+  type="button"
 >
   <div />
 </button>

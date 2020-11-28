@@ -4,6 +4,7 @@ exports[`Button Match snapshot 1`] = `
 <button
   className="button"
   onClick={[MockFunction]}
+  type="button"
 >
   Test
 </button>

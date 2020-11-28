@@ -1,7 +1,16 @@
-import {TITLES_BUTTON, FILTER_TYPES} from 'models/enums';
+import {TITLES_BUTTON, FILTER_TYPES, TYPES_BUTTON} from 'models/enums';
+import {TransitionStatus} from 'react-transition-group/Transition';
 
+export type TTypesButton =
+  | TYPES_BUTTON.BUTTON
+  | TYPES_BUTTON.RESET
+  | TYPES_BUTTON.SUBMIT;
+export type TAttributesButton = Array<string | number>;
 export type TClassName = Array<string | {[key: string]: boolean}>
 export type TTitleButton = TITLES_BUTTON.ADDED | TITLES_BUTTON.ADD
+export type TTransitionClassnames = {
+  [K in TransitionStatus]: string
+}
 
 // common
 export type TMerge<A, B> = ({ [K in keyof A]: K extends keyof B ? B[K] : A[K] } &

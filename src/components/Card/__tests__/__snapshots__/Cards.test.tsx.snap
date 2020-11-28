@@ -63,6 +63,7 @@ exports[`Cards Match snapshot 1`] = `
                 >
                   <button
                     class="button button--active"
+                    type="button"
                   >
                     Added
                   </button>
@@ -129,6 +130,7 @@ exports[`Cards Match snapshot 1`] = `
                 >
                   <button
                     class="button"
+                    type="button"
                   >
                     Add to card
                   </button>

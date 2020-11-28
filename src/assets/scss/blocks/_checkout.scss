@@ -1,0 +1,92 @@
+.checkout {
+    $horizontal-gutter: 10px;
+    $vertical-gutter: 20px;
+
+    position: fixed;
+    z-index: $z-index-overlay;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($black, .4);
+
+    &--fade-in {
+        animation-name: fade-in;
+        animation-duration: $transition-duration-long;
+    }
+
+    &--fade-out {
+        animation-name: fade-out;
+        animation-duration: $transition-duration-long;
+    }
+
+    &__popup {
+        $width-popup: 752px;
+        $height-popup: 500px;
+
+        @include centering();
+
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        width: rem($width-popup);
+        max-height: rem($height-popup);
+        padding: rem(20px);
+        border-radius: rem(5px);
+        background-color: $white;
+    }
+
+    &__section {
+        &--header {
+            &:not(:last-child) {
+                padding-bottom: rem(20px);
+            }
+        }
+
+        &--body {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        &--footer {
+            &:not(:first-child) {
+                padding-top: rem(20px);
+            }
+        }
+    }
+
+    &__inputs {
+        margin-top: rem(-$vertical-gutter);
+    }
+
+    &__input {
+        margin-top: rem($vertical-gutter);
+    }
+
+    &__buttons {
+        @include margin-horizontal(-$horizontal-gutter / 2);
+
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__button {
+        @include padding-horizontal($horizontal-gutter / 2);
+    }
+
+    &__row {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: row;
+
+        &:not(:last-child) {
+            margin-bottom: rem(20px);
+        }
+    }
+
+    &__label {
+        width: 30%;
+        padding-top: rem(5px);
+    }
+}

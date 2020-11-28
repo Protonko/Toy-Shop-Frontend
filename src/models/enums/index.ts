@@ -25,3 +25,9 @@ export enum ORDER_BY {
   ASC = 'ASC',
   DESC = 'DESC',
 }
+
+export enum TYPES_BUTTON {
+  SUBMIT = 'submit',
+  RESET = 'reset',
+  BUTTON = 'button',
+}

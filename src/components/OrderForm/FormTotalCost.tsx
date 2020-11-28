@@ -8,7 +8,8 @@ import {OrderPrice} from './OrderPrice';
 import {FormSubmit} from './FormSubmit';
 
 interface IProps extends IOrderCost {
-  cartItemsAmount: number
+  cartItemsAmount: number,
+  onClick: () => void,
 }
 
 export const FormTotalCost: FC<IProps> = ({
@@ -17,6 +18,7 @@ export const FormTotalCost: FC<IProps> = ({
   fullPrice,
   sale,
   cartItemsAmount,
+  onClick,
 }) => {
   return (
     <div className="order__section order__section--footer order__box">
@@ -29,7 +31,7 @@ export const FormTotalCost: FC<IProps> = ({
       />
       <FormSubmit
         text={DESCRIPTION_ORDER}
-        onClick={() => true}
+        onClick={onClick}
         cartItemsAmount={cartItemsAmount}
       />
     </div>

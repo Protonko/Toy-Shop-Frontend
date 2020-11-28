@@ -8,6 +8,7 @@ import {FormTotalCost} from './FormTotalCost';
 
 interface IProps {
   toggleSelectProduct: (id: number | string) => void,
+  toggleVisibilityModal: (visibility: boolean) => void,
   deleteSelected: () => void,
   cartItems: Array<IProduct>,
   cartSelectedItems?: Array<IProduct>,
@@ -23,6 +24,7 @@ export const OrderForm: FC<IProps> = ({
   total,
   fullPrice,
   sale,
+  toggleVisibilityModal,
 }) => {
   const cartItemsAmount = cartItems.length;
 
@@ -42,6 +44,7 @@ export const OrderForm: FC<IProps> = ({
         fullPrice={fullPrice}
         sale={sale}
         cartItemsAmount={cartItemsAmount}
+        onClick={() => toggleVisibilityModal(true)}
       />
     </form>
   )

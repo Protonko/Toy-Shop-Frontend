@@ -1,5 +1,6 @@
 // Colors
 $white: #FFFFFF;
+$black: #000000;
 $red-ribbon: #F91155;
 $blue-ribbon: #005BFF;
 $midnight: #001A34;
@@ -33,6 +34,7 @@ $transition-duration-long: 400ms;
 // z-index
 $z-index-header: 15;
 $z-index-popup: 20;
+$z-index-overlay: 25;
 
 // layout
 $header-height: 70px;

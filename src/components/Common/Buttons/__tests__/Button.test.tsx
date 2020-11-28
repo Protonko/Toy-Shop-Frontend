@@ -1,3 +1,6 @@
+// types
+import {TYPES_BUTTON} from 'models/enums';
+
 import React from 'react';
 import {shallow} from 'enzyme';
 import {ELEMENT_SELECTORS_BUTTON} from 'static/__test__/button';
@@ -41,5 +44,13 @@ describe('Button', () => {
       .hasClass(ELEMENT_SELECTORS_BUTTON.testButton);
 
     expect(classNameButton).toEqual(true);
+  });
+
+  it('Should type button be a "submit"', () => {
+    props = {...props, type: TYPES_BUTTON.SUBMIT}
+    const buttonComponent = shallowCardComponent(props);
+    const button = buttonComponent.find(ELEMENT_SELECTORS_BUTTON.button);
+
+    expect(button.prop('type')).toEqual(TYPES_BUTTON.SUBMIT);
   });
 });

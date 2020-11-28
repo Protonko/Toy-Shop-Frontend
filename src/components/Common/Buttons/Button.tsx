@@ -1,15 +1,18 @@
 // types
-import {TClassName} from 'models/types';
+import {TClassName, TTypesButton, TAttributesButton} from 'models/types';
+import {TYPES_BUTTON} from 'models/enums';
 
 import React, {FC} from 'react';
 import classNames from 'classnames';
 
 export interface IProps {
   title: string,
-  onClick: () => void,
+  onClick: (...args: any) => void,
   isRemoved?: boolean,
   disabled?: boolean,
+  type?: TTypesButton,
   classNamesAdditional?: TClassName,
+  attrs?: TAttributesButton,
 }
 
 export const Button: FC<IProps> = ({
@@ -17,9 +20,11 @@ export const Button: FC<IProps> = ({
   onClick,
   isRemoved,
   disabled,
-  classNamesAdditional = []
+  type = TYPES_BUTTON.BUTTON,
+  classNamesAdditional = [],
+  ...attrs
 }) => {
-  const classNamesButton: string = classNames(
+  const classNamesButton = classNames(
     'button',
     {'button--disabled': disabled},
     {'button--red': isRemoved},
@@ -27,7 +32,12 @@ export const Button: FC<IProps> = ({
   );
 
   return (
-    <button className={classNamesButton} onClick={onClick}>
+    <button
+      className={classNamesButton}
+      onClick={onClick}
+      type={type}
+      {...attrs}
+    >
       {title}
     </button>
   );
