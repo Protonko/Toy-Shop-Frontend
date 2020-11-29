@@ -29,6 +29,7 @@ describe('Main', () => {
       setProducts: () => {},
       setSearchQuery: () => {},
       page: 0,
+      errorMessage: null,
     };
     componentWillUnmount = jest.fn(() => '');
   });

@@ -21,6 +21,7 @@ describe('Cart', () => {
       countProducts: 1,
       items: products,
       removeFromCart: () => {},
+      getSelectedItems: () => {},
     };
   });
 

@@ -56,10 +56,16 @@ export const getSelectedItems = (): TAppThunk =>
 export const deleteSelected = (): TAppThunk =>
   (dispatch, getState) => {
     const cartState = getState().cart;
-    const deletedItems = cartState.items
+    const deletedItems: Array<IProduct> = cartState.items
       .filter(item => !item.checked);
 
-    CartStorage.setData(deletedItems);
+    // Set to the desired form in CartStorage
+    const deletedItemsObject = deletedItems.reduce((acc, elem) => ({
+      ...acc,
+      [elem.id]: elem,
+    }), {});
+
+    CartStorage.setData(deletedItemsObject);
     dispatch(deleteSelectedAction(deletedItems));
   }
 
