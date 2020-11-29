@@ -1,20 +1,32 @@
 import React, {FC} from 'react';
-import {ReactComponent as StarIcon} from 'assets/icons/logo.svg';
+import {ReactComponent as StarIcon} from 'assets/icons/star.svg';
 
 interface IProps {
   numberOfStars?: number,
+  rating: number,
 }
 
-export const Rating: FC<IProps> = ({numberOfStars = 5}) => {
-  const starsData = new Array(numberOfStars);
+const SIZE_STAR = 16;
+
+export const Rating: FC<IProps> = ({numberOfStars = 5, rating}) => {
+  const starsData = new Array(numberOfStars).fill('');
+  const maxWidthContainer = SIZE_STAR * numberOfStars;
+  const progress = `${(rating / numberOfStars) * 100}%`;
 
   const renderStars = (_: any, index: number) => (
-    <StarIcon key={index} />
+    <div className="rating__item">
+      <StarIcon key={index} />
+    </div>
   );
 
   return (
-    <div className="rating">
-      {starsData.map(renderStars)}
+    <div className="rating" style={{width: maxWidthContainer}}>
+      <div className="rating__row rating__row--filled" style={{width: progress}}>
+        {starsData.map(renderStars)}
+      </div>
+      <div className="rating__row">
+        {starsData.map(renderStars)}
+      </div>
     </div>
   );
 };

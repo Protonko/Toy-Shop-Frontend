@@ -39,7 +39,7 @@ export const ProductDetail: FC<IProps> = ({
   getProductDetail,
 }) => {
   const {id} = useParams<IRouteParams>();
-  const {title, about, description, price, sale} = detail ?? {};
+  const {title, about, description, price, sale, rating} = detail ?? {};
   const productPrice = sale ? Math.round(price! * sale) : price;
   const isAdded = !!selectedProducts.find(
     (item: IProduct) => item.id === detail?.id);
@@ -102,6 +102,7 @@ export const ProductDetail: FC<IProps> = ({
                 price={price!}
                 sale={!!sale}
                 isAdded={isAdded}
+                rating={rating!}
                 onClick={handlePressAddButton}
               />
             </div>

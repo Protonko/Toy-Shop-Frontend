@@ -1,0 +1,29 @@
+.rating {
+    $size: 16px;
+
+    position: relative;
+    height: rem($size);
+
+    &__row {
+        position: absolute;
+        top: 0;
+        display: flex;
+
+        &--filled {
+            z-index: 2;
+            overflow: hidden;
+        }
+    }
+    &__row--filled & {
+        &__item {
+            color: $salmon;
+        }
+    }
+
+    &__item {
+        width: rem($size);
+        min-width: rem($size);
+        height: rem($size);
+        color: $geyser;
+    }
+}

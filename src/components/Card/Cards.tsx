@@ -1,5 +1,7 @@
-import React, {FC} from 'react';
+// types
 import {IProduct} from 'models/interfaces';
+
+import React, {FC} from 'react';
 import {Card} from 'components/Card/Card';
 
 export interface IProps {

@@ -35,7 +35,7 @@
         }
 
         &-price {
-            margin-bottom: rem(15px);
+            margin-bottom: rem(10px);
 
             &-relevant {
                 font-size: rem($font-size-large);
@@ -49,6 +49,10 @@
                 font-weight: $font-weight-bold;
                 color: rgba($text-color-secondary, .6);
             }
+        }
+
+        &-rating {
+            margin-bottom: rem(20px);
         }
 
         &-button {

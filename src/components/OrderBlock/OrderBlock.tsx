@@ -1,9 +1,11 @@
 import React, {FC} from 'react';
 import {Button} from 'components/Common/Buttons/Button';
+import {Rating} from 'components/Common/Rating';
 
 interface IProps {
   price: number,
   priceWithSale: number,
+  rating: number
   sale: boolean,
   isAdded: boolean,
   onClick: () => void,
@@ -15,6 +17,7 @@ export const OrderBlock: FC<IProps> = ({
   sale,
   onClick,
   isAdded,
+  rating,
 }) => {
   const title = isAdded ? 'Remove from cart' : 'Add to cart';
 
@@ -29,6 +32,9 @@ export const OrderBlock: FC<IProps> = ({
             ${price}
           </s>
         )}
+      </div>
+      <div className="product-content__order-rating">
+        <Rating rating={rating} />
       </div>
       <Button
         title={title}

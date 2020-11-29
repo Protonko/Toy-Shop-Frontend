@@ -1,10 +1,14 @@
-import React, {FC} from 'react';
-import {Link} from 'react-router-dom';
-import classNames from 'classnames';
+// types
 import {IProduct} from 'models/interfaces';
 import {TITLES_BUTTON} from 'models/enums';
 import {TTitleButton} from 'models/types';
+
+import React, {FC} from 'react';
+import {Link} from 'react-router-dom';
+import classNames from 'classnames';
 import {Button} from 'components/Common/Buttons/Button';
+import {Rating} from 'components/Common/Rating';
+import Dotdotdot from 'react-dotdotdot';
 
 export interface IProps {
   product: IProduct,
@@ -15,7 +19,7 @@ export interface IProps {
 
 export const Card: FC<IProps> = props => {
   const {product, selectedProducts, addToCart, removeFromCart} = props;
-  const {price, sale, image, title, id} = product;
+  const {price, sale, image, title, id, rating} = product;
   const productPrice = sale ? Math.round(price * sale) : price;
   const isAdded = !!selectedProducts.find(
     (item: IProduct) => item.id === product.id);
@@ -45,9 +49,12 @@ export const Card: FC<IProps> = props => {
               </s>
             )}
           </div>
-          <Link to={`/product/${id}`} className="card__data-title">{title}</Link>
+          <Dotdotdot clamp={3}>
+            <Link to={`/product/${id}`} className="card__data-title">{title}</Link>
+          </Dotdotdot>
         </div>
         <div className="card__section card__section--footer">
+          <Rating rating={rating} />
           <div className="card__data-actions">
             <ul className="card__data-actions-list list list--reset">
               <li className="card__data-actions-item">
