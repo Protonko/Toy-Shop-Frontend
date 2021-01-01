@@ -82,7 +82,10 @@ const CardComponent: FC<IProps> = props => {
   );
 };
 
-export const Card = memo(CardComponent, (prevProps: any, nextProps: any): any => {
+export const Card = memo(
+  CardComponent,
+  (prevProps: IProps, nextProps: IProps
+): boolean => {
   const prevProducts = checkSelectedProducts(prevProps.selectedProducts, prevProps.product);
   const nextProducts = checkSelectedProducts(nextProps.selectedProducts, nextProps.product);
 
