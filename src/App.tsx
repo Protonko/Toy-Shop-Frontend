@@ -27,9 +27,8 @@ const App: FC = () => {
             </Route>
             <Route exact path="/delivery">
               <ErrorBoundary>
-
+                <Delivery />
               </ErrorBoundary>
-              <Delivery />
             </Route>
             <Route exact path="/payment">
               <ErrorBoundary>

@@ -14,8 +14,8 @@ export const Rating: FC<IProps> = ({numberOfStars = 5, rating}) => {
   const progress = `${(rating / numberOfStars) * 100}%`;
 
   const renderStars = (_: any, index: number) => (
-    <div className="rating__item">
-      <StarIcon key={index} />
+    <div className="rating__item" key={index}>
+      <StarIcon />
     </div>
   );
 

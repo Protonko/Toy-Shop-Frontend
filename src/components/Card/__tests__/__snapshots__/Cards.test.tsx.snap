@@ -42,16 +42,82 @@ exports[`Cards Match snapshot 1`] = `
                 $10
               </s>
             </div>
-            <a
-              class="card__data-title"
-              href="/product/0"
-            >
-              title
-            </a>
+            <div>
+              <a
+                class="card__data-title"
+                href="/product/0"
+              >
+                title
+              </a>
+            </div>
           </div>
           <div
             class="card__section card__section--footer"
           >
+            <div
+              class="rating"
+              style="width:80px"
+            >
+              <div
+                class="rating__row rating__row--filled"
+                style="width:100%"
+              >
+                <div
+                  class="rating__item"
+                >
+                  <div />
+                </div>
+                <div
+                  class="rating__item"
+                >
+                  <div />
+                </div>
+                <div
+                  class="rating__item"
+                >
+                  <div />
+                </div>
+                <div
+                  class="rating__item"
+                >
+                  <div />
+                </div>
+                <div
+                  class="rating__item"
+                >
+                  <div />
+                </div>
+              </div>
+              <div
+                class="rating__row"
+              >
+                <div
+                  class="rating__item"
+                >
+                  <div />
+                </div>
+                <div
+                  class="rating__item"
+                >
+                  <div />
+                </div>
+                <div
+                  class="rating__item"
+                >
+                  <div />
+                </div>
+                <div
+                  class="rating__item"
+                >
+                  <div />
+                </div>
+                <div
+                  class="rating__item"
+                >
+                  <div />
+                </div>
+              </div>
+            </div>
             <div
               class="card__data-actions"
             >
@@ -109,16 +175,82 @@ exports[`Cards Match snapshot 1`] = `
                 $1
               </s>
             </div>
-            <a
-              class="card__data-title"
-              href="/product/1"
-            >
-              title 1
-            </a>
+            <div>
+              <a
+                class="card__data-title"
+                href="/product/1"
+              >
+                title 1
+              </a>
+            </div>
           </div>
           <div
             class="card__section card__section--footer"
           >
+            <div
+              class="rating"
+              style="width:80px"
+            >
+              <div
+                class="rating__row rating__row--filled"
+                style="width:60%"
+              >
+                <div
+                  class="rating__item"
+                >
+                  <div />
+                </div>
+                <div
+                  class="rating__item"
+                >
+                  <div />
+                </div>
+                <div
+                  class="rating__item"
+                >
+                  <div />
+                </div>
+                <div
+                  class="rating__item"
+                >
+                  <div />
+                </div>
+                <div
+                  class="rating__item"
+                >
+                  <div />
+                </div>
+              </div>
+              <div
+                class="rating__row"
+              >
+                <div
+                  class="rating__item"
+                >
+                  <div />
+                </div>
+                <div
+                  class="rating__item"
+                >
+                  <div />
+                </div>
+                <div
+                  class="rating__item"
+                >
+                  <div />
+                </div>
+                <div
+                  class="rating__item"
+                >
+                  <div />
+                </div>
+                <div
+                  class="rating__item"
+                >
+                  <div />
+                </div>
+              </div>
+            </div>
             <div
               class="card__data-actions"
             >

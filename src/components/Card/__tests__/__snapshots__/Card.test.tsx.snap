@@ -35,16 +35,26 @@ exports[`Card Match snapshot 1`] = `
           10
         </s>
       </div>
-      <Link
-        className="card__data-title"
-        to="/product/0"
+      <Dotdotdot
+        clamp={3}
+        tagName="div"
+        truncationChar="…"
+        useNativeClamp={false}
       >
-        title
-      </Link>
+        <Link
+          className="card__data-title"
+          to="/product/0"
+        >
+          title
+        </Link>
+      </Dotdotdot>
     </div>
     <div
       className="card__section card__section--footer"
     >
+      <Component
+        rating={5}
+      />
       <div
         className="card__data-actions"
       >
