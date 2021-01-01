@@ -10,6 +10,7 @@ import {ProductDetailPage} from 'pages/ProductDetailPage';
 import {Header} from 'components/Header/Header';
 import {Footer} from 'components/Footer/Footer';
 import {Container} from 'components/Common/Container';
+import {ErrorBoundary} from 'components/ErrorBoundary/ErrorBoundary';
 
 const App: FC = () => {
   return (
@@ -20,22 +21,35 @@ const App: FC = () => {
         <Container classNames="container page__content-wrapper">
           <Switch>
             <Route exact path="/">
-              <Main />
+              <ErrorBoundary>
+                <Main />
+              </ErrorBoundary>
             </Route>
             <Route exact path="/delivery">
+              <ErrorBoundary>
+
+              </ErrorBoundary>
               <Delivery />
             </Route>
             <Route exact path="/payment">
-              <Payment />
+              <ErrorBoundary>
+                <Payment />
+              </ErrorBoundary>
             </Route>
             <Route exact path="/support">
-              <Support />
+              <ErrorBoundary>
+                <Support />
+              </ErrorBoundary>
             </Route>
             <Route exact path='/order'>
-              <Order />
+              <ErrorBoundary>
+                <Order />
+              </ErrorBoundary>
             </Route>
             <Route exact path='/product/:id'>
-              <ProductDetailPage />
+              <ErrorBoundary>
+                <ProductDetailPage />
+              </ErrorBoundary>
             </Route>
             <Route exact path='*'>
               <ErrorPage />
