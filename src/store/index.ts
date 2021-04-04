@@ -9,7 +9,11 @@ declare global {
   }
 }
 
-const middleware = [thunk, logger];
+const middleware: any[] = [thunk, logger]
+
+if (process.env.NODE_ENV === 'development') {
+  middleware.push(logger)
+}
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 export default createStore(
