@@ -9,7 +9,7 @@ declare global {
   }
 }
 
-const middleware: any[] = [thunk, logger]
+const middleware: any[] = [thunk]
 
 if (process.env.NODE_ENV === 'development') {
   middleware.push(logger)
