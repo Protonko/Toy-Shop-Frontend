@@ -1,12 +1,12 @@
 // types
-import {IInputs, IButtons} from './checkoutData';
+import {IInputs} from './checkoutData';
 import {SIZES} from 'models/enums';
 import {TTransitionClassnames} from 'models/types';
 
-import React, {FC, useRef} from 'react';
+import React, {FC, useState, useRef} from 'react';
 import {Transition} from 'react-transition-group';
 import classNames from 'classnames';
-import {INPUTS_CHECKOUT, BUTTONS_CHECKOUT} from './checkoutData';
+import {INPUTS_CHECKOUT} from './checkoutData';
 import {TRANSITION_DURATION_LONG} from 'static';
 import {useOutsideClick} from 'hooks/useOutsideClick';
 import {Heading} from 'components/Common/Heading';
@@ -28,24 +28,45 @@ const TRANSITION_CLASSNAMES: TTransitionClassnames = {
 
 export const Checkout: FC<IProps> = ({modalVisibility, toggleVisibilityModal}) => {
   const modal = useRef<HTMLElement>(null);
+  const [formValues, setFormValues] = useState<Record<string, string>>({
+    phone: '',
+    city: '',
+    name: '',
+    email: '',
+    comment: '',
+  });
+
+  const submitForm = () => {
+    let canSubmit = true;
+
+    for (let key in formValues) {
+      if (formValues.hasOwnProperty(key) && !formValues[key]) {
+        canSubmit = false;
+        break;
+      }
+    }
+
+    if (canSubmit) {
+      toggleVisibilityModal(false);
+    } else {
+      alert('You should fill in all fields');
+    }
+  }
   const renderInputs = (elem: IInputs) => {
     return (
       <li className="checkout__input" key={elem.id}>
         <CheckoutInput
+          name={elem.name}
           placeholder={elem.placeholder}
           label={elem.label}
+          onChange={(value, name) => setFormValues({
+            ...formValues,
+            [name]: value,
+          })}
         />
       </li>
     )
   };
-
-  const renderButtons = (elem: IButtons) => {
-    return (
-      <li className="checkout__button" key={elem.id}>
-        <Button title={elem.title} onClick={elem.onPress} />
-      </li>
-    )
-  }
 
   useOutsideClick<HTMLElement>(modal, () => toggleVisibilityModal(false));
 
@@ -75,7 +96,9 @@ export const Checkout: FC<IProps> = ({modalVisibility, toggleVisibilityModal}) =
               </div>
               <footer className="checkout__section checkout__section--footer">
                 <ul className="checkout__buttons list list--reset">
-                  {BUTTONS_CHECKOUT.map(renderButtons)}
+                  <li className="checkout__button">
+                    <Button title="Checkout" onClick={submitForm} />
+                  </li>
                 </ul>
               </footer>
             </article>
